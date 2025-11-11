@@ -53,7 +53,7 @@ if ($seats) {
                             </div>
                         </div>
 
-                        <div class="listing-single--details text-center">
+                        <div class="listing-single--details listing-single--details-pill-specs text-center fs-14 fw-semibold">
                             <h1><?= $product->get_name() ?></h1>
 
                             <?php

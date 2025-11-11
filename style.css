@@ -17559,6 +17559,20 @@ footer {
   transform: rotate(35deg);
   margin-top: -6px;
 }
+.listing-single--details-pill-specs ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.listing-single--details-pill-specs ul li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+}
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
     --box-padding: 20px;
