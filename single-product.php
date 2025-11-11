@@ -346,7 +346,7 @@ if ($berths) {
                                                 <?php if ($pa_berths) { ?>
                                                     <div class="<?= $layout_type == 'Single' ? 'col-md-6' : 'col-12' ?>">
                                                         <div class="layouts--inner">
-                                                            <div class="d-flex justify-content-end gap-3 align-items-center">
+                                                            <div class="d-flex gap-3 align-items-center">
                                                                 Berths
                                                                 <div class="icons d-flex gap-1 align-items-center">
                                                                     <?php
