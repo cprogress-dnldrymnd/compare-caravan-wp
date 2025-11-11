@@ -14,7 +14,7 @@ function enqueue_scripts()
 
     wp_enqueue_script('swiper', vendor_dir . 'swiper/js/swiper-bundle.min.js', NULL, theme_version);
     wp_enqueue_script('fancybox', vendor_dir . 'fancybox/js/fancybox.umd.js', NULL, theme_version);
-    wp_enqueue_script('bootstrap', vendor_dir . 'bootstrap/dist/bootstrap.bundle.min.js', NULL, theme_version);
+    wp_enqueue_script('bootstrap', vendor_dir . 'bootstrap/dist/js/bootstrap.bundle.min.js', NULL, theme_version);
 
     wp_enqueue_script('main', assets_dir . 'js/main.js', NULL, theme_version);
 }
