@@ -183,48 +183,6 @@ if ($seats) {
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="listing--details-mobile d-block d-lg-none">
-                            <div class="image-box brand mb-3">
-                                <img width="121" height="37" src="https://newglossopacaravans.theprogressteam.co.uk/wp-content/uploads/2025/05/Swift_Logo_Horizontal-300x92-1.png" class="attachment-medium size-medium" alt="" decoding="async">
-                            </div>
-                            <h2 class="heading mb-0">Swift Sprite Quattro FB 2024</h2>
-                        </div>
-                        <div class="listing-key--info xs-margin-bottom d-none">
-                            <h4 class="fs-35 heading mb-3 mb-lg-4">Key Information</h4>
-                            <ul class="inner-box-style icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
-                                <li class="border-bottom py-1 py-lg-3"> <img src="<?= get_template_directory_uri() ?>/assets/images/berths.svg" alt="berths.svg"> <span class="col d-flex justify-content-between">
-                                        <span>Berth</span>
-                                        <span>6</span>
-                                    </span>
-                                </li>
-                                <li class="border-bottom py-1 py-lg-3"><img src="<?= get_template_directory_uri() ?>/assets/images/year.svg" alt="year.svg"> <span class="col d-flex justify-content-between">
-                                        <span>Unladen Weight</span>
-                                        <span>1450kg</span>
-                                    </span>
-                                </li>
-                                <li class="border-bottom py-1 py-lg-3"><img src="<?= get_template_directory_uri() ?>/assets/images/year.svg" alt="year.svg"> <span class="col d-flex justify-content-between">
-                                        <span>Year</span>
-                                        <span>2024</span>
-                                    </span>
-                                </li>
-                                <li class="border-bottom py-1 py-lg-3"><img src="<?= get_template_directory_uri() ?>/assets/images/kg.svg" alt="kg.svg"> <span class="col d-flex justify-content-between">
-                                        <span>MTPLM</span>
-                                        <span>1630kg</span>
-                                    </span>
-                                </li>
-                                <li class="border-bottom py-1 py-lg-3"><img src="<?= get_template_directory_uri() ?>/assets/images/awning-size.svg" alt="awning-size.svg"> <span class="col d-flex justify-content-between">
-                                        <span>Awning Size</span>
-                                        <span>10.52m</span>
-                                    </span>
-                                </li>
-                                <li class="border-bottom py-1 py-lg-3"><img src="<?= get_template_directory_uri() ?>/assets/images/dimensions.svg" alt="dimensions.svg"> <span class="col d-flex justify-content-between">
-                                        <span>Dimensions</span>
-                                        <span>L 7.98m x W 2.25m</span>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="listing-inner--description xs-margin-bottom">
                             <h4 class="fs-35 heading mb-3 mb-lg-4 d-none">Description</h4>
                             <div class="desc">
