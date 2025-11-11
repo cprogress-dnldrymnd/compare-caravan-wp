@@ -70,7 +70,7 @@ if ($seats) {
                         <div class="listing-inner--tabs xs-margin-bottom border-bottom pb-5">
                             <div class="tab-content mb-3" id="listingInner--Tab">
                                 <div class="tab-pane fade active show" id="gallery-tab-pane" role="tabpanel" aria-labelledby="gallery-tab" tabindex="0">
-                                    <div class="row g-xs flex-column-reverse flex-lg-row gallery-row">
+                                    <div class="row g-xs flex-column-reverse flex-lg-row gallery-row align-items-stretch">
                                         <div class="col-lg-2">
                                             <div class="swiper-gallery-thumbnails">
                                                 <div class="listing-grid--gallery h-auto h-lg-100">
