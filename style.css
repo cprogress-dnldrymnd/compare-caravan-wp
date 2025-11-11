@@ -17557,6 +17557,7 @@ footer {
   border-bottom: 4px solid;
   border-right: 4px solid;
   transform: rotate(35deg);
+  margin-top: -6px;
 }
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
