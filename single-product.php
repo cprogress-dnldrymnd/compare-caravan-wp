@@ -365,11 +365,11 @@ if ($seats) {
                                                             <?php } ?>
                                                             <?php if ($pa_seats) { ?>
                                                                 <div class="d-flex gap-3 align-items-center">
-                                                                    Berths
+                                                                    Seats
                                                                     <div class="icons d-flex gap-1 align-items-center">
                                                                         <?php
                                                                         for ($i = 0; $i < intval($pa_seats); $i++) {
-                                                                            echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="seats.svg">';
+                                                                            echo '<img src="' . get_template_directory_uri() . '/assets/images/seats-layout.svg" alt="seats.svg">';
                                                                         }
                                                                         ?>
                                                                     </div>
