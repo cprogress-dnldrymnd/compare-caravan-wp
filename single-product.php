@@ -96,7 +96,7 @@ if ($seats) {
                                                         <div class="swiper-wrapper h-100">
                                                             <?php foreach ($product_gallery_ids as $product_gallery) { ?>
                                                                 <div class="swiper-slide h-100 swiper-slide-active bg-white rounded">
-                                                                    <a href="<?= wp_get_attachment_image_url($product_gallery, 'large') ?>" data-fancybox="gallery-1" class="d-block image-box image-style h-100">
+                                                                    <a href="<?= wp_get_attachment_image_url($product_gallery, 'large') ?>" data-fancybox="gallery-listing" class="d-block image-box image-style h-100">
                                                                         <?= wp_get_attachment_image($product_gallery, 'large') ?>
                                                                     </a>
                                                                 </div>
@@ -291,7 +291,7 @@ if ($seats) {
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <a href="<?= wp_get_attachment_image_url($layout, 'large') ?>" data-fancybox="gallery-2" class="d-block">
+                                                                <a href="<?= wp_get_attachment_image_url($layout, 'large') ?>" data-fancybox="gallery-layout" class="d-block">
                                                                     <?= wp_get_attachment_image($layout, 'large') ?>
                                                                 </a>
                                                             </div>
@@ -307,7 +307,7 @@ if ($seats) {
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--day.svg' ?> ?>" alt="Day Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <a href="<?= wp_get_attachment_image_url($day_layout, 'large') ?>" data-fancybox="gallery-2" class="d-block">
+                                                                <a href="<?= wp_get_attachment_image_url($day_layout, 'large') ?>" data-fancybox="gallery-layout" class="d-block">
                                                                     <?= wp_get_attachment_image($day_layout, 'large') ?>
                                                                 </a>
                                                             </div>
@@ -323,7 +323,7 @@ if ($seats) {
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--night.svg' ?> ?>" alt="Night Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <a href="<?= wp_get_attachment_image_url($night_layout, 'large') ?>" data-fancybox="gallery-2" class="d-block">
+                                                                <a href="<?= wp_get_attachment_image_url($night_layout, 'large') ?>" data-fancybox="gallery-layout" class="d-block">
                                                                     <?= wp_get_attachment_image($night_layout, 'large') ?>
                                                                 </a>
                                                             </div>
