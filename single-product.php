@@ -11,6 +11,7 @@ $layout_type = get_field('layout_type');
 $layout = get_field('layout');
 $day_layout = get_field('day_layout');
 $night_layout = get_field('night_layout');
+$pill_specs = get_field('pill_specs');
 
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
@@ -54,6 +55,12 @@ if ($seats) {
 
                         <div class="listing-single--details text-center">
                             <h1><?= $product->get_name() ?></h1>
+
+                            <?php
+                            if ($pill_specs) {
+                                echo $pill_specs;
+                            }
+                            ?>
                             <div class="listing-grid-item__badges fs-14 fw-semibold mb-5">
                                 <div class="row g-xxs justify-content-center">
                                     <div class="col-auto">
