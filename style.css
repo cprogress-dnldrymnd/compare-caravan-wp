@@ -17598,8 +17598,10 @@ footer {
   width: 40%;
   z-index: 2;
 }
-.listing--single-right{
+@media (min-width: 992px) {
+  .listing--single-right .listing--single--right-inner .listing--single--right-inner {
     padding-bottom: var(--listing-pricing-height);
+  }
 }
 @media (max-width: 991px) {
   .swiper-thumbnails.swiper-thumbnails {
