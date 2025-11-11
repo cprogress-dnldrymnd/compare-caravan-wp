@@ -126,7 +126,7 @@ if ($seats) {
                                 <?php if ($video) { ?>
                                     <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab" tabindex="0">
                                         <div class="iframe-holder rounded overflow-hidden">
-                                            <iframe src="<?= get_video_embed_url($virtual_tour) ?> " frameborder="0"></iframe>
+                                            <iframe src="<?= get_video_embed_url($video) ?> " frameborder="0"></iframe>
                                         </div>
                                     </div>
                                 <?php } ?>
