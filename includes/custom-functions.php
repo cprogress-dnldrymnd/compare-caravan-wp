@@ -138,45 +138,64 @@ function breadcrumbs()
 
 
 /**
- * Gets a clean YouTube embed URL from various YouTube link formats.
+ * Gets a clean video embed URL from various YouTube or Vimeo link formats.
  *
- * This function parses a URL to find the 11-character YouTube video ID
- * and returns the standardized embed-only URL. It works with standard
- * 'watch', shortened 'youtu.be', and 'embed' links.
+ * This function parses a URL to find the video ID
+ * and returns the standardized embed-only URL for either platform.
  *
- * @param string $url The YouTube URL to parse.
- * @return string The clean embed URL (e.g., 'https://www.youtube.com/embed/VIDEO_ID')
- * or an empty string if no valid ID is found.
+ * @param string $url The YouTube or Vimeo URL to parse.
+ * @return string The clean embed URL (e.g., 'https://www.youtube.com/embed/VIDEO_ID'
+ * or 'https://player.vimeo.com/video/VIDEO_ID') or an empty
+ * string if no valid ID is found.
  */
-function get_youtube_embed_url( $url ) {
+function get_video_embed_url( $url ) {
     $video_id = '';
+    $embed_url = '';
 
-    // A comprehensive regex to find the video ID from all common URL types
-    // It looks for 'v=', 'v/', 'embed/', or 'youtu.be/' followed by the 11-character ID.
-    $pattern = '~'
-        . '(?:'                        // Start a non-capturing group for URL patterns
-            . 'v='                     // Standard 'watch' URL query parameter
-            . '|'                      // OR
-            . 'v\/'                   // Less common '/v/' format
-            . '|'                      // OR
-            . 'embed\/'               // Standard 'embed' URL path
-            . '|'                      // OR
-            . 'youtu\.be\/'           // Shortened 'youtu.be' domain
-        . ')'                          // End non-capturing group
-        . '([a-zA-Z0-9_-]{11})'       // Capture the 11-character video ID
+    // Check for Vimeo first
+    // Regex for Vimeo: vimeo.com/ or vimeo.com/video/ followed by digits
+    $vimeo_pattern = '~'
+        . 'vimeo\.com\/(?:video\/)?' // Matches vimeo.com/ or vimeo.com/video/
+        . '(\d+)'                    // Captures the numeric video ID
         . '~';
 
-    // Check if the pattern matches the given URL
-    if ( preg_match( $pattern, $url, $matches ) ) {
-        // The video ID will be in the first capture group ($matches[1])
-        if ( isset( $matches[1] ) ) {
-            $video_id = $matches[1];
+    if ( preg_match( $vimeo_pattern, $url, $vimeo_matches ) ) {
+        if ( isset( $vimeo_matches[1] ) ) {
+            $video_id = $vimeo_matches[1];
+            $embed_url = 'https://player.vimeo.com/video/' . $video_id;
         }
     }
 
-    // If we found a video ID, construct and return the standard embed URL
-    if ( ! empty( $video_id ) ) {
-        return 'https://www.youtube.com/embed/' . $video_id;
+    // If not Vimeo, check for YouTube
+    if ( empty( $embed_url ) ) {
+        // A comprehensive regex to find the video ID from all common URL types
+        // It looks for 'v=', 'v/', 'embed/', or 'youtu.be/' followed by the 11-character ID.
+        $youtube_pattern = '~'
+            . '(?:'                        // Start a non-capturing group for URL patterns
+                . 'v='                     // Standard 'watch' URL query parameter
+                . '|'                      // OR
+                . 'v\/'                   // Less common '/v/' format
+                . '|'                      // OR
+                . 'embed\/'               // Standard 'embed' URL path
+                . '|'                      // OR
+                . 'youtu\.be\/'           // Shortened 'youtu.be' domain
+            . ')'                          // End non-capturing group
+            . '([a-zA-Z0-9_-]{11})'       // Capture the 11-character video ID
+            . '~';
+
+        // Check if the pattern matches the given URL
+        if ( preg_match( $youtube_pattern, $url, $youtube_matches ) ) {
+            // The video ID will be in the first capture group ($matches[1])
+            if ( isset( $youtube_matches[1] ) ) {
+                $video_id = $youtube_matches[1];
+                $embed_url = 'https://www.youtube.com/embed/' . $video_id;
+            }
+        }
+    }
+
+    // If we found an embed URL, return it
+    if ( ! empty( $embed_url ) ) {
+        return $embed_url;
     }
 
     // If no ID was found, return an empty string
