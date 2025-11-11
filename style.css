@@ -17537,6 +17537,16 @@ footer {
   z-index: 1;
   position: relative;
 }
+.list--checkbox ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+.list--checkbox li {
+  position: relative;
+}
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
     --box-padding: 20px;
