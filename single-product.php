@@ -11,6 +11,8 @@ $layout_type = get_field('layout_type');
 $layout = get_field('layout');
 $day_layout = get_field('day_layout');
 $night_layout = get_field('night_layout');
+$video = get_field('video');
+$virtual_tour = get_field('virtual_tour');
 $pill_specs = get_field('pill_specs');
 
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
