@@ -315,6 +315,7 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
                                 </div>
                             </div>
                         <?php } ?>
+                        <?= $layout_type ?>
                         <?php if ($layout || $day_layout || $night_layout) {  ?>
 
                             <div class="listing-inner--layouts sm-margin-bottom rounded overflow-hidden">
@@ -334,7 +335,6 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
                                                                 <?= wp_get_attachment_image($layout, 'large') ?>
                                                             </div>
                                                             <div class="row">
-                                                                
                                                                 <div class="col-sm-6 fs-16 fw-medium">
                                                                     <?php if ($attribute_pa_berths) { ?>
                                                                         <div class="d-flex justify-content-end gap-3 align-items-center">
