@@ -17547,6 +17547,9 @@ footer {
 .list--checkbox li {
   position: relative;
 }
+.list--checkbox li:before {
+  content: "";
+}
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
     --box-padding: 20px;
