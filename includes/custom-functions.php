@@ -134,3 +134,51 @@ function breadcrumbs()
 <?php
     return ob_get_clean();
 }
+
+
+
+/**
+ * Gets a clean YouTube embed URL from various YouTube link formats.
+ *
+ * This function parses a URL to find the 11-character YouTube video ID
+ * and returns the standardized embed-only URL. It works with standard
+ * 'watch', shortened 'youtu.be', and 'embed' links.
+ *
+ * @param string $url The YouTube URL to parse.
+ * @return string The clean embed URL (e.g., 'https://www.youtube.com/embed/VIDEO_ID')
+ * or an empty string if no valid ID is found.
+ */
+function get_youtube_embed_url( $url ) {
+    $video_id = '';
+
+    // A comprehensive regex to find the video ID from all common URL types
+    // It looks for 'v=', 'v/', 'embed/', or 'youtu.be/' followed by the 11-character ID.
+    $pattern = '~'
+        . '(?:'                        // Start a non-capturing group for URL patterns
+            . 'v='                     // Standard 'watch' URL query parameter
+            . '|'                      // OR
+            . 'v\/'                   // Less common '/v/' format
+            . '|'                      // OR
+            . 'embed\/'               // Standard 'embed' URL path
+            . '|'                      // OR
+            . 'youtu\.be\/'           // Shortened 'youtu.be' domain
+        . ')'                          // End non-capturing group
+        . '([a-zA-Z0-9_-]{11})'       // Capture the 11-character video ID
+        . '~';
+
+    // Check if the pattern matches the given URL
+    if ( preg_match( $pattern, $url, $matches ) ) {
+        // The video ID will be in the first capture group ($matches[1])
+        if ( isset( $matches[1] ) ) {
+            $video_id = $matches[1];
+        }
+    }
+
+    // If we found a video ID, construct and return the standard embed URL
+    if ( ! empty( $video_id ) ) {
+        return 'https://www.youtube.com/embed/' . $video_id;
+    }
+
+    // If no ID was found, return an empty string
+    return '';
+}
