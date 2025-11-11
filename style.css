@@ -17606,8 +17606,9 @@ footer {
     margin-right: 0;
     position: fixed;
     bottom: 0;
-    right: auto;
+    right: 0;
     width: 40%;
+
   }
 }
 
