@@ -291,7 +291,9 @@ if ($seats) {
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <?= wp_get_attachment_image($layout, 'large') ?>
+                                                                <a href="<?= wp_get_attachment_image_url($layout, 'large') ?>" data-fancybox="gallery-1" class="d-block">
+                                                                    <?= wp_get_attachment_image($layout, 'large') ?>
+                                                                </a>
                                                             </div>
 
                                                         </div>
@@ -299,13 +301,15 @@ if ($seats) {
                                                 <?php } ?>
 
                                                 <?php if ($layout_type == 'Day-Night' && $day_layout) { ?>
-                                                    <div class="col-md-6">
+                                                    <div class=" col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="layout-icon">
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--day.svg' ?> ?>" alt="Day Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <?= wp_get_attachment_image($day_layout, 'large') ?>
+                                                                <a href="<?= wp_get_attachment_image_url($day_layout, 'large') ?>" data-fancybox="gallery-1" class="d-block">
+                                                                    <?= wp_get_attachment_image($day_layout, 'large') ?>
+                                                                </a>
                                                             </div>
 
                                                         </div>
@@ -319,7 +323,9 @@ if ($seats) {
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--night.svg' ?> ?>" alt="Night Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
-                                                                <?= wp_get_attachment_image($night_layout, 'large') ?>
+                                                                <a href="<?= wp_get_attachment_image_url($night_layout, 'large') ?>" data-fancybox="gallery-1" class="d-block">
+                                                                    <?= wp_get_attachment_image($night_layout, 'large') ?>
+                                                                </a>
                                                             </div>
 
                                                         </div>
