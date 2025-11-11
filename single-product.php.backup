@@ -7,6 +7,11 @@ $highlights = get_field('highlights');
 $interior_features = get_field('interior_features');
 $exterior_features = get_field('exterior_features');
 $warranty = get_field('warranty');
+$layout_type = get_field('layout_type');
+$layout = get_field('layout');
+$day_layout = get_field('day_layout');
+$night_layout = get_field('night_layout');
+
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
@@ -310,10 +315,8 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
                                 </div>
                             </div>
                         <?php } ?>
-                        <?php if ($product->get_type() == 'variable') {  ?>
-                            <?php
-                            $variations = $product->get_available_variations();
-                            ?>
+                        <?php if ($layout || $day_layout || $night_layout) {  ?>
+
                             <div class="listing-inner--layouts sm-margin-bottom rounded overflow-hidden">
                                 <h3 class="mb-4">Available Layouts</h3>
                                 <div class="listing-inner--layouts-holder">
@@ -324,26 +327,14 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
                                     <div class="listing-inner-box">
                                         <div class="inner-box-style p-0 rounded">
                                             <div class="row g-0">
-                                                <?php foreach ($variations as $variation) { ?>
-                                                    <?php
-                                                    $variation_obj = wc_get_product($variation['variation_id']);
-                                                    $attributes = $variation['attributes'];
-                                                    $layout = $attributes['attribute_layout'];
-                                                    $attribute_pa_berths = $attributes['attribute_pa_berths'];
-
-                                                    ?>
+                                                <?php if ($layout_type == 'Single' && $layout) { ?>
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="listing-grid__image image-style" style="--fit: contain">
-                                                                <?= wp_get_attachment_image($variation_obj->get_image_id(), 'large') ?>
+                                                                <?= wp_get_attachment_image($layout, 'large') ?>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <h3 class="fs-24"><?= $layout ?></h3>
-                                                                    <div class="price">
-                                                                        <?= $variation_obj->get_price_html() ?>
-                                                                    </div>
-                                                                </div>
+                                                                
                                                                 <div class="col-sm-6 fs-16 fw-medium">
                                                                     <?php if ($attribute_pa_berths) { ?>
                                                                         <div class="d-flex justify-content-end gap-3 align-items-center">
@@ -362,7 +353,6 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
                                                         </div>
                                                     </div>
                                                 <?php } ?>
-
                                             </div>
                                         </div>
                                     </div>
