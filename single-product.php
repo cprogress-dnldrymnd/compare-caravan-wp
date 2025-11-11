@@ -338,25 +338,25 @@ if ($berths) {
                                                             <div class="listing-grid__image image-style" style="--fit: contain">
                                                                 <?= wp_get_attachment_image($layout, 'large') ?>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 fs-16 fw-medium">
-                                                                    <?php if ($pa_berths) { ?>
-                                                                        <div class="d-flex justify-content-end gap-3 align-items-center">
-                                                                            Berths
-                                                                            <div class="icons d-flex gap-1 align-items-center">
-                                                                                <?php
-                                                                                for ($i = 0; $i < intval($pa_berths); $i++) {
-                                                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
-                                                                                }
-                                                                                ?>
-                                                                            </div>
-                                                                        </div>
-                                                                    <?php } ?>
-                                                                </div>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 <?php } ?>
+
+                                                <div class="col-12">
+                                                    <?php if ($pa_berths) { ?>
+                                                        <div class="d-flex justify-content-end gap-3 align-items-center">
+                                                            Berths
+                                                            <div class="icons d-flex gap-1 align-items-center">
+                                                                <?php
+                                                                for ($i = 0; $i < intval($pa_berths); $i++) {
+                                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
