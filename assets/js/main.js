@@ -179,6 +179,7 @@ function swiper_sliders() {
                 slidesPerView: 4,
                 freeMode: true,
                 watchSlidesProgress: true,
+                autoHeight: true,
             });
         }
 
