@@ -339,7 +339,7 @@ if ($seats) {
                                                 <?php if ($layout_type == 'Single' && $layout) { ?>
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
-                                                            <div class="listing-grid__image image-style" style="--fit: contain">
+                                                            <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
                                                                 <?= wp_get_attachment_image($layout, 'large') ?>
                                                             </div>
 
@@ -353,7 +353,7 @@ if ($seats) {
                                                             <div class="layout-icon">
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--day.svg' ?> ?>" alt="Day Layout">
                                                             </div>
-                                                            <div class="listing-grid__image image-style" style="--fit: contain">
+                                                            <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
                                                                 <?= wp_get_attachment_image($day_layout, 'large') ?>
                                                             </div>
 
@@ -367,7 +367,7 @@ if ($seats) {
                                                             <div class="layout-icon">
                                                                 <img src="<?= get_template_directory_uri() . '/assets/images/icon--night.svg' ?> ?>" alt="Night Layout">
                                                             </div>
-                                                            <div class="listing-grid__image image-style" style="--fit: contain">
+                                                            <div class="listing-grid__image image-style" style="--fit: contain; --padding: 20%;">
                                                                 <?= wp_get_attachment_image($night_layout, 'large') ?>
                                                             </div>
 
