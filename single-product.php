@@ -96,7 +96,7 @@ if ($seats) {
                                                         <div class="swiper-wrapper h-100">
                                                             <?php foreach ($product_gallery_ids as $product_gallery) { ?>
                                                                 <div class="swiper-slide h-100 swiper-slide-active bg-white rounded">
-                                                                    <a href="<?= wp_get_attachment_image_url($product_gallery, 'large') ?>" data-fancybox="gallery-listing" class="d-block image-box image-style h-100">
+                                                                    <a href="<?= wp_get_attachment_image_url($product_gallery, 'large') ?>" data-fancybox="gallery-listing" class="d-block image-box image-style h-auto h-lg-100">
                                                                         <?= wp_get_attachment_image($product_gallery, 'large') ?>
                                                                     </a>
                                                                 </div>
