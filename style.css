@@ -17599,7 +17599,7 @@ footer {
   z-index: 2;
 }
 @media (min-width: 992px) {
-  .listing--single-right .listing--single--right-inner .listing--single--right-inner {
+  .listing--single-right .listing--single--right-inner.listing--single--right-inner {
     padding-bottom: var(--listing-pricing-height);
   }
 }
