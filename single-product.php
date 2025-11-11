@@ -235,7 +235,7 @@ if ($seats) {
                             <div class="listing-inner--hightlights sm-margin-bottom">
                                 <div class="inner-box-style rounded">
                                     <h4 class="mb-3">Highlights</h4>
-                                    <div class="desc-box hightlights">
+                                    <div class="desc-box list--checkbox hightlights">
                                         <?= wpautop($highlights) ?>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseInterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body pt-0">
+                                                    <div class="accordion-body list--checkbox pt-0">
                                                         <?= wpautop($interior_features) ?>
                                                     </div>
                                                 </div>
@@ -290,7 +290,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseExterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body pt-0">
+                                                    <div class="accordion-body list--checkbox pt-0">
                                                         <?= wpautop($exterior_features) ?>
                                                     </div>
                                                 </div>
@@ -313,7 +313,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body pt-0">
+                                                    <div class="accordion-body list--checkbox pt-0">
                                                         <?= wpautop($warranty) ?>
                                                     </div>
                                                 </div>
