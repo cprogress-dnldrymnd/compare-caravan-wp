@@ -3,6 +3,7 @@ jQuery(document).ready(function () {
     password_input();
     menu_responsive();
     sell_leisure_vehicle_form();
+    fancybox();
     setTimeout(function () {
         swiper_sliders();
         header();
@@ -10,6 +11,12 @@ jQuery(document).ready(function () {
     }, 1000);
 
 });
+
+function fancybox() {
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+}
 
 function sell_leisure_vehicle_form() {
     jQuery('#add-technical-details').click(function (e) {
