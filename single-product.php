@@ -90,9 +90,9 @@ if ($seats) {
                                         </div>
                                         <div class="col-lg-10">
                                             <div class="listing-inner--gallery-grid-holder position-relative rounded overflow-hidden">
-                                                <div class="listing-grid--gallery h-100">
+                                                <div class="listing-grid--gallery h-auto h-lg-100">
 
-                                                    <div class="swiper swiper-gallery h-100">
+                                                    <div class="swiper swiper-gallery h-auto h-lg-100">
                                                         <div class="swiper-wrapper h-100">
                                                             <?php foreach ($product_gallery_ids as $product_gallery) { ?>
                                                                 <div class="swiper-slide h-100 swiper-slide-active bg-white rounded">
