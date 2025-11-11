@@ -19,6 +19,11 @@ $berths = get_the_terms(get_the_ID(), 'pa_berths');
 if ($berths) {
     $pa_berths = $berths[0]->name;
 }
+
+$seats = get_the_terms(get_the_ID(), 'pa_seats');
+if ($seats) {
+    $pa_seats = $seats[0]->name;
+}
 ?>
 <section class="listing-single">
     <div class="container-fluid g-0">
@@ -343,19 +348,33 @@ if ($berths) {
                                                     </div>
                                                 <?php } ?>
 
-                                                <?php if ($pa_berths) { ?>
+                                                <?php if ($pa_berths || $pa_seats) { ?>
                                                     <div class="<?= $layout_type == 'Single' ? 'col-md-6' : 'col-12' ?>">
                                                         <div class="layouts--inner">
-                                                            <div class="d-flex gap-3 align-items-center">
-                                                                Berths
-                                                                <div class="icons d-flex gap-1 align-items-center">
-                                                                    <?php
-                                                                    for ($i = 0; $i < intval($pa_berths); $i++) {
-                                                                        echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
-                                                                    }
-                                                                    ?>
+                                                            <?php if ($pa_berths) { ?>
+                                                                <div class="d-flex gap-3 align-items-center">
+                                                                    Berths
+                                                                    <div class="icons d-flex gap-1 align-items-center">
+                                                                        <?php
+                                                                        for ($i = 0; $i < intval($pa_berths); $i++) {
+                                                                            echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
+                                                                        }
+                                                                        ?>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
+                                                            <?php } ?>
+                                                            <?php if ($pa_seats) { ?>
+                                                                <div class="d-flex gap-3 align-items-center">
+                                                                    Berths
+                                                                    <div class="icons d-flex gap-1 align-items-center">
+                                                                        <?php
+                                                                        for ($i = 0; $i < intval($pa_seats); $i++) {
+                                                                            echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="seats.svg">';
+                                                                        }
+                                                                        ?>
+                                                                    </div>
+                                                                </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                 <?php } ?>
