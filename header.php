@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="html">
+
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="">
+	<meta name="format-detection" content="telephone=no">
+	<title>
+		<?php wp_title('') ?>
+	</title>
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+	<?php wp_head(); ?>
+</head>
+
+
+<body <?php body_class(); ?>>
+<div class="top-bar py-2 position-relative">
+    <div class="container">
+        <div class="row g-3 justify-content-center justify-content-md-between">
+            <div class="col-auto trustpilot d-flex align-items-center gap-3">
+                <span class="fw-semibold">Excellent 4.9</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="20.5 248.5 600 147.3">
+                    <path d="m178.2 300.7h60.7v11.3h-23.9v63.7h-13.1v-63.7h-23.8zm58.1 20.7h11.2v10.5h.2c.4-1.5 1.1-2.9 2.1-4.3s2.2-2.7 3.7-3.8c1.4-1.2 3-2.1 4.8-2.8 1.7-.7 3.5-1.1 5.3-1.1 1.4 0 2.4.1 2.9.1.5.1 1.1.2 1.6.2v11.5c-.8-.2-1.7-.3-2.6-.4s-1.7-.2-2.6-.2c-2 0-3.9.4-5.7 1.2s-3.3 2-4.7 3.5c-1.3 1.6-2.4 3.5-3.2 5.8s-1.2 5-1.2 8v25.8h-12zm86.8 54.3h-11.8v-7.6h-.2c-1.5 2.8-3.7 4.9-6.6 6.6s-5.9 2.5-8.9 2.5c-7.1 0-12.3-1.7-15.5-5.3-3.2-3.5-4.8-8.9-4.8-16v-34.5h12v33.3c0 4.8.9 8.2 2.8 10.1 1.8 2 4.4 3 7.7 3 2.5 0 4.6-.4 6.3-1.2s3.1-1.8 4.1-3.1c1.1-1.3 1.8-2.9 2.3-4.7s.7-3.8.7-5.9v-31.5h12v54.3zm20.4-17.4c.4 3.5 1.7 5.9 4 7.4 2.3 1.4 5.1 2.1 8.3 2.1 1.1 0 2.4-.1 3.8-.3s2.8-.5 4-1c1.3-.5 2.3-1.2 3.1-2.2s1.2-2.2 1.1-3.7-.6-2.8-1.7-3.8-2.4-1.7-4-2.4c-1.6-.6-3.5-1.1-5.6-1.5s-4.2-.9-6.4-1.4-4.4-1.1-6.5-1.8-3.9-1.6-5.6-2.9c-1.6-1.2-3-2.7-3.9-4.6-1-1.9-1.5-4.1-1.5-6.9 0-3 .7-5.4 2.2-7.4 1.4-2 3.3-3.6 5.5-4.8s4.7-2.1 7.4-2.6 5.3-.7 7.7-.7c2.8 0 5.5.3 8 .9s4.9 1.5 6.9 2.9c2.1 1.3 3.8 3.1 5.1 5.2 1.4 2.1 2.2 4.7 2.6 7.7h-12.5c-.6-2.9-1.9-4.8-3.9-5.8-2.1-1-4.4-1.5-7.1-1.5-.8 0-1.9.1-3 .2-1.2.2-2.2.4-3.3.8-1 .4-1.9 1-2.6 1.7s-1.1 1.7-1.1 2.9c0 1.5.5 2.6 1.5 3.5s2.3 1.6 4 2.3c1.6.6 3.5 1.1 5.6 1.5s4.3.9 6.5 1.4 4.3 1.1 6.4 1.8 4 1.6 5.6 2.9c1.6 1.2 3 2.7 4 4.5s1.5 4.1 1.5 6.7c0 3.2-.7 5.9-2.2 8.2-1.5 2.2-3.4 4.1-5.7 5.5s-5 2.4-7.8 3.1c-2.9.6-5.7 1-8.5 1-3.4 0-6.6-.4-9.5-1.2s-5.5-2-7.6-3.5c-2.1-1.6-3.8-3.5-5-5.9-1.2-2.3-1.9-5.1-2-8.4h12.1v.1zm39.5-36.9h9.1v-16.4h12v16.3h10.8v8.9h-10.8v29c0 1.3.1 2.3.2 3.3.1.9.4 1.7.7 2.3.4.6 1 1.1 1.7 1.4.8.3 1.8.5 3.2.5.8 0 1.7 0 2.5-.1s1.7-.2 2.5-.4v9.3c-1.3.2-2.6.3-3.9.4-1.3.2-2.5.2-3.9.2-3.2 0-5.7-.3-7.6-.9s-3.4-1.5-4.5-2.6c-1.1-1.2-1.8-2.6-2.2-4.3s-.6-3.8-.7-6v-32h-9.1v-9.1zm40.3 0h11.3v7.4h.2c1.7-3.2 4-5.4 7-6.8s6.2-2.1 9.8-2.1c4.3 0 8 .7 11.2 2.3 3.2 1.5 5.8 3.5 7.9 6.2 2.1 2.6 3.7 5.7 4.7 9.2s1.6 7.3 1.6 11.2c0 3.7-.5 7.2-1.4 10.6-1 3.4-2.4 6.5-4.3 9.1s-4.3 4.7-7.3 6.3-6.4 2.4-10.4 2.4c-1.7 0-3.5-.2-5.2-.5s-3.4-.8-5-1.5-3.1-1.6-4.4-2.7c-1.4-1.1-2.5-2.4-3.4-3.8h-.2v27.1h-12v-74.4zm41.9 27.2c0-2.4-.3-4.8-1-7.1-.6-2.3-1.6-4.3-2.9-6.1s-2.9-3.2-4.7-4.3c-1.9-1.1-4.1-1.6-6.5-1.6-5 0-8.8 1.7-11.4 5.2-2.5 3.5-3.8 8.2-3.8 14 0 2.8.3 5.3 1 7.6s1.6 4.3 3 6c1.3 1.7 2.9 3 4.8 4s4 1.5 6.5 1.5c2.8 0 5-.6 6.9-1.7s3.4-2.6 4.7-4.3c1.2-1.8 2.1-3.8 2.6-6.1.5-2.4.8-4.7.8-7.1zm21.1-47.9h12v11.3h-12zm0 20.7h12v54.3h-12zm22.7-20.7h12v75h-12zm48.6 76.5c-4.3 0-8.2-.7-11.6-2.2s-6.2-3.4-8.6-5.9c-2.3-2.5-4.1-5.6-5.3-9.1s-1.9-7.4-1.9-11.5.6-7.9 1.9-11.4c1.2-3.5 3-6.5 5.3-9.1 2.3-2.5 5.2-4.5 8.6-5.9s7.3-2.2 11.6-2.2 8.2.7 11.6 2.2c3.4 1.4 6.2 3.4 8.6 5.9 2.3 2.5 4.1 5.6 5.3 9.1s1.9 7.3 1.9 11.4c0 4.2-.6 8-1.9 11.5s-3 6.5-5.3 9.1c-2.3 2.5-5.2 4.5-8.6 5.9s-7.2 2.2-11.6 2.2zm0-9.5c2.6 0 5-.6 6.9-1.7 2-1.1 3.5-2.6 4.8-4.4s2.2-3.9 2.8-6.1c.6-2.3.9-4.6.9-7 0-2.3-.3-4.6-.9-6.9s-1.5-4.3-2.8-6.1-2.9-3.2-4.8-4.3c-2-1.1-4.3-1.7-6.9-1.7s-5 .6-6.9 1.7c-2 1.1-3.5 2.6-4.8 4.3-1.3 1.8-2.2 3.8-2.8 6.1s-.9 4.6-.9 6.9c0 2.4.3 4.7.9 7s1.5 4.3 2.8 6.1 2.9 3.3 4.8 4.4c2 1.2 4.3 1.7 6.9 1.7zm31-46.3h9.1v-16.4h12v16.3h10.8v8.9h-10.8v29c0 1.3.1 2.3.2 3.3.1.9.4 1.7.7 2.3.4.6 1 1.1 1.7 1.4.8.3 1.8.5 3.2.5.8 0 1.7 0 2.5-.1s1.7-.2 2.5-.4v9.3c-1.3.2-2.6.3-3.9.4-1.3.2-2.5.2-3.9.2-3.2 0-5.7-.3-7.6-.9s-3.4-1.5-4.5-2.6c-1.1-1.2-1.8-2.6-2.2-4.3s-.6-3.8-.7-6v-32h-9.1v-9.1z" fill="currentColor"></path>
+                    <path d="m164.2 300.7h-54.9l-16.9-52.2-17 52.2-54.9-.1 44.4 32.3-17 52.2 44.4-32.3 44.4 32.3-16.9-52.2z" fill="#00b67a"></path>
+                    <path d="m123.6 344.7-3.8-11.8-27.4 19.9z" fill="#005128"></path>
+                </svg>
+            </div>
+            <div class="col-auto d-none d-md-block">
+                <ul class="d-flex gap-4 list-inline align-items-center mb-0 fs-15 fw-medium">
+                    <li>
+                        <a href="#">Sell my leisure vehicle</a>
+                    </li>
+                    <li>
+                        <a href="#">Log in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<header id="main-header" class="main-header py-3 position-relative" role="banner">
+  <div class="container">
+    <div class="row g-3 justify-content-between align-items-center">
+      <div class="col-auto">
+        <div class="logo-box">
+          <a href="/" class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197.139" height="28.201" viewBox="0 0 197.139 28.201">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_598" data-name="Rectangle 598" width="197.139" height="28.201" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1388" data-name="Group 1388" transform="translate(0 -0.659)">
+    <g id="Group_1388-2" data-name="Group 1388" transform="translate(0 0.659)" clip-path="url(#clip-path)">
+      <path id="Path_2124" data-name="Path 2124" d="M100.614,21.19a9.956,9.956,0,0,1-4-.8,10.357,10.357,0,0,1-5.476-5.572,10.541,10.541,0,0,1-.785-4.079A10.266,10.266,0,0,1,95.463,1.7,10.443,10.443,0,0,1,100.883.28a11.051,11.051,0,0,1,4.864.957A8.5,8.5,0,0,1,109.154,4L105.171,7.25A5.12,5.12,0,0,0,103.391,5.6a4.885,4.885,0,0,0-2.432-.613,5.214,5.214,0,0,0-2.872.785,5.34,5.34,0,0,0-1.9,2.087,6.181,6.181,0,0,0-.671,2.872,5.938,5.938,0,0,0,.709,2.853,5.542,5.542,0,0,0,1.953,2.107,5.307,5.307,0,0,0,2.891.785,4.551,4.551,0,0,0,2.528-.67,6.906,6.906,0,0,0,1.8-1.705l3.753,3.256a9.911,9.911,0,0,1-3.5,2.815,11.435,11.435,0,0,1-5.036,1.015" transform="translate(-48.962 -0.151)" fill="currentColor"/>
+      <path id="Path_2125" data-name="Path 2125" d="M142.007,21.237a10.6,10.6,0,0,1-5.476-1.417,10.227,10.227,0,0,1-5.132-9,10.372,10.372,0,0,1,1.359-5.247,10.232,10.232,0,0,1,3.772-3.791,11.324,11.324,0,0,1,10.971,0,10.323,10.323,0,0,1,5.113,9.037,10.262,10.262,0,0,1-5.113,9,10.575,10.575,0,0,1-5.5,1.417m0-4.71a5.208,5.208,0,0,0,2.872-.786,5.331,5.331,0,0,0,1.9-2.087,6.107,6.107,0,0,0,.671-2.835,6.184,6.184,0,0,0-.671-2.872,5.339,5.339,0,0,0-1.9-2.088,5.649,5.649,0,0,0-5.744,0,5.332,5.332,0,0,0-1.9,2.088,6.179,6.179,0,0,0-.671,2.872,6.1,6.1,0,0,0,.671,2.835,5.323,5.323,0,0,0,1.9,2.087,5.207,5.207,0,0,0,2.872.786" transform="translate(-71.206 -0.198)" fill="currentColor"/>
+      <path id="Path_2126" data-name="Path 2126" d="M182.728,20.739V.824h5.094V3.735q1.569-3.37,6.089-3.37a7.426,7.426,0,0,1,3.792.977,7.115,7.115,0,0,1,2.681,2.776,7.459,7.459,0,0,1,2.546-2.776,7.815,7.815,0,0,1,4.194-.977,7.591,7.591,0,0,1,3.868,1,7.1,7.1,0,0,1,2.719,2.834,9.044,9.044,0,0,1,1,4.366V20.739h-5.17V9.824a5.352,5.352,0,0,0-1.111-3.772,3.788,3.788,0,0,0-2.872-1.168,4.168,4.168,0,0,0-2.929,1.034q-1.13,1.034-1.13,3.906V20.739h-5.17V9.824a5.125,5.125,0,0,0-1.187-3.772,4.236,4.236,0,0,0-3.1-1.168,4.1,4.1,0,0,0-2.891,1.168A4.972,4.972,0,0,0,187.9,9.824V20.739Z" transform="translate(-99.022 -0.198)" fill="currentColor"/>
+      <path id="Path_2127" data-name="Path 2127" d="M258.8,28.444V.87H263.9V4.087a6.653,6.653,0,0,1,2.279-2.643,7.219,7.219,0,0,1,4.078-1,9.061,9.061,0,0,1,3.849.824,9.941,9.941,0,0,1,3.121,2.259,10.761,10.761,0,0,1,2.872,7.373,10.5,10.5,0,0,1-1.321,5.226,10.313,10.313,0,0,1-3.542,3.754,9.154,9.154,0,0,1-4.979,1.4,7.379,7.379,0,0,1-4.021-.938,6.391,6.391,0,0,1-2.259-2.508V28.444ZM269.41,16.61a5.209,5.209,0,0,0,2.891-.8,5.542,5.542,0,0,0,1.934-2.125,6.209,6.209,0,0,0,0-5.687A5.443,5.443,0,0,0,272.3,5.906a5.308,5.308,0,0,0-2.891-.785,5.374,5.374,0,0,0-2.949.8,5.53,5.53,0,0,0-1.953,2.106,6.046,6.046,0,0,0-.689,2.873,5.961,5.961,0,0,0,.689,2.833,5.382,5.382,0,0,0,1.953,2.088,5.47,5.47,0,0,0,2.949.785" transform="translate(-140.247 -0.243)" fill="currentColor"/>
+      <path id="Path_2128" data-name="Path 2128" d="M318.052,21.282a9.178,9.178,0,0,1-4.959-1.4,10.25,10.25,0,0,1-3.562-3.754A10.5,10.5,0,0,1,308.21,10.9a10.762,10.762,0,0,1,2.872-7.373A9.93,9.93,0,0,1,314.2,1.273a9.059,9.059,0,0,1,3.848-.824,7.236,7.236,0,0,1,4.06.977,6.621,6.621,0,0,1,2.259,2.585V.87H329.5V20.785h-5.017V17.529a6.874,6.874,0,0,1-2.28,2.718,7.161,7.161,0,0,1-4.154,1.034m.843-4.672a5.3,5.3,0,0,0,4.9-2.872,5.956,5.956,0,0,0,.69-2.833,6.041,6.041,0,0,0-.69-2.873,5.568,5.568,0,0,0-1.933-2.106A5.8,5.8,0,0,0,316,5.906a5.439,5.439,0,0,0-1.934,2.087,6.209,6.209,0,0,0,0,5.687A5.539,5.539,0,0,0,316,15.806a5.207,5.207,0,0,0,2.892.8" transform="translate(-167.022 -0.243)" fill="currentColor"/>
+      <path id="Path_2129" data-name="Path 2129" d="M361.379,20.717V.8H366.4V4.594a5.413,5.413,0,0,1,2.029-3.274,6.193,6.193,0,0,1,4.137-.977V5.207h-.728a5.322,5.322,0,0,0-3.753,1.417,5.06,5.06,0,0,0-1.532,3.907V20.717Z" transform="translate(-195.834 -0.176)" fill="currentColor"/>
+      <path id="Path_2130" data-name="Path 2130" d="M396.092,21.192a10.2,10.2,0,0,1-5.4-1.417A9.861,9.861,0,0,1,387.073,16a10.739,10.739,0,0,1-1.283-5.228,10.586,10.586,0,0,1,1.341-5.265A10.267,10.267,0,0,1,390.787,1.7a9.965,9.965,0,0,1,5.3-1.417A9.772,9.772,0,0,1,401.358,1.7a9.946,9.946,0,0,1,3.562,3.811,10.967,10.967,0,0,1,1.282,5.265c0,.281-.013.574-.038.88s-.064.626-.115.958h-14.9a5.329,5.329,0,0,0,1.7,2.872,4.768,4.768,0,0,0,3.236,1.109,5.472,5.472,0,0,0,2.929-.765,5.651,5.651,0,0,0,1.934-1.915l4.022,3.026A8.657,8.657,0,0,1,401.415,20a11.749,11.749,0,0,1-5.324,1.187m-.077-16.467a4.676,4.676,0,0,0-3.14,1.111,5.3,5.3,0,0,0-1.723,2.91h9.842a5.623,5.623,0,0,0-1.743-2.834,4.67,4.67,0,0,0-3.236-1.187" transform="translate(-209.063 -0.153)" fill="currentColor"/>
+      <path id="Path_2131" data-name="Path 2131" d="M33.476,5.5,28.923.948,19.914,9.957V3.084A3.084,3.084,0,0,0,16.829,0H2.271V6.439H9.053L0,15.492l4.553,4.553,9.009-9.009V17.91a3.084,3.084,0,0,0,3.084,3.084H31.2V14.555H24.423Z" transform="translate(0 0)" fill="currentColor"/>
+    </g>
+  </g>
+</svg>
+          </a>
+        </div>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <div class="navbar-collapse" id="navbarMain">
+          <nav class="navbar">
+            <ul class="navbar-nav me-auto flex-column flex-lg-row gap-4 fw-semibold" id="main-navbar">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/listing--caravans.html">Caravans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/listing--motorhomes.html">Motorhomes</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="/listing--campervans.html" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Campervans
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/listing--campervans.html">Campervans</a></li>
+                  <li><a class="dropdown-item" href="#">Motohomes Submenu 2</a></li>
+                  <li><a class="dropdown-item" href="#">Motohomes Submenu 3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/listing--static-caravans.html" aria-disabled="true">Static Caravans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/listing--holiday-homes.html" aria-disabled="true">Holiday Homes</a>
+              </li>
+            </ul>
+
+          </nav>
+        </div>
+      </div>
+      <div class="col-auto text-end d-flex flex-wrap">
+        <div class="d-inline-flex gap-5 align-items-center ">
+          <a href="vehicle-comparison.html"
+            class="btn p-0 compare fw-semibold  gap-3 align-items-center d-none d-lg-flex">
+            Compare
+            <div class="icon position-relative">
+              <span class="count fw-medium">2</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="34.222" height="28" viewBox="0 0 34.222 28">
+                <path fill="currentColor" id="compare"
+                  d="M1,10.778A1.556,1.556,0,0,1,2.556,9.222h11.8L10.789,5.655a1.555,1.555,0,1,1,2.2-2.2l6.222,6.222a1.556,1.556,0,0,1,0,2.2L12.989,18.1a1.555,1.555,0,1,1-2.2-2.2l3.567-3.567H2.556A1.556,1.556,0,0,1,1,10.778ZM33.667,21.667h-11.8L25.433,18.1a1.555,1.555,0,1,0-2.2-2.2l-6.222,6.222a1.556,1.556,0,0,0,0,2.2l6.222,6.222a1.555,1.555,0,1,0,2.2-2.2l-3.567-3.567h11.8a1.556,1.556,0,1,0,0-3.111Z"
+                  transform="translate(-1 -3)" fill="#201f1f" />
+              </svg>
+            </div>
+          </a>
+          <button class="menu-burger d-flex flex-column justify-content-between" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+</header>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvasMenu" aria-labelledby="offCanvasMenuLabel">
+    <div class="offcanvas-body background-lightgray-2">
+        <div class="button-box text-end">
+            <button type="button" class="btn-close text-color" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas--inner">
+            <div class="menu-holder mb-5">
+                <h3 class="fs-25 mb-3">Compare for dealers</h3>
+                <ul class="menu list-inline mb-0 d-flex flex-column gap-3">
+                    <li><a href="#">Advertising packages</a></li>
+                    <li><a href="#">Pay as you go</a></li>
+                    <li><a href="#">Contact Compare</a></li>
+                    <li><a href="/dealer-login.html" data-bs-toggle="modal" data-bs-target="#dealerLoginModal">Dealer login</a></li>
+                </ul>
+            </div>
+            <div class="menu-holder">
+                <h3 class="fs-25 mb-3">Compare for consumers</h3>
+                <ul class="menu menu-hover-text list-inline mb-0 d-flex flex-column gap-3">
+                    <li><a href="#">Sell my leisure vehicle</a></li>
+                    <li><a href="#">Advertising packages</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="/consumer-login.html">Consumer login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+	<main id="main" class="background-lightgray-2">

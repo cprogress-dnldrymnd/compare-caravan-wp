@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41.521" height="28.277" viewBox="0 0 41.521 28.277">
+  <g id="Group_697" data-name="Group 697" transform="translate(18944.66 18990.996)">
+    <path id="Path_1049" data-name="Path 1049" d="M-19116.562-18741.227l19.795-9.238" transform="translate(172.899 -239.535)" fill="none" stroke="#201f1f" stroke-linecap="round" stroke-width="1.5"/>
+    <path id="Path_1050" data-name="Path 1050" d="M-19096.328-18713v19.137h31.383V-18713" transform="translate(156.776 -269.609)" fill="none" stroke="#201f1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_1051" data-name="Path 1051" d="M-19096.766-18741.227l-19.793-9.238" transform="translate(192.63 -239.535)" fill="none" stroke="#201f1f" stroke-linecap="round" stroke-width="1.5"/>
+    <g id="Rectangle_320" data-name="Rectangle 320" transform="translate(-18929.154 -18979.49)" fill="none" stroke="#201f1f" stroke-linecap="round" stroke-width="1.5">
+      <rect width="10.51" height="10.51" stroke="none"/>
+      <rect x="0.75" y="0.75" width="9.01" height="9.01" fill="none"/>
+    </g>
+    <g id="Path_1052" data-name="Path 1052" transform="translate(-18936.732 -18979.385)" fill="none" stroke-linecap="round">
+      <path d="M0,.991,6.4.061V10.223L0,9.447Z" stroke="none"/>
+      <path d="M 4.901903629302979 1.794236183166504 L 1.500003337860107 2.288507461547852 L 1.500003337860107 8.118048667907715 L 4.901903629302979 8.530035018920898 L 4.901903629302979 1.794236183166504 M 6.401903629302979 0.06055164337158203 L 6.401903629302979 10.22265148162842 L 3.337860107421875e-06 9.447351455688477 L 3.337860107421875e-06 0.9907016754150391 L 6.401903629302979 0.06055164337158203 Z" stroke="none" fill="#201f1f"/>
+    </g>
+    <g id="Path_1053" data-name="Path 1053" transform="translate(-18917.469 -18979.385)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.4.991,0,.061V10.223l6.4-.775Z" stroke="none"/>
+      <path d="M 1.500003337860107 1.794236183166504 L 1.500003337860107 8.530035018920898 L 4.901903629302979 8.118048667907715 L 4.901903629302979 2.288507461547852 L 1.500003337860107 1.794236183166504 M 3.337860107421875e-06 0.06055164337158203 L 6.401903629302979 0.9907016754150391 L 6.401903629302979 9.447351455688477 L 3.337860107421875e-06 10.22265148162842 L 3.337860107421875e-06 0.06055164337158203 Z" stroke="none" fill="#201f1f"/>
+    </g>
+  </g>
+</svg>
