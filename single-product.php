@@ -348,6 +348,28 @@ if ($seats) {
                                                     </div>
                                                 <?php } ?>
 
+                                                <?php if ($layout_type == 'Day-Night' && $day_layout) { ?>
+                                                    <div class="col-md-6">
+                                                        <div class="layouts--inner">
+                                                            <div class="listing-grid__image image-style" style="--fit: contain">
+                                                                <?= wp_get_attachment_image($day_layout, 'large') ?>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+
+                                                <?php if ($layout_type == 'Day-Night' && $night_layout) { ?>
+                                                    <div class="col-md-6">
+                                                        <div class="layouts--inner">
+                                                            <div class="listing-grid__image image-style" style="--fit: contain">
+                                                                <?= wp_get_attachment_image($night_layout, 'large') ?>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+
                                                 <?php if ($pa_berths || $pa_seats) { ?>
                                                     <div class="<?= $layout_type == 'Single' ? 'col-md-6' : 'col-12' ?>">
                                                         <div class="layouts--inner d-flex flex-column gap-3 <?= $layout_type == 'Single' ? 'justify-content-center' : '' ?>">
