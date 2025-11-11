@@ -1,5 +1,4 @@
 jQuery(document).ready(function () {
-    templates();
     password_input();
     menu_responsive();
     sell_leisure_vehicle_form();
@@ -124,13 +123,7 @@ function password_input() {
     });
 }
 
-function templates() {
-    fetch___template('template-parts/--topbar.html', '#top-bar-insert');
-    fetch___template('template-parts/--header.html', '#header-insert');
-    fetch___template('template-parts/offcanvas/--offcanvas-menu.html', '#offcanvas-menu');
-    fetch___template('template-parts/--footer.html', '#footer-insert');
 
-}
 
 function header() {
     jQuery('.header').removeClass('overflow-hidden');
