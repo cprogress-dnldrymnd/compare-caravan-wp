@@ -351,7 +351,7 @@ if ($seats) {
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="layout-icon">
-                                                                <img src="<?= get_template_directory_uri() . '/assets/images/axles.svg' ?> ?>" alt="Day Layout">
+                                                                <img src="<?= get_template_directory_uri() . '/assets/images/icon--day.svg' ?> ?>" alt="Day Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain">
                                                                 <?= wp_get_attachment_image($day_layout, 'large') ?>
@@ -365,7 +365,7 @@ if ($seats) {
                                                     <div class="col-md-6">
                                                         <div class="layouts--inner">
                                                             <div class="layout-icon">
-                                                                <img src="<?= get_template_directory_uri() . '/assets/images/axles.svg' ?> ?>" alt="Night Layout">
+                                                                <img src="<?= get_template_directory_uri() . '/assets/images/icon--night.svg' ?> ?>" alt="Night Layout">
                                                             </div>
                                                             <div class="listing-grid__image image-style" style="--fit: contain">
                                                                 <?= wp_get_attachment_image($night_layout, 'large') ?>
