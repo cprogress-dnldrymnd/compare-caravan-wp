@@ -5,29 +5,29 @@
 define('theme_version', 1);
 define('theme_dir', get_template_directory_uri() . '/');
 define('assets_dir', theme_dir . 'assets/');
+define('vendor_dir', assets_dir . 'vendors/');
 function enqueue_scripts()
 {
-	//wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
-	wp_enqueue_style('intl-tel', 'https://cdn.jsdelivr.net/npm/intl-tel-input@21.2.7/build/css/intlTelInput.css', NULL, theme_version);
-	wp_enqueue_script('intlTelInput', 'https://cdn.jsdelivr.net/npm/intl-tel-input@21.2.7/build/js/intlTelInput.js', NULL, theme_version);
-	wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-	wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js');
-	
-	wp_enqueue_script('main', assets_dir . 'js/main.js', NULL, theme_version);
-	wp_enqueue_style('style', theme_dir . 'style.css', NULL, theme_version);
+    wp_enqueue_style('style', theme_dir . 'style.css', NULL, theme_version);
 
+    wp_enqueue_script('swiper', vendor_dir . 'swiper/js/swiper-bundle.min.js', NULL, theme_version);
+    wp_enqueue_script('fancybox', vendor_dir . 'fancybox/js/fancybox.umd.js', NULL, theme_version);
+    wp_enqueue_script('bootstrap', vendor_dir . 'bootstrap/dist/bootstrap.bundle.min.js', NULL, theme_version);
+
+    wp_enqueue_script('main', assets_dir . 'js/main.js', NULL, theme_version);
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_scripts', 99999); 
+add_action('wp_enqueue_scripts', 'enqueue_scripts', 99999);
 
 require_once('includes/woocommerce.php');
 require_once('includes/custom-functions.php');
 require_once('includes/wpsl.php');
 
-add_filter( 'body_class', 'custom_class' );
-function custom_class( $classes ) {
-	$classes[] = 'header-light breadcrumbs-light header-background-darkgreen hero-background-darkgreen';
-	return $classes;
+add_filter('body_class', 'custom_class');
+function custom_class($classes)
+{
+    $classes[] = 'header-light breadcrumbs-light header-background-darkgreen hero-background-darkgreen';
+    return $classes;
 }
 
 
@@ -45,15 +45,16 @@ function custom_class( $classes ) {
  * @param string      $taxonomy The name of the taxonomy the term belongs to (e.g., 'category').
  * @return int The depth of the term (0 for top-level).
  */
-function get_term_hierarchy_level( $term, $taxonomy ) {
-    
+function get_term_hierarchy_level($term, $taxonomy)
+{
+
     // Initialize depth
     $depth = 0;
 
     // Get the term object if an ID is passed
-    if ( is_numeric( $term ) ) {
-        $term_object = get_term( $term, $taxonomy );
-    } elseif ( $term instanceof WP_Term ) {
+    if (is_numeric($term)) {
+        $term_object = get_term($term, $taxonomy);
+    } elseif ($term instanceof WP_Term) {
         // It's already a term object
         $term_object = $term;
     } else {
@@ -62,7 +63,7 @@ function get_term_hierarchy_level( $term, $taxonomy ) {
     }
 
     // Check for a valid term object and that it belongs to the correct taxonomy
-    if ( is_wp_error( $term_object ) || ! $term_object || $term_object->taxonomy !== $taxonomy ) {
+    if (is_wp_error($term_object) || ! $term_object || $term_object->taxonomy !== $taxonomy) {
         return 0;
     }
 
@@ -70,16 +71,16 @@ function get_term_hierarchy_level( $term, $taxonomy ) {
     $current_parent_id = $term_object->parent;
 
     // Loop while the term has a parent (parent ID is not 0)
-    while ( $current_parent_id != 0 ) {
-        
+    while ($current_parent_id != 0) {
+
         // We found a parent, so increment the depth
         $depth++;
 
         // Get the parent term object to check *its* parent
-        $parent_term = get_term( $current_parent_id, $taxonomy );
+        $parent_term = get_term($current_parent_id, $taxonomy);
 
         // Check for errors or if the parent term somehow doesn't exist
-        if ( is_wp_error( $parent_term ) || ! $parent_term ) {
+        if (is_wp_error($parent_term) || ! $parent_term) {
             // This is a safety break in case of orphaned terms.
             break;
         }
@@ -98,9 +99,10 @@ function get_term_hierarchy_level( $term, $taxonomy ) {
  * @param string $taxonomy       The slug of the taxonomy (e.g., 'category', 'post_tag').
  * @return array|WP_Error An array of WP_Term objects on success, or a WP_Error object on failure.
  */
-function get_level_one_child_terms( $parent_term_id, $taxonomy ) {
+function get_level_one_child_terms($parent_term_id, $taxonomy)
+{
     // Ensure the parent term ID is a valid integer.
-    $parent_term_id = intval( $parent_term_id );
+    $parent_term_id = intval($parent_term_id);
 
     // Arguments for the get_terms() function.
     $args = array(
@@ -110,7 +112,7 @@ function get_level_one_child_terms( $parent_term_id, $taxonomy ) {
     );
 
     // Retrieve the terms.
-    $child_terms = get_terms( $args );
+    $child_terms = get_terms($args);
 
     // Return the terms (or WP_Error if something went wrong).
     return $child_terms;
@@ -119,7 +121,8 @@ function get_level_one_child_terms( $parent_term_id, $taxonomy ) {
 /**
  * Add 'product_brand' taxonomy support to 'post' post type.
  */
-function add_brands_to_posts() {
-    register_taxonomy_for_object_type( 'product_brand', 'post' );
+function add_brands_to_posts()
+{
+    register_taxonomy_for_object_type('product_brand', 'post');
 }
-add_action( 'init', 'add_brands_to_posts' );
+add_action('init', 'add_brands_to_posts');
