@@ -15,8 +15,10 @@ $night_layout = get_field('night_layout');
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
-$berths = get_the_terms( get_the_ID(), 'pa_berths' );
-var_dump($berths);
+$berths = get_the_terms(get_the_ID(), 'pa_berths');
+if ($berths) {
+    $pa_berths = $berths[0]->name;
+}
 ?>
 <section class="listing-single">
     <div class="container-fluid g-0">
@@ -338,12 +340,12 @@ var_dump($berths);
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-6 fs-16 fw-medium">
-                                                                    <?php if ($attribute_pa_berths) { ?>
+                                                                    <?php if ($pa_berths) { ?>
                                                                         <div class="d-flex justify-content-end gap-3 align-items-center">
                                                                             Berths
                                                                             <div class="icons d-flex gap-1 align-items-center">
                                                                                 <?php
-                                                                                for ($i = 0; $i < intval($attribute_pa_berths); $i++) {
+                                                                                for ($i = 0; $i < intval($pa_berths); $i++) {
                                                                                     echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
                                                                                 }
                                                                                 ?>
