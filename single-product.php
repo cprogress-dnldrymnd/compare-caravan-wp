@@ -55,7 +55,7 @@ if ($seats) {
 
                         <div class="listing-single--details listing-single--details-pill-specs text-center fs-14 fw-semibold">
                             <h1><?= $product->get_name() ?></h1>
-                            <div class="mb-5 pill-specs">
+                            <div class="mb-5 pill-specs mt-3">
                                 <?php
                                 if ($pill_specs) {
                                     echo $pill_specs;
