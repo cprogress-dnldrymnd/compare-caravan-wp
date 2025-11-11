@@ -17576,6 +17576,9 @@ footer {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-radius: var(--bs-border-radius) !important;
 }
+.swiper-wrapper.swiper-wrapper{
+  height: auto;
+}
 .iframe-holder {
   position: relative;
   padding: 25%;
