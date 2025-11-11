@@ -17493,7 +17493,6 @@ section.hero {
 }
 .layouts--inner {
   padding: var(--box-padding);
-  border: 1px solid #dfdfdf;
   height: 100%;
 }
 .listing-inner--layouts-holder .decor {
