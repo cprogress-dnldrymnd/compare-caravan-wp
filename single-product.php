@@ -436,19 +436,7 @@ if ($seats) {
                                 </div>
                                 <?= do_shortcode('[wpsl category="' . get_product_brand_slugs_by_id($product->get_id()) . '" ]') ?>
                             </div>
-                            <div class="listing-pricing background-text text-white">
-                                <div class="row g-3 justify-content-between align-items-center">
-                                    <div class="col-auto">
-                                        <h3 class="fs-32"><?= $product->get_name() ?></h3>
-                                    </div>
 
-                                    <div class="col-auto">
-                                        <div class="price">
-                                            <?= $product->get_price_html() ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -456,4 +444,17 @@ if ($seats) {
         </div>
     </div>
 </section>
+<div class="listing-pricing background-text text-white">
+    <div class="row g-3 justify-content-between align-items-center">
+        <div class="col-auto">
+            <h3 class="fs-32"><?= $product->get_name() ?></h3>
+        </div>
+
+        <div class="col-auto">
+            <div class="price">
+                <?= $product->get_price_html() ?>
+            </div>
+        </div>
+    </div>
+</div>
 <?php get_footer() ?>
