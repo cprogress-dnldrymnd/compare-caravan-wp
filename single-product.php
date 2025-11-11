@@ -15,6 +15,8 @@ $night_layout = get_field('night_layout');
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
+$berths = get_the_terms( get_the_ID(), 'pa_berths' );
+var_dump($berths);
 ?>
 <section class="listing-single">
     <div class="container-fluid g-0">
