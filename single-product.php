@@ -327,7 +327,7 @@ if ($seats) {
                         <?php if ($layout || $day_layout || $night_layout) {  ?>
 
                             <div class="listing-inner--layouts sm-margin-bottom rounded overflow-hidden">
-                                <h3 class="mb-4">Available Layouts</h3>
+                                <h3 class="mb-4">Layout</h3>
                                 <div class="listing-inner--layouts-holder">
                                     <div class="decor decor-top"></div>
                                     <div class="decor decor-bottom"></div>
