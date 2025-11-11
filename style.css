@@ -17589,17 +17589,6 @@ footer {
   position: absolute;
   inset: 0;
 }
-@media (max-width: 991px) {
-  .swiper-thumbnails.swiper-thumbnails {
-    height: auto !important;
-  }
-}
-@media (max-width: 575px) {
-  .listing-inner--layouts-holder {
-    --box-padding: 20px;
-  }
-}
-
 .listing-pricing {
   margin-left: 0;
   margin-right: 0;
@@ -17608,6 +17597,25 @@ footer {
   right: 0;
   width: 40%;
   z-index: 2;
+}
+.listing--single-right{
+    padding-bottom: var(--listing-pricing-height);
+}
+@media (max-width: 991px) {
+  .swiper-thumbnails.swiper-thumbnails {
+    height: auto !important;
+  }
+  .listing-pricing {
+    width: 100%;
+  }
+  footer {
+    margin-bottom: var(--listing-pricing-height);
+  }
+}
+@media (max-width: 575px) {
+  .listing-inner--layouts-holder {
+    --box-padding: 20px;
+  }
 }
 
 @media (min-width: 992px) {
