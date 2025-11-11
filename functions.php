@@ -9,6 +9,8 @@ define('vendor_dir', assets_dir . 'vendors/');
 function enqueue_scripts()
 {
     wp_enqueue_style('fancybox', vendor_dir . 'fancybox/css/fancybox.css', NULL, theme_version);
+    wp_enqueue_style('style', theme_dir . 'style.css', NULL, theme_version);
+
 
     wp_enqueue_script('swiper', vendor_dir . 'swiper/js/swiper-bundle.min.js', NULL, theme_version);
     wp_enqueue_script('fancybox', vendor_dir . 'fancybox/js/fancybox.umd.js', NULL, theme_version);
