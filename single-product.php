@@ -350,7 +350,7 @@ if ($seats) {
 
                                                 <?php if ($pa_berths || $pa_seats) { ?>
                                                     <div class="<?= $layout_type == 'Single' ? 'col-md-6' : 'col-12' ?>">
-                                                        <div class="layouts--inner">
+                                                        <div class="layouts--inner d-flex flex-column gap-3">
                                                             <?php if ($pa_berths) { ?>
                                                                 <div class="d-flex gap-3 align-items-center">
                                                                     Berths
