@@ -73,7 +73,7 @@ if ($seats) {
                                     <div class="row g-xs flex-column-reverse flex-lg-row gallery-row">
                                         <div class="col-lg-2">
                                             <div class="swiper-gallery-thumbnails">
-                                                <div class="listing-grid--gallery h-100">
+                                                <div class="listing-grid--gallery h-auto h-lg-100">
                                                     <div class="swiper swiper-thumbnails" style="height: 518.375px;">
                                                         <div class="swiper-wrapper ">
                                                             <?php foreach ($product_gallery_ids as $product_gallery) { ?>
