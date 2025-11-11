@@ -17545,18 +17545,18 @@ footer {
   padding: 0;
 }
 .list--checkbox li {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 .list--checkbox li:before {
-    content: "";
-    width: 13px;
-    height: 22px;
-    display: inline-block;
-    border-bottom: 3px solid;
-    border-right: 3px solid;
-    transform: rotate(28deg);
+  content: "";
+  width: 11px;
+  height: 20px;
+  display: inline-block;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  transform: rotate(35deg);
 }
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {

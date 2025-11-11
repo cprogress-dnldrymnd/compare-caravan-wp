@@ -92,6 +92,9 @@ function action_wp_head()
                 .background--color.background--color.background--color.background--color {
                     background-color: <?= $background_color ?>;
                 }
+                .list--checkbox li:before {
+                    border-color: <?= $background_color ?>;
+                }
             </style>
     <?php
         }
