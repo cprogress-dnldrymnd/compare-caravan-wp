@@ -117,7 +117,11 @@ if ($seats) {
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="virtual-tour-tab-pane" role="tabpanel" aria-labelledby="virtual-tour-tab" tabindex="0">
-                                    [virtual tour section]
+                                    <?php
+                                    if ($virtual_tour) {
+                                        echo $virtual_tour;
+                                    }
+                                    ?>
                                 </div>
                                 <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab" tabindex="0">
                                     [video section]
