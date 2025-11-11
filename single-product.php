@@ -343,20 +343,23 @@ if ($berths) {
                                                     </div>
                                                 <?php } ?>
 
-                                                <div class="col-12">
-                                                    <?php if ($pa_berths) { ?>
-                                                        <div class="d-flex justify-content-end gap-3 align-items-center">
-                                                            Berths
-                                                            <div class="icons d-flex gap-1 align-items-center">
-                                                                <?php
-                                                                for ($i = 0; $i < intval($pa_berths); $i++) {
-                                                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
-                                                                }
-                                                                ?>
+
+                                                <?php if ($pa_berths) { ?>
+                                                    <div class="col-12">
+                                                        <div class="layouts--inner">
+                                                            <div class="d-flex justify-content-end gap-3 align-items-center">
+                                                                Berths
+                                                                <div class="icons d-flex gap-1 align-items-center">
+                                                                    <?php
+                                                                    for ($i = 0; $i < intval($pa_berths); $i++) {
+                                                                        echo '<img src="' . get_template_directory_uri() . '/assets/images/berths-layout.svg" alt="berths.svg">';
+                                                                    }
+                                                                    ?>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    <?php } ?>
-                                                </div>
+                                                    </div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
