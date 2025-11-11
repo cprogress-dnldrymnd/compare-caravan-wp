@@ -116,16 +116,19 @@ if ($seats) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="virtual-tour-tab-pane" role="tabpanel" aria-labelledby="virtual-tour-tab" tabindex="0">
-                                    <?php
-                                    if ($virtual_tour) {
-                                        echo $virtual_tour;
-                                    }
-                                    ?>
-                                </div>
-                                <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab" tabindex="0">
-                                    [video section]
-                                </div>
+                                <?php if ($virtual_tour) { ?>
+                                    <div class="tab-pane fade" id="virtual-tour-tab-pane" role="tabpanel" aria-labelledby="virtual-tour-tab" tabindex="0">
+                                        <div class="iframe-holder">
+                                            <iframe src="<?= $virtual_tour ?> " frameborder="0"></iframe>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                                <?php if ($video) { ?>
+                                    <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab" tabindex="0">
+                                        [video section]
+                                    </div>
+                                <?php } ?>
+
                             </div>
                             <div class="nav-tabs-holder text-center mt-5">
                                 <ul class="nav nav-tabs nav-tabs-style-3 flex-nowrap" id="myTab" role="tablist">
@@ -141,27 +144,33 @@ if ($seats) {
                                             </svg>
                                         </span> <span class="text d-none d-sm-block">Gallery</span>
                                     </button>
-                                    <button class="nav-link" id="virtual-tour-tab" data-bs-toggle="tab" data-bs-target="#virtual-tour-tab-pane" type="button" role="tab" aria-controls="virtual-tour-tab-pane" aria-selected="false" tabindex="-1">
-                                        <span class="icon"><svg id="google-streetview-svgrepo-com" xmlns="http://www.w3.org/2000/svg" width="38.783" height="34.969" viewBox="0 0 38.783 34.969">
-                                                <path id="Path_70" data-name="Path 70" d="M5,5.828C5,2.609,7.894,0,11.464,0s6.464,2.609,6.464,5.828-2.894,5.828-6.464,5.828S5,9.047,5,5.828Z" transform="translate(7.928)" style="
+                                    <?php if ($virtual_tour) { ?>
+
+                                        <button class="nav-link" id="virtual-tour-tab" data-bs-toggle="tab" data-bs-target="#virtual-tour-tab-pane" type="button" role="tab" aria-controls="virtual-tour-tab-pane" aria-selected="false" tabindex="-1">
+                                            <span class="icon"><svg id="google-streetview-svgrepo-com" xmlns="http://www.w3.org/2000/svg" width="38.783" height="34.969" viewBox="0 0 38.783 34.969">
+                                                    <path id="Path_70" data-name="Path 70" d="M5,5.828C5,2.609,7.894,0,11.464,0s6.464,2.609,6.464,5.828-2.894,5.828-6.464,5.828S5,9.047,5,5.828Z" transform="translate(7.928)" style="
                                     fill: currentColor;
                                 "></path>
-                                                <path id="Path_71" data-name="Path 71" d="M13.049,6C8.052,6,4,9.653,4,14.159v4.663a1.234,1.234,0,0,0,1.293,1.166H20.806A1.234,1.234,0,0,0,22.1,18.822V14.159C22.1,9.653,18.047,6,13.049,6Z" transform="translate(6.342 7.988)" style="
+                                                    <path id="Path_71" data-name="Path 71" d="M13.049,6C8.052,6,4,9.653,4,14.159v4.663a1.234,1.234,0,0,0,1.293,1.166H20.806A1.234,1.234,0,0,0,22.1,18.822V14.159C22.1,9.653,18.047,6,13.049,6Z" transform="translate(6.342 7.988)" style="
                                     fill: currentColor;
                                 "></path>
-                                                <path id="Path_72" data-name="Path 72" d="M3.605,13.029A2.631,2.631,0,0,0,2.586,14.9a2.657,2.657,0,0,0,1.05,1.9A11.165,11.165,0,0,0,7.1,18.779a35.415,35.415,0,0,0,12.288,1.954A35.416,35.416,0,0,0,31.68,18.779a11.165,11.165,0,0,0,3.468-1.971,2.657,2.657,0,0,0,1.05-1.9,2.631,2.631,0,0,0-1.02-1.876,10.894,10.894,0,0,0-3.376-1.95l1.036-2.136A13.454,13.454,0,0,1,37.031,11.4a4.829,4.829,0,0,1,1.752,3.5,4.858,4.858,0,0,1-1.795,3.541,13.726,13.726,0,0,1-4.29,2.476,38.2,38.2,0,0,1-13.307,2.143A38.2,38.2,0,0,1,6.085,20.922a13.723,13.723,0,0,1-4.29-2.476A4.857,4.857,0,0,1,0,14.9a4.829,4.829,0,0,1,1.752-3.5A13.451,13.451,0,0,1,5.946,8.942l1.036,2.136A10.9,10.9,0,0,0,3.605,13.029Z" transform="translate(0 11.905)" style="
+                                                    <path id="Path_72" data-name="Path 72" d="M3.605,13.029A2.631,2.631,0,0,0,2.586,14.9a2.657,2.657,0,0,0,1.05,1.9A11.165,11.165,0,0,0,7.1,18.779a35.415,35.415,0,0,0,12.288,1.954A35.416,35.416,0,0,0,31.68,18.779a11.165,11.165,0,0,0,3.468-1.971,2.657,2.657,0,0,0,1.05-1.9,2.631,2.631,0,0,0-1.02-1.876,10.894,10.894,0,0,0-3.376-1.95l1.036-2.136A13.454,13.454,0,0,1,37.031,11.4a4.829,4.829,0,0,1,1.752,3.5,4.858,4.858,0,0,1-1.795,3.541,13.726,13.726,0,0,1-4.29,2.476,38.2,38.2,0,0,1-13.307,2.143A38.2,38.2,0,0,1,6.085,20.922a13.723,13.723,0,0,1-4.29-2.476A4.857,4.857,0,0,1,0,14.9a4.829,4.829,0,0,1,1.752-3.5A13.451,13.451,0,0,1,5.946,8.942l1.036,2.136A10.9,10.9,0,0,0,3.605,13.029Z" transform="translate(0 11.905)" style="
                                     fill: currentColor;
                                 "></path>
-                                            </svg></span> <span class="text d-none d-sm-block">Virtual
-                                            tour</span>
-                                    </button>
-                                    <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false" tabindex="-1">
-                                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="42.261" height="26.6" viewBox="0 0 42.261 26.6">
-                                                <path id="video-svgrepo-com" d="M31.355,13.867l5.62-3.041c1.73-.936,2.595-1.4,3.307-1.344a2.245,2.245,0,0,1,1.556.794c.423.519.423,1.429.423,3.248v8.551c0,1.819,0,2.729-.423,3.248a2.245,2.245,0,0,1-1.556.794c-.712.06-1.577-.408-3.307-1.344l-5.62-3.041M9.98,29.6h14.4c2.443,0,3.665,0,4.6-.429a4.173,4.173,0,0,0,1.906-1.719c.475-.841.475-1.943.475-4.146V12.293c0-2.2,0-3.3-.475-4.146a4.173,4.173,0,0,0-1.906-1.719C28.04,6,26.819,6,24.376,6H9.98c-2.443,0-3.665,0-4.6.429A4.173,4.173,0,0,0,3.475,8.148C3,8.989,3,10.09,3,12.293V23.307c0,2.2,0,3.3.475,4.146a4.173,4.173,0,0,0,1.906,1.719C6.315,29.6,7.537,29.6,9.98,29.6Z" transform="translate(-1.5 -4.5)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-                                                </path>
-                                            </svg>
-                                        </span> <span class="text d-none d-sm-block">Video</span>
-                                    </button>
+                                                </svg></span> <span class="text d-none d-sm-block">Virtual
+                                                tour</span>
+                                        </button>
+                                    <?php } ?>
+                                    <?php if ($video) { ?>
+                                        <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane" type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false" tabindex="-1">
+                                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="42.261" height="26.6" viewBox="0 0 42.261 26.6">
+                                                    <path id="video-svgrepo-com" d="M31.355,13.867l5.62-3.041c1.73-.936,2.595-1.4,3.307-1.344a2.245,2.245,0,0,1,1.556.794c.423.519.423,1.429.423,3.248v8.551c0,1.819,0,2.729-.423,3.248a2.245,2.245,0,0,1-1.556.794c-.712.06-1.577-.408-3.307-1.344l-5.62-3.041M9.98,29.6h14.4c2.443,0,3.665,0,4.6-.429a4.173,4.173,0,0,0,1.906-1.719c.475-.841.475-1.943.475-4.146V12.293c0-2.2,0-3.3-.475-4.146a4.173,4.173,0,0,0-1.906-1.719C28.04,6,26.819,6,24.376,6H9.98c-2.443,0-3.665,0-4.6.429A4.173,4.173,0,0,0,3.475,8.148C3,8.989,3,10.09,3,12.293V23.307c0,2.2,0,3.3.475,4.146a4.173,4.173,0,0,0,1.906,1.719C6.315,29.6,7.537,29.6,9.98,29.6Z" transform="translate(-1.5 -4.5)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                                                    </path>
+                                                </svg>
+                                            </span> <span class="text d-none d-sm-block">Video</span>
+                                        </button>
+                                    <?php } ?>
+
                                 </ul>
                             </div>
                         </div>
