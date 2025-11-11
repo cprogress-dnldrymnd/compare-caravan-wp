@@ -234,7 +234,7 @@ if ($seats) {
                         <?php if ($highlights) { ?>
                             <div class="listing-inner--hightlights sm-margin-bottom">
                                 <div class="inner-box-style rounded">
-                                    <h4>Highlights</h4>
+                                    <h4 class="mb-3">Highlights</h4>
                                     <div class="desc-box hightlights">
                                         <?= wpautop($highlights) ?>
                                     </div>
