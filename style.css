@@ -17565,6 +17565,8 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
+  --bs-border-radius: 50px;
+  --bs-border-color: var(--text-color);
 }
 .listing-single--details-pill-specs ul li {
   padding-top: 0.5rem;
@@ -17572,6 +17574,7 @@ footer {
   padding-right: 1rem;
   padding-left: 1rem;
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border-radius: var(--bs-border-radius) !important;
 }
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
