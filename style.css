@@ -17589,6 +17589,11 @@ footer {
   position: absolute;
   inset: 0;
 }
+@media(max-width: 991px) {
+  .swiper-thumbnails.swiper-thumbnails {
+    height: auto !important;
+  }
+}
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
     --box-padding: 20px;
