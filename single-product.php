@@ -61,39 +61,6 @@ if ($seats) {
                                 echo $pill_specs;
                             }
                             ?>
-                            <div class="listing-grid-item__badges fs-14 fw-semibold mb-5">
-                                <div class="row g-xxs justify-content-center">
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">2021
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">4 berth
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">End
-                                            bedroom
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">Fixed
-                                            bunk
-                                            beds
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">Double
-                                            axle
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="listing-grid-item__badge py-2 px-3 rounded border">Motor
-                                            mover
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="listing-inner--tabs xs-margin-bottom border-bottom pb-5">
