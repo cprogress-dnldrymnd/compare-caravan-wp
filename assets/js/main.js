@@ -3,6 +3,7 @@ jQuery(document).ready(function () {
     menu_responsive();
     //sell_leisure_vehicle_form();
     fancybox();
+    listing_pricing();
     setTimeout(function () {
         swiper_sliders();
         header();
@@ -15,6 +16,10 @@ function fancybox() {
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
     });
+}
+
+function listing_pricing() {
+    jQuery('body').css('--listing-pricing-height', jQuery('.listing-pricing').outerHeight() + 'px');
 }
 
 function sell_leisure_vehicle_form() {
