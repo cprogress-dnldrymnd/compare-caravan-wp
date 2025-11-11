@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
     password_input();
     menu_responsive();
-    sell_leisure_vehicle_form();
+    //sell_leisure_vehicle_form();
     fancybox();
     setTimeout(function () {
         swiper_sliders();
