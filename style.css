@@ -17598,6 +17598,9 @@ footer {
   width: 40%;
   z-index: 2;
 }
+.is-range-hero:before {
+  z-index: 3;
+}
 @media (min-width: 992px) {
   section.listing-single .listing--single-right .listing--single--right-inner {
     padding-bottom: var(--listing-pricing-height);
