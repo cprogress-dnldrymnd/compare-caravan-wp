@@ -50,6 +50,15 @@
      </div>
  </section>
 
+ <?php if ($is_range == true) { ?>
+
+     <section class="the-content md-padding-top md-padding-bottom">
+         <div class="container">
+            <?=  wpautop(get_the_content(NULL, false, $_GET['id'])) ?>
+         </div>
+     </section>
+
+ <?php } ?>
 
 
  <?php if ($level == 0) { ?>
