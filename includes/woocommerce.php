@@ -194,9 +194,9 @@ function display_category_attribute_filters($attributes_to_show = array())
     if (! empty($_GET)) {
         foreach ($_GET as $key => $value) {
             // We'll render the selects for attributes, so skip them
-            if (in_array($key, $attributes_to_show, true)) {
-                continue;
-            }
+            //if (in_array($key, $attributes_to_show, true)) {
+               // continue;
+           // }
             // Skip pagination, will be reset
             if ($key === 'paged') {
                 continue;
