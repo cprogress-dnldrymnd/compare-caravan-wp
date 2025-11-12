@@ -16,7 +16,7 @@
         $is_range = false;
     }
     ?>
- <section class="hero background--color position-relative">
+ <section class="hero background--color position-relative <?= $is_range == true ? 'is-range-hero' : '' ?>">
      <?php
         if ($is_range == true) {
             echo '<div class="background-image">';
