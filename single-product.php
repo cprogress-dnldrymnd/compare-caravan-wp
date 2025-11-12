@@ -49,7 +49,6 @@ if ($seats) {
                                                 </svg>
                                             </a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -214,7 +213,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseInterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body list--checkbox pt-0">
+                                                    <div class="accordion-body  pt-0">
                                                         <?= wpautop($interior_features) ?>
                                                     </div>
                                                 </div>
@@ -241,7 +240,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseExterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body list--checkbox pt-0">
+                                                    <div class="accordion-body  pt-0">
                                                         <?= wpautop($exterior_features) ?>
                                                     </div>
                                                 </div>
@@ -264,7 +263,7 @@ if ($seats) {
                                                     </button>
                                                 </h2>
                                                 <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                    <div class="accordion-body list--checkbox pt-0">
+                                                    <div class="accordion-body  pt-0">
                                                         <?= wpautop($warranty) ?>
                                                     </div>
                                                 </div>
