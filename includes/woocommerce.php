@@ -69,7 +69,7 @@ function listing_grid($post_id)
         }
     }
 ?>
-    <div class="listing-grid h-100 position-relative rounded style-1 background-white">
+    <div class="listing-grid h-100 position-relative rounded style-1 background-white d-flex flex-column justify-content-between">
         <div class="listing-grid-item__top position-relative">
             <h3><?= $product->get_name() ?></h3>
             <div class="desc mb-3 mt-3">
