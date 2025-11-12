@@ -8,9 +8,11 @@
     if (isset($_GET['range'])) {
         $name = get_the_title($_GET['id']);
         $description = false;
+        $thumbnail_id = get_post_thumbnail_id($_GET['id']);
     } else {
         $name = $term->name;
         $description = $term->description;
+        $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
     }
     ?>
  <section class="hero background--color">
