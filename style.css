@@ -17577,8 +17577,11 @@ footer {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-radius: var(--bs-border-radius) !important;
 }
-.pill-specs.pill-specs-grid ul li:nth-child(n+4) {
-    display: none !important;
+.pill-specs.pill-specs-grid ul {
+  justify-content: flex-start;
+}
+.pill-specs.pill-specs-grid ul li:nth-child(n + 4) {
+  display: none !important;
 }
 .swiper-wrapper.swiper-wrapper {
   height: auto;
@@ -17603,7 +17606,7 @@ footer {
   z-index: 2;
 }
 .is-range-hero {
-      min-height: 30vw;
+  min-height: 30vw;
 }
 .is-range-hero:before {
   z-index: 3;
