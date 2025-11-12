@@ -54,7 +54,7 @@
 
      <section class="the-content md-padding-top md-padding-bottom background-white">
          <div class="container small-container">
-            <?=  wpautop(get_the_content(NULL, false, $_GET['id'])) ?>
+             <?= wpautop(get_the_content(NULL, false, $_GET['id'])) ?>
          </div>
      </section>
 
@@ -382,13 +382,7 @@
 
                                      </div>
                                      <?php
-                                        $attributes_to_include = array(
-                                            'pa_axle',
-                                            'pa_berths',
-                                            'pa_chassis',
-                                            'pa_gearbox'
-                                        );
-                                        display_category_attribute_filters($attributes_to_include);
+                                        display_category_attribute_filters();
                                         ?>
                                      <div class="filter--bottom p-20 background-pink text-white text-center">
                                          <span class="fs-25 fw-semibold">Show <span class="fw-semobold"><?= $total_posts_count ?></span>
