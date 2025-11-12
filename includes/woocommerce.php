@@ -132,7 +132,7 @@ function bbloomer_add_price_suffix($html, $product, $price, $qty)
  *
  * @param array $attribute_slugs An array of attribute slugs to display (e.g., ['pa_make', 'pa_model']).
  */
-function display_category_attribute_filters($attributes_to_show = array())
+function display_category_attribute_filters()
 {
 
     // Ensure we are on a product taxonomy archive page (category, brand, tag, etc.) and WooCommerce is active.
