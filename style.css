@@ -17577,9 +17577,7 @@ footer {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-radius: var(--bs-border-radius) !important;
 }
-.pill-specs.pill-specs-grid ul {
-  justify-content: flex-start;
-}
+
 .pill-specs.pill-specs-grid ul li:nth-child(n + 4) {
   display: none !important;
 }
