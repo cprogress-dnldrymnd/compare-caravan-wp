@@ -1,12 +1,17 @@
  <?php get_header(); ?>
  <?php
     $term = get_queried_object();
-    $name = $term->name;
     $term_id = $term->term_id;
     $description = $term->description;
     $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
     $level = get_term_hierarchy_level($term, $term->taxonomy);
     $child_terms = get_level_one_child_terms($term_id, $term->taxonomy);
+    if (!isset($_GET['range'])) {
+        $name = get_the_title($_GET['id']);
+    } else {
+        $name = $term->name;
+    }
+
     ?>
  <section class="hero background--color">
      <div class="container">
@@ -267,9 +272,9 @@
  <?php if ($level == 1) { ?>
      <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		$args['post_type'] = 'product';
-		$args['posts_per_page'] = '12';
-		$args['paged'] = 'paged';
+        $args['post_type'] = 'product';
+        $args['posts_per_page'] = '12';
+        $args['paged'] = 'paged';
         $tax_query = array(
             'relation' => 'AND',
 
@@ -279,29 +284,29 @@
                 'field'    => 'term_id',
                 'terms'    => $term->term_id,
             ),
-			
+
         );
-	
-		if(!isset($_GET['range'])) {
-			$tax_query[] = array(
+
+        if (!isset($_GET['range'])) {
+            $tax_query[] = array(
                 'taxonomy' => 'product_cat',
                 'field'    => 'slug',
                 'terms'    => 'range',
             );
-		} else {
-			$tax_query[] = array(
+        } else {
+            $tax_query[] = array(
                 'taxonomy' => 'product_cat',
                 'field'    => 'slug',
                 'terms'    => 'model',
             );
-			
-			$group_prod = wc_get_product($_GET['id']);
-			
-			if ( $group_prod && $group_prod->is_type( 'grouped' ) ) {
-				$child_product_ids = $group_prod->get_children();
-				$args['post__in'] = $child_product_ids;
-			}
-		}
+
+            $group_prod = wc_get_product($_GET['id']);
+
+            if ($group_prod && $group_prod->is_type('grouped')) {
+                $child_product_ids = $group_prod->get_children();
+                $args['post__in'] = $child_product_ids;
+            }
+        }
 
         // Loop through all URL parameters (e.g., ?pa_axle=single-axle)
         if (isset($_GET) && !empty($_GET)) {
@@ -318,8 +323,8 @@
                 }
             }
         }
-		$args['tax_query'] = $tax_query;
-	
+        $args['tax_query'] = $tax_query;
+
         $listings = new WP_Query($args);
         $total_posts_count = $listings->found_posts;
         ?>
