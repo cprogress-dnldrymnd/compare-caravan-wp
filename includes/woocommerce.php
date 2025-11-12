@@ -53,19 +53,21 @@ function listing_grid($post_id)
 {
     ob_start();
     $product = wc_get_product($post_id);
-	$count = '';
-	$add_s = '';
-	if ( $product && $product->is_type( 'grouped' ) ) {
-		// 4. Get the array of child product IDs
-		$child_product_ids = $product->get_children();
-		// 5. (Optional) Display the IDs
-		if ( ! empty( $child_product_ids ) ) {
-			$count = count($child_product_ids);
-			if($count > 1) {
-				$add_s = 's';
-			} 
-		}
-	}
+    $count = '';
+    $add_s = '';
+    $pill_specs = get_field('pill_specs', $post_id);
+
+    if ($product && $product->is_type('grouped')) {
+        // 4. Get the array of child product IDs
+        $child_product_ids = $product->get_children();
+        // 5. (Optional) Display the IDs
+        if (! empty($child_product_ids)) {
+            $count = count($child_product_ids);
+            if ($count > 1) {
+                $add_s = 's';
+            }
+        }
+    }
 ?>
     <div class="listing-grid h-100 position-relative rounded style-1 background-white">
         <div class="listing-grid-item__top position-relative">
@@ -79,22 +81,14 @@ function listing_grid($post_id)
         </div>
         <div class="listing-grid-item__bottom ">
             <div class="p-20">
-                <div class="listing-grid-item__badges fs-14 fw-semibold mb-3">
-                    <div class="row g-xxs">
-                        <div class="col-auto">
-                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
-                                Highlight</div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
-                                Highlight</div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
-                                Highlight</div>
-                        </div>
-                    </div>
+                <div class="mb-5 pill-specs mt-3">
+                    <?php
+                    if ($pill_specs) {
+                        echo $pill_specs;
+                    }
+                    ?>
                 </div>
+
                 <div class="listing-grid-item__price">
                     <span class="h3 fw-medium"><?= $product->get_price_html() ?></span>
                 </div>
@@ -102,7 +96,7 @@ function listing_grid($post_id)
 
             <div class="listing-grid-item__button border-top p-20">
                 <a href="<?= get_the_permalink($post_id) ?>" class="btn btn-primary w-100 btn-lg">
-                    View <?= $count ?> Model<?= $add_s?>
+                    View <?= $count ?> Model<?= $add_s ?>
                 </a>
             </div>
         </div>
@@ -191,11 +185,11 @@ function display_category_attribute_filters($attributes_to_show = array())
     // Get the base URL for the form action
     $form_action = get_term_link($current_term, $current_term->taxonomy);
     echo '<form method="get" id="wc-filter-form" action="' . esc_url($form_action) . '">';
-	if(isset($_GET['range'])) {
-		echo '<input type="hidden" name="range" value="'.$_GET['range'].'">';
-		echo '<input type="hidden" name="id" value="'.$_GET['id'].'">';
-	}
-	
+    if (isset($_GET['range'])) {
+        echo '<input type="hidden" name="range" value="' . $_GET['range'] . '">';
+        echo '<input type="hidden" name="id" value="' . $_GET['id'] . '">';
+    }
+
     // Add hidden fields for existing GET params to preserve state (like search)
     if (! empty($_GET)) {
         foreach ($_GET as $key => $value) {
@@ -382,9 +376,9 @@ function my_cpt_project_permalink_structure($post_link, $post)
     // Check if it's our 'project' post type and the placeholder is present
     if ('product' === $post->post_type) {
         $product = wc_get_product($post->ID);
-		if ($product->get_type() == 'grouped') {
+        if ($product->get_type() == 'grouped') {
             $terms = get_product_manufacturer_level_one($post->ID, true);
-			$post_link = get_term_link($terms[0], 'product_brand') . '?range=' .$post->post_name.'&id='.$post->ID;
+            $post_link = get_term_link($terms[0], 'product_brand') . '?range=' . $post->post_name . '&id=' . $post->ID;
         }
     }
 
