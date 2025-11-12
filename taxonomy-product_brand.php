@@ -11,7 +11,6 @@
     } else {
         $name = $term->name;
     }
-
     ?>
  <section class="hero background--color">
      <div class="container">
