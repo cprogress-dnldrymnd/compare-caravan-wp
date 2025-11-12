@@ -6,7 +6,7 @@
     $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
     $level = get_term_hierarchy_level($term, $term->taxonomy);
     $child_terms = get_level_one_child_terms($term_id, $term->taxonomy);
-    if (!isset($_GET['range'])) {
+    if (isset($_GET['range'])) {
         $name = get_the_title($_GET['id']);
     } else {
         $name = $term->name;
