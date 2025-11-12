@@ -52,7 +52,7 @@
 
  <?php if ($is_range == true) { ?>
 
-     <section class="the-content md-padding-top md-padding-bottom">
+     <section class="the-content md-padding-top md-padding-bottom background-white">
          <div class="container">
             <?=  wpautop(get_the_content(NULL, false, $_GET['id'])) ?>
          </div>
