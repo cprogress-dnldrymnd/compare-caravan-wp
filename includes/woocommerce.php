@@ -82,7 +82,7 @@ function listing_grid($post_id)
         <div class="listing-grid-item__bottom ">
             <div class="p-20">
                 
-                <div class="pill-specs fs-14 fw-semibold mb-3">
+                <div class="pill-specs pill-specs-grid fs-14 fw-semibold mb-3">
                     <?php
                     if ($pill_specs) {
                         echo $pill_specs;
