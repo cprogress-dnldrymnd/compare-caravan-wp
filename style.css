@@ -17567,6 +17567,7 @@ footer {
   justify-content: center;
   --bs-border-radius: 50px;
   --bs-border-color: var(--text-color);
+  padding: 0;
 }
 .pill-specs ul li {
   padding-top: 0.5rem;
