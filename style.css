@@ -17598,6 +17598,9 @@ footer {
   width: 40%;
   z-index: 2;
 }
+.is-range-hero {
+      min-height: 30vw;
+}
 .is-range-hero:before {
   z-index: 3;
 }
