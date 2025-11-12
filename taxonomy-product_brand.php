@@ -24,7 +24,7 @@
             echo '</div>';
         }
         ?>
-     <div class="container">
+     <div class="container position-relative">
          <?= breadcrumbs() ?>
          <div class="hero-title-image md-margin-top ">
 
