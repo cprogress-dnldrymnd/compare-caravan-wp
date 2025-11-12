@@ -81,7 +81,23 @@ function listing_grid($post_id)
         </div>
         <div class="listing-grid-item__bottom ">
             <div class="p-20">
-                <div class="mb-5 pill-specs mt-3">
+                <div class="listing-grid-item__badges fs-14 fw-semibold mb-3">
+                    <div class="row g-xxs">
+                        <div class="col-auto">
+                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
+                                Highlight</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
+                                Highlight</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="listing-grid-item__badge py-2 px-3 rounded border">
+                                Highlight</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pill-specs fs-14 fw-semibold mb-3">
                     <?php
                     if ($pill_specs) {
                         echo $pill_specs;
