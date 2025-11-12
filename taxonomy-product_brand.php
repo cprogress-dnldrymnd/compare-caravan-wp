@@ -16,17 +16,18 @@
         $is_range = false;
     }
     ?>
- <section class="hero background--color">
+ <section class="hero background--color position-relative">
+     <?php
+        if ($is_range == true) {
+            echo '<div class="background-image">';
+            echo wp_get_attachment_image($thumbnail_id, 'large');
+            echo '</div>';
+        }
+        ?>
      <div class="container">
          <?= breadcrumbs() ?>
-         <div class="hero-title-image md-margin-top position-relative">
-             <?php
-                if ($is_range == true) {
-                    echo '<div class="background-image">';
-                    echo wp_get_attachment_image($thumbnail_id, 'large');
-                    echo '</div>';
-                }
-                ?>
+         <div class="hero-title-image md-margin-top ">
+
              <div class="row">
                  <div class="col-lg-6 md-padding-bottom">
                      <h1 class="mb-4"><?= $name ?></h1>
