@@ -8,10 +8,12 @@
         $name = get_the_title($_GET['id']);
         $description = false;
         $thumbnail_id = get_post_thumbnail_id($_GET['id']);
+        $is_range = true;
     } else {
         $name = $term->name;
         $description = $term->description;
         $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
+        $is_range = false;
     }
     ?>
  <section class="hero background--color">
@@ -27,8 +29,7 @@
                          </div>
                      <?php } ?>
                  </div>
-                 <?php if ($thumbnail_id && $level == 0) { ?>
-
+                 <?php if ($thumbnail_id && $level == 0 || $is_range == true) { ?>
                      <div class="col-lg-6">
                          <div class="image-box">
                              <?= wp_get_attachment_image($thumbnail_id, 'large') ?>
