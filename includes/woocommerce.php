@@ -194,9 +194,10 @@ function display_category_attribute_filters($attributes_to_show = array())
     if (! empty($_GET)) {
         foreach ($_GET as $key => $value) {
             // We'll render the selects for attributes, so skip them
-            //if (in_array($key, $attributes_to_show, true)) {
-               // continue;
-           // }
+            /*
+            if (in_array($key, $attributes_to_show, true)) {
+                continue;
+            }*/
             // Skip pagination, will be reset
             if ($key === 'paged') {
                 continue;
@@ -209,6 +210,7 @@ function display_category_attribute_filters($attributes_to_show = array())
     echo '<div class="accordion rounded" id="accordionFilter">';
 
     // --- Step 3: Loop through each specified attribute and find its available terms ---
+    $attributes_to_show = get_all_woocommerce_attribute_slugs();
     foreach ($attributes_to_show as $attribute_slug) {
 
         // Get all terms for this attribute that are associated with OUR list of product IDs
@@ -284,6 +286,30 @@ function display_category_attribute_filters($attributes_to_show = array())
     ";
 
     echo '<script>' . $js_script . '</script>';
+}
+
+/**
+ * Get all WooCommerce product attribute slugs in an array.
+ *
+ * @return array An array of attribute slugs (e.g., 'pa_color', 'pa_size').
+ */
+function get_all_woocommerce_attribute_slugs()
+{
+    $attribute_slugs = array();
+
+    // Get all registered WooCommerce product attribute taxonomies
+    $attribute_taxonomies = wc_get_attribute_taxonomies();
+
+    // Check if there are any attributes
+    if ($attribute_taxonomies) {
+        foreach ($attribute_taxonomies as $taxonomy) {
+            // The 'attribute_name' property is the slug (e.g., 'color')
+            // WooCommerce prefixes attribute slugs with 'pa_' to create the taxonomy name (e.g., 'pa_color')
+            $attribute_slugs[] = 'pa_' . $taxonomy->attribute_name;
+        }
+    }
+
+    return $attribute_slugs;
 }
 /**
  * Get product brand slugs as a string for a single product by its ID.
