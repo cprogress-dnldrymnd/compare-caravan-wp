@@ -17559,7 +17559,7 @@ footer {
   transform: rotate(35deg);
   margin-top: -6px;
 }
-.listing-single--details-pill-specs ul {
+.pill-specs ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -17568,7 +17568,7 @@ footer {
   --bs-border-radius: 50px;
   --bs-border-color: var(--text-color);
 }
-.listing-single--details-pill-specs ul li {
+.pill-specs ul li {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-right: 1rem;
