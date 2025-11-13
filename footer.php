@@ -21,7 +21,7 @@
                                 <div id="collapseDealer" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFooter">
                                     <div class="accordion-body">
-                                        <?= dynamic_sidebar('footer-1'); ?>
+                                        <?php dynamic_sidebar('footer-1'); ?>
 
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                 <div id="collapseConsumer" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFooter">
                                     <div class="accordion-body">
-                                        <?= dynamic_sidebar('footer-2'); ?>
+                                        <?php dynamic_sidebar('footer-2'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <div id="collapseLegal" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFooter">
                                     <div class="accordion-body">
-                                        <?= dynamic_sidebar('footer-3'); ?>
+                                        <?php dynamic_sidebar('footer-3'); ?>
 
                                     </div>
                                 </div>
