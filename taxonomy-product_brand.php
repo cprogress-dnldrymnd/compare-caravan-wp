@@ -7,7 +7,9 @@
     if (isset($_GET['range'])) {
         $name = get_the_title($_GET['id']);
         $description = false;
-        $thumbnail_id = get_post_thumbnail_id($_GET['id']);
+        $product = wc_get_product($_GET['id']);
+        $product_gallery_ids = $product->get_gallery_image_ids();
+        $thumbnail_id = $product_gallery_ids[0];
         $is_range = true;
     } else {
         $name = $term->name;
