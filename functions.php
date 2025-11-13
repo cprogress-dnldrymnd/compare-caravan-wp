@@ -128,3 +128,67 @@ function add_brands_to_posts()
     register_taxonomy_for_object_type('product_brand', 'post');
 }
 add_action('init', 'add_brands_to_posts');
+
+
+/**
+ * Register Four Footer Widget Areas
+ *
+ * This function is hooked into the 'widgets_init' action to register
+ * four distinct sidebars (widget areas) for the website footer.
+ *
+ * Usage: Place this code in your theme's functions.php file.
+ * To display these in your theme, you would use:
+ *
+ * if ( is_active_sidebar( 'footer-1' ) ) :
+ * dynamic_sidebar( 'footer-1' );
+ * endif;
+ * // ... and repeat for footer-2, footer-3, footer-4
+ */
+function my_theme_register_footer_sidebars() {
+
+    // --- Footer Column 1 ---
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Column 1', 'my-theme-textdomain' ),
+        'id'            => 'footer-1',
+        'description'   => esc_html__( 'Add widgets here for the first column of the footer.', 'my-theme-textdomain' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // --- Footer Column 2 ---
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Column 2', 'my-theme-textdomain' ),
+        'id'            => 'footer-2',
+        'description'   => esc_html__( 'Add widgets here for the second column of the footer.', 'my-theme-textdomain' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // --- Footer Column 3 ---
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Column 3', 'my-theme-textdomain' ),
+        'id'            => 'footer-3',
+        'description'   => esc_html__( 'Add widgets here for the third column of the footer.', 'my-theme-textdomain' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // --- Footer Column 4 ---
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Column 4', 'my-theme-textdomain' ),
+        'id'            => 'footer-4',
+        'description'   => esc_html__( 'Add widgets here for the fourth column of the footer.', 'my-theme-textdomain' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+
+add_action( 'widgets_init', 'my_theme_register_footer_sidebars' );
