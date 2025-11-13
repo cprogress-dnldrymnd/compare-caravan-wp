@@ -68,7 +68,6 @@
                                     data-bs-parent="#accordionFooter">
                                     <div class="accordion-body">
                                         <?php dynamic_sidebar('footer-3'); ?>
-
                                     </div>
                                 </div>
                             </div>
