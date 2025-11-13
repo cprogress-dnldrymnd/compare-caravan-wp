@@ -69,32 +69,6 @@
                                     <div class="accordion-body">
                                         <?= dynamic_sidebar('footer-3'); ?>
 
-                                        <ul class="d-flex flex-column gap-4 list-inline mb-0 fs-16">
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                            <li><a href="#" class="text-white text-decoration-none">Lorem ipsum sit
-                                                    dolor
-                                                    amet</a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
