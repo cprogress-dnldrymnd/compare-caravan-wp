@@ -14,6 +14,25 @@ function custom_wpsl_add_listing_info_field($meta_fields)
             'label'    => __('Listing Information 1', 'wpsl'),
             'type'  => 'text', // Defines the input type
         ),
+
+        'listing_information_2' => array(
+            'label'    => __('Listing Information 2', 'wpsl'),
+            'type'  => 'text', // Defines the input type
+        ),
+
+        'listing_information_3' => array(
+            'label'    => __('Listing Information 3', 'wpsl'),
+            'type'  => 'text', // Defines the input type
+        ),
+
+        'listing_information_4' => array(
+            'label'    => __('Listing Information 4', 'wpsl'),
+            'type'  => 'text', // Defines the input type
+        ),
+        'listing_information_5' => array(
+            'label'    => __('Listing Information 5', 'wpsl'),
+            'type'  => 'text', // Defines the input type
+        ),
     );
 
     return $meta_fields;
@@ -30,6 +49,26 @@ function custom_wpsl_frontend_listing_info($store_fields)
 
     $store_fields['wpsl_listing_information_1'] = array(
         'name' => 'listing_information_1',
+    );
+
+    
+    $store_fields['wpsl_listing_information_2'] = array(
+        'name' => 'listing_information_2',
+    );
+
+    
+    $store_fields['wpsl_listing_information_3'] = array(
+        'name' => 'listing_information_3',
+    );
+
+    
+    $store_fields['wpsl_listing_information_4'] = array(
+        'name' => 'listing_information_4',
+    );
+
+    
+    $store_fields['wpsl_listing_information_5'] = array(
+        'name' => 'listing_information_5',
     );
 
     return $store_fields;
@@ -84,6 +123,30 @@ function custom_listing_template()
     $listing_template .= '<% if ( listing_information_1 ) { %>';
     $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
     $listing_template .= '<p><%= listing_information_1 %></p>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
+    $listing_template .= '<% if ( listing_information_2 ) { %>';
+    $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
+    $listing_template .= '<p><%= listing_information_2 %></p>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
+    $listing_template .= '<% if ( listing_information_3 ) { %>';
+    $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
+    $listing_template .= '<p><%= listing_information_3 %></p>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
+    $listing_template .= '<% if ( listing_information_4 ) { %>';
+    $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
+    $listing_template .= '<p><%= listing_information_4 %></p>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
+    $listing_template .= '<% if ( listing_information_5 ) { %>';
+    $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
+    $listing_template .= '<p><%= listing_information_5 %></p>' . "\r\n";
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
