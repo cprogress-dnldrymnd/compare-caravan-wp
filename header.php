@@ -108,23 +108,6 @@
       <div class="offcanvas--inner">
         <div class="menu-holder mb-5">
           <?php dynamic_sidebar('sideout-menu'); ?>
-          <h3 class="fs-25 mb-3">Compare for dealers</h3>
-          <ul class="menu list-inline mb-0 d-flex flex-column gap-3">
-            <li><a href="#">Advertising packages</a></li>
-            <li><a href="#">Pay as you go</a></li>
-            <li><a href="#">Contact Compare</a></li>
-            <li><a href="/dealer-login.html" data-bs-toggle="modal" data-bs-target="#dealerLoginModal">Dealer login</a></li>
-          </ul>
-        </div>
-        <div class="menu-holder">
-          <h3 class="fs-25 mb-3">Compare for consumers</h3>
-          <ul class="menu menu-hover-text list-inline mb-0 d-flex flex-column gap-3">
-            <li><a href="#">Sell my leisure vehicle</a></li>
-            <li><a href="#">Advertising packages</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="/consumer-login.html">Consumer login</a></li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
