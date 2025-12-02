@@ -158,7 +158,7 @@
                                                         <div class="blog-grid--title mb-4">
                                                             <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
                                                         </div>
-                                                        <div class="blog-grid--date fs-14 "><?= $related_post->post_date ?></div>
+                                                        <div class="blog-grid--date fs-14 "><?= get_the_date(NULL, $post->ID) ?></div>
                                                     </div>
                                                 </div>
                                             </div>
