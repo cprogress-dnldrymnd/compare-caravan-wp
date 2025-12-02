@@ -106,8 +106,8 @@
         <button type="button" class="btn-close text-color" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas--inner">
-        <div class="menu-holder mb-5">
           <?php dynamic_sidebar('sideout-menu'); ?>
+    
       </div>
     </div>
   </div>
