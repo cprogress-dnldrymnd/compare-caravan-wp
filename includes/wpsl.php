@@ -82,11 +82,14 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '<span  class="contact-details-span"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"> <g id="Icon_feather-globe" data-name="Icon feather-globe" transform="translate(-2.5 -2.5)"> <path id="Path_1331" data-name="Path 1331" d="M15,9A6,6,0,1,1,9,3,6,6,0,0,1,15,9Z" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1332" data-name="Path 1332" d="M3,18H15" transform="translate(0 -9)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1333" data-name="Path 1333" d="M14.4,3a9.18,9.18,0,0,1,2.4,6,9.18,9.18,0,0,1-2.4,6A9.18,9.18,0,0,1,12,9a9.18,9.18,0,0,1,2.4-6Z" transform="translate(-5.4)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> </g> </svg><%= url %></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
-    $listing_template .= '<% if ( wpsl_listing_information ) { %>';
+// --- UPDATED SECTION START ---
+    // We check strict undefined to prevent JS errors if the key is missing from JSON
+    $listing_template .= '<% if ( typeof wpsl_listing_information !== "undefined" && wpsl_listing_information ) { %>';
     $listing_template .= '<div class="wpsl-listing-info">' . "\r\n";
     $listing_template .= '<p><strong>Info:</strong> <%= wpsl_listing_information %></p>' . "\r\n";
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
+    // --- UPDATED SECTION END ---
 
     // }
 
