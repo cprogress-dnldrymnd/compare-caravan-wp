@@ -8,13 +8,15 @@ add_filter('wpsl_meta_box_fields', 'custom_wpsl_add_listing_info_field');
 function custom_wpsl_add_listing_info_field($meta_fields)
 {
 
-    // The key 'additional' targets the "Additional Information" tab
-    $meta_fields['Additional Information']['wpsl_listing_information'] = array(
-        'label' => 'Listing Information',
-        'type'  => 'textarea', // Defines the input type
-        'name'  => 'wpsl_listing_information', // The meta key used in the database
-        'help'  => 'Enter specific details about this listing here.', // Optional help text
+
+    $meta_fields[__('Additional Information', 'wpsl')] = array(
+        'listing_information' => array(
+            'label'    => __('Text input', 'wpsl'),
+            'type'  => 'textarea', // Defines the input type
+        ),
     );
+
+    return $meta_fields;
 
     return $meta_fields;
 }
@@ -29,7 +31,7 @@ function custom_wpsl_frontend_listing_info($store_fields)
 {
 
     $store_fields['wpsl_listing_information'] = array(
-        'name' => 'wpsl_listing_information',
+        'name' => 'listing_information',
         'type' => 'text'
     );
 
