@@ -17609,7 +17609,24 @@ footer {
 .is-range-hero:before {
   z-index: 3;
 }
+#main-header .menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  font-weight: 600;
+  gap: 1.5rem;
+}
+
+#main-header .menu li a {
+  text-decoration: none;
+  color: var(--bs-white);
+}
+
 @media (min-width: 992px) {
+  #main-header .menu {
+    flex-direction: row;
+  }
   section.listing-single .listing--single-right .listing--single--right-inner {
     padding-bottom: var(--listing-pricing-height);
   }
