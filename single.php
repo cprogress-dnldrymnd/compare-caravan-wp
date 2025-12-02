@@ -148,9 +148,9 @@
                                         <div class="cursor-pointer select-none related--post-grid rounded background-white overflow-hidden">
                                             <div class="row g-0">
                                                 <div class="col-6">
-                                                    <div class="image-box image-style h-100 blog-image">
+                                                    <a class="image-box image-style h-100 blog-image d-block" href="<?= get_the_permalink($post->ID)  ?>">
                                                         <?= get_the_post_thumbnail($related_post->ID) ?>
-                                                    </div>
+                                                    </a>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="content-box p-20">
