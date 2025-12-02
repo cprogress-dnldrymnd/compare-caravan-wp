@@ -31,8 +31,7 @@
         ),
     ));
 
-
-    $query = new WP_Query($args);
+    var_dump($related_posts);
     ?>
     <section class="hero mb-0!">
         <div class="container">
