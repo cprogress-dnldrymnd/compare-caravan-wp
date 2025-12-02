@@ -37,7 +37,9 @@ if (is_archive()) {
                                 <div class="row g-sm h-100">
                                     <?php while (have_posts()) { ?>
                                         <?php the_post(); ?>
-                                        <?= blog_grid(get_the_ID()) ?>
+                                        <div class="col-6 col-lg-4 col-xl-3">
+                                            <?= blog_grid(get_the_ID()) ?>
+                                        </div>
                                     <?php } ?>
                                 </div>
                             </div>
