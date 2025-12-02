@@ -17,8 +17,8 @@
         $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
         $is_range = false;
     }
-
     $vehicle_type = outputFoundValues($term->name);
+
     ?>
  <section class="hero background--color position-relative <?= $is_range == true ? 'is-range-hero' : '' ?>">
      <?php
