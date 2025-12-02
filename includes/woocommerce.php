@@ -351,6 +351,31 @@ function get_product_brand_slugs_by_id($product_id, $array_val = false)
     }
 }
 
+/**
+ * Get product vehicle type .
+ *
+ */
+function get_product_vehicle_type($product_id)
+{
+    // Get the terms for the product ID from the 'product_brand' taxonomy
+    // If your taxonomy is named differently (e.g., 'product_brands'), change 'product_brand' below.
+    $terms = get_the_terms($product_id, 'product_brand');
+
+    $brand_slugs = array();
+
+    // Check if terms were found and it's not a WP_Error object
+    if (! empty($terms) && ! is_wp_error($terms)) {
+
+        // Loop through each term object
+        foreach ($terms as $term) {
+
+            if ($term->parent != 0) {
+                return $term->name;
+            }
+        }
+    }
+}
+
 function get_product_manufacturer_level_one($product_id, $array_val = false)
 {
     // Get the terms for the product ID from the 'product_brand' taxonomy

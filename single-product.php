@@ -25,7 +25,7 @@ $manufacturer_term_vehicle_type = get_terms(array(
 ))[0]->name;
 
 
-$vehicle_type = outputFoundValues($manufacturer_term_vehicle_type);
+$vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
 
 $berths = get_the_terms(get_the_ID(), 'pa_berths');
 if ($berths) {
