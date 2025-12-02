@@ -412,12 +412,7 @@
                              <div class="form-control-holder">
                                  <select name="Type" id="Type" class="form-control form-control-lg background-transparent">
                                      <option value="">Sort by lowest price</option>
-                                     <option value="Option 1">Option 1</option>
-                                     <option value="Option 2">Option 2</option>
-                                     <option value="Option 3">Option 3</option>
-                                     <option value="Option 4">Option 4</option>
-                                     <option value="Option 5">Option 5</option>
-                                     <option value="Option 6"> Option 6</option>
+                                     <option value="Option 1">Sort by highest price</option>
                                  </select>
                              </div>
                          </div>
