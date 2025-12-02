@@ -30,7 +30,6 @@ function custom_wpsl_frontend_listing_info($store_fields)
 
     $store_fields['wpsl_listing_information'] = array(
         'name' => 'wpsl_listing_information',
-        'type' => 'text'
     );
 
     return $store_fields;
