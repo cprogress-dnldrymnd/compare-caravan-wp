@@ -16452,7 +16452,9 @@ h5,
 .hero-background-dark-color-2 section.hero a:not(.btn) {
   color: inherit;
 }
-
+.background-dark-color-2 {
+  background-color: var(--dark-color-2) !important;
+}
 @media screen and (max-width: 991px) {
   #main-navbar {
     margin-bottom: 3rem !important;
@@ -17625,21 +17627,21 @@ footer {
 }
 
 .offcanvas.offcanvas {
-    z-index: 999999;
+  z-index: 999999;
 }
 .offcanvas-backdrop {
   z-index: 99999;
 }
 .menu-holder .menu {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
 }
 .post-categories > span:not(:last-child):after {
-  content: ', ';
+  content: ", ";
 }
 @media (min-width: 992px) {
   #main-header .menu {

@@ -6,7 +6,7 @@ if (is_archive()) {
     $title = 'Blogs';
 }
 ?>
-<section class="hero background--color position-relative ">
+<section class="hero background--color background-dark-color-2 position-relative ">
     <div class="container position-relative">
         <?= breadcrumbs() ?>
         <div class="hero-title-image md-margin-top ">
