@@ -1,11 +1,13 @@
 <?php
+
 /**
  * 1. Add the "Listing Information" textarea to the 'Additional Info' tab in Admin
  */
-add_filter( 'wpsl_meta_box_fields', 'custom_wpsl_add_listing_info_field' );
+add_filter('wpsl_meta_box_fields', 'custom_wpsl_add_listing_info_field');
 
-function custom_wpsl_add_listing_info_field( $meta_fields ) {
-    
+function custom_wpsl_add_listing_info_field($meta_fields)
+{
+
     // The key 'additional' targets the "Additional Information" tab
     $meta_fields['Additional Information']['wpsl_listing_information'] = array(
         'label' => 'Listing Information',
@@ -21,13 +23,14 @@ function custom_wpsl_add_listing_info_field( $meta_fields ) {
  * 2. Include the new data in the Frontend JSON response
  * This allows the map to read the data when generating the store list.
  */
-add_filter( 'wpsl_frontend_meta_fields', 'custom_wpsl_frontend_listing_info' );
+add_filter('wpsl_frontend_meta_fields', 'custom_wpsl_frontend_listing_info');
 
-function custom_wpsl_frontend_listing_info( $store_fields ) {
-    
-    $store_fields['wpsl_listing_information'] = array( 
+function custom_wpsl_frontend_listing_info($store_fields)
+{
+
+    $store_fields['wpsl_listing_information'] = array(
         'name' => 'wpsl_listing_information',
-        'type' => 'text' 
+        'type' => 'text'
     );
 
     return $store_fields;
@@ -75,6 +78,12 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '<span  class="contact-details-span"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"> <g id="Icon_feather-globe" data-name="Icon feather-globe" transform="translate(-2.5 -2.5)"> <path id="Path_1331" data-name="Path 1331" d="M15,9A6,6,0,1,1,9,3,6,6,0,0,1,15,9Z" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1332" data-name="Path 1332" d="M3,18H15" transform="translate(0 -9)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1333" data-name="Path 1333" d="M14.4,3a9.18,9.18,0,0,1,2.4,6,9.18,9.18,0,0,1-2.4,6A9.18,9.18,0,0,1,12,9a9.18,9.18,0,0,1,2.4-6Z" transform="translate(-5.4)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> </g> </svg><%= url %></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
+    $listing_template = '<% if ( wpsl_listing_information ) { %>';
+    $listing_template .= '<div class="wpsl-listing-info">' . "\r\n";
+    $listing_template .= '<p><strong>Info:</strong> <%= wpsl_listing_information %></p>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
     // }
 
 
