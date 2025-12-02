@@ -17,7 +17,7 @@
     $related_posts = get_posts(array(
         'post_type' => 'post',
         'tax_query' => array(
-            'relation' => 'AND',
+            'relation' => 'OR',
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
