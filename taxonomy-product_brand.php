@@ -404,7 +404,7 @@
                  <div class="col-lg-9">
                      <div class="sort-result d-flex gap-3 align-items-center justify-content-between mb-4">
                          <div class="result">
-                             <span class="fw-semibold"><?= $total_posts_count ?></span> caravan deals
+                             <span class="fw-semibold"><?= $total_posts_count ?></span> <?= outputFoundValues($name) ?> deals
                          </div>
                          <div class="filter d-none d-lg-block">
                              <div class="form-control-holder">
