@@ -50,7 +50,7 @@
                             </div>
                             <div class="blog--inner-footer sm-margin-bottom sm-margin-top sm-padding-top">
                                 <div class="row g-5">
-                                    <div class="col-12 d-flex flex-column justify-content-between">
+                                    <div class="col-12 d-flex flex-column justify-content-between text-center">
                                         <div class="share mb-5">
                                             <p class="mb-3 fw-semibold opacity-half">Share this post</p>
                                             <div class="row g-xxs align-items-end ">
