@@ -222,3 +222,29 @@ function outputFoundValues($text, $targetValues = ["Campervans", "Caravans", "Mo
         }
     }
 }
+
+
+function post_categories($id = false)
+{
+    ob_start();
+    if (!$id) {
+        $post_id = get_the_ID();
+    } else {
+        $post_id = $id;
+    }
+    $post_categories = get_the_terms($post_id, 'category');
+    $manufacturers = get_the_terms($post_id, 'product_brand');
+
+?> <div class="post-categories">
+        <?php foreach ($post_categories as $post_category) { ?>
+            <span><?= $post_category->name ?></span>
+        <?php } ?>
+        <?php foreach ($manufacturers as $manufacturer) { ?>
+            <?php if ($manufacturer->parent == 0) { ?>
+                <span><?= $manufacturer->name ?></span>
+            <?php } ?>
+        <?php } ?>
+    </div>
+<?php
+    return ob_get_clean();
+}
