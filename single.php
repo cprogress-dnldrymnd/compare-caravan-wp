@@ -4,7 +4,7 @@
     <?php
     $post_categories = get_the_terms(get_the_ID(), 'category');
     $manufacturers = get_the_terms(get_the_ID(), 'product_brand');
-    $post_categories_slug = [];
+    $post_categories_slugs = [];
     $manufacturers_slugs = [];
 
     foreach ($post_categories as $post_category) {
