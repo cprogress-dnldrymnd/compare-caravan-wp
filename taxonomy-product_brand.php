@@ -17,6 +17,8 @@
         $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
         $is_range = false;
     }
+
+    $vehicle_type = outputFoundValues($term->name);
     ?>
  <section class="hero background--color position-relative <?= $is_range == true ? 'is-range-hero' : '' ?>">
      <?php
@@ -388,7 +390,7 @@
                                         ?>
                                      <div class="filter--bottom p-20 background-pink text-white text-center">
                                          <span class="fs-25 fw-semibold">Show <span class="fw-semobold"><?= $total_posts_count ?></span>
-                                             <?= outputFoundValues($name) ?></span>
+                                             <?= $vehicle_type ?></span>
                                      </div>
                                      <div class="reset-btn text-center mt-4 d-block d-lg-none">
                                          <a href="" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
@@ -404,7 +406,7 @@
                  <div class="col-lg-9">
                      <div class="sort-result d-flex gap-3 align-items-center justify-content-between mb-4">
                          <div class="result">
-                             <span class="fw-semibold"><?= $total_posts_count ?></span> <?= outputFoundValues($name) ?> deals
+                             <span class="fw-semibold"><?= $total_posts_count ?></span> <?= $vehicle_type ?> deals
                          </div>
                          <div class="filter d-none d-lg-block">
                              <div class="form-control-holder">
