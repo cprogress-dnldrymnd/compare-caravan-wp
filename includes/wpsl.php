@@ -36,33 +36,6 @@ function custom_wpsl_frontend_meta_fields( $store_fields ) {
     return $store_fields;
 }
 
-/**
- * 3. Display the field in the Search Results List.
- * * This modifies the Underscore.js template used to render the list
- * below or beside the map.
- */
-add_filter( 'wpsl_listing_template', 'custom_wpsl_listing_template' );
-
-function custom_wpsl_listing_template( $listing_template ) {
-    
-    // This is the HTML template that will be injected.
-    // We check if the data exists (<% if ... %>) before showing it.
-    $custom_content = '
-    <% if ( wpsl_additional_info ) { %>
-        <div class="wpsl-additional-info" style="margin-top: 10px; font-style: italic;">
-            <strong>Info:</strong> <%= wpsl_additional_info %>
-        </div>
-    <% } %>
-    ';
-
-    // We append this content before the closing </li> of the list item.
-    // You can change '</li>' to another tag to place it elsewhere in the list.
-    $listing_template = str_replace( '</li>', $custom_content . '</li>', $listing_template );
-
-    return $listing_template;
-}
-
-add_filter('wpsl_templates', 'custom_templates');
 
 function custom_templates($templates)
 {
