@@ -36,6 +36,31 @@ function custom_wpsl_frontend_listing_info($store_fields)
     return $store_fields;
 }
 
+/**
+ * 3. Display the new field in the Store Locator List (Frontend)
+ * This appends the listing information to the search results.
+ */
+add_filter('wpsl_listing_template', 'custom_wpsl_listing_template_info');
+
+function custom_wpsl_listing_template_info($listing_template)
+{
+
+    // We check if the data exists, then display it using the Underscore.js template syntax
+    $custom_content = '<% if ( wpsl_listing_information ) { %>';
+    $custom_content .= '<div class="wpsl-listing-info">' . "\r\n";
+    $custom_content .= '<p><strong>Info:</strong> <%= wpsl_listing_information %></p>' . "\r\n";
+    $custom_content .= '</div>';
+    $custom_content .= '<% } %>';
+
+    // Append this to the end of the listing template (before the closing </li>)
+    $listing_template = str_replace('</li>', $custom_content . '</li>', $listing_template);
+
+    return $listing_template;
+}
+
+
+
+
 add_filter('wpsl_listing_template', 'custom_listing_template');
 
 function custom_listing_template()
