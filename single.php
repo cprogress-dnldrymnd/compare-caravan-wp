@@ -31,7 +31,7 @@
         ),
     ));
     echo '<pre>';
-    var_dump($post_categories_slug);
+    var_dump($post_categories_slugs);
     var_dump($manufacturers_slugs);
     echo '</pre>';
     ?>
