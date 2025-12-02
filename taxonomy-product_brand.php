@@ -312,7 +312,7 @@
         if (isset($_GET['price-sort'])) {
             $args['meta_key'] = '_price';
             $args['orderby'] = 'meta_value_num';
-            $args['order'] = 'ASC';
+            $args['order'] = $_GET['price-sort'];
         }
         if (!isset($_GET['range'])) {
             $tax_query[] = array(
