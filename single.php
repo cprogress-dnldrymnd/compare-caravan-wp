@@ -39,7 +39,9 @@
                                         <span><?= $post_category->name ?></span>
                                     <?php } ?>
                                     <?php foreach ($manufacturers as $manufacturer) { ?>
-                                        <span><?= $manufacturer->name ?></span>
+                                        <?php if ($manufacturer->parent == 0) { ?>
+                                            <span><?= $manufacturer->name ?></span>
+                                        <?php } ?>
                                     <?php } ?>
                                 </div>
                             </li>
