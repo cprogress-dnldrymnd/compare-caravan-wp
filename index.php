@@ -22,9 +22,30 @@ if (is_archive()) {
                         </div>
                     <?php } ?>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
+<?php if (is_archive()) { ?>
+    <section id="Blog" class="latest-news row-swap sm-padding-bottom sm-padding-top">
+        <div class="container">
+            <div class="blogs-insert">
+                <div class="blogs--holder">
+                    <div class="row blogs-row g-sm">
+                        <div class="col-lg-12">
+                            <div class="blog-grid--holder h-auto h-lg-100 swiper-on-mobile-js">
+                                <div class="row g-sm h-100">
+                                    <?php while (have_posts()) { ?>
+                                        <?php the_post(); ?>
+                                        <?= blog_grid(get_the_ID()) ?>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php } ?>
 <?php get_footer() ?>
