@@ -59,7 +59,7 @@
                                                 <div class="col">
                                                     <h3>Caravan</h3>
                                                     <div class="desc mb-4">Sales &amp; Marketing</div>
-                                                    <div class="logo-box"><a href="#" class="text-white text-decoration-none"><span class="circle"></span><span class="text">
+                                                    <div class="logo-box"><a href="#" class="text-white text-decoration-none"><span class="text">
                                                                 <div><svg id="Group_1366" xmlns="http://www.w3.org/2000/svg" version="1.1" width="192.195" height="38" viewBox="0 0 782.19 112" fill="currentColor">
                                                                         <g id="Group_1365">
                                                                             <g id="Group_1364">
