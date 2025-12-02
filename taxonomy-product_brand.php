@@ -309,10 +309,12 @@
             ),
 
         );
+        $args['meta_key'] = '_price';
+        $args['orderby'] = 'meta_value_num';
         if (isset($_GET['price-sort'])) {
-            $args['meta_key'] = '_price';
-            $args['orderby'] = 'meta_value_num';
             $args['order'] = $_GET['price-sort'];
+        } else {
+            $args['order'] = 'ASC';
         }
         if (!isset($_GET['range'])) {
             $tax_query[] = array(
