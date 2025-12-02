@@ -73,32 +73,6 @@
           <div class="navbar-collapse" id="navbarMain">
             <nav class="navbar">
               <?php dynamic_sidebar('header-menu'); ?>
-              <ul class="navbar-nav me-auto flex-column flex-lg-row gap-4 fw-semibold" id="main-navbar">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/listing--caravans.html">Caravans</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/listing--motorhomes.html">Motorhomes</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link  dropdown-toggle" href="/listing--campervans.html" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Campervans
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/listing--campervans.html">Campervans</a></li>
-                    <li><a class="dropdown-item" href="#">Motohomes Submenu 2</a></li>
-                    <li><a class="dropdown-item" href="#">Motohomes Submenu 3</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/listing--static-caravans.html" aria-disabled="true">Static Caravans</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/listing--holiday-homes.html" aria-disabled="true">Holiday Homes</a>
-                </li>
-              </ul>
-
             </nav>
           </div>
         </div>
