@@ -7,7 +7,7 @@ add_filter( 'wpsl_meta_box_fields', 'custom_wpsl_add_listing_info_field' );
 function custom_wpsl_add_listing_info_field( $meta_fields ) {
     
     // The key 'additional' targets the "Additional Information" tab
-    $meta_fields['additional_information']['wpsl_listing_information'] = array(
+    $meta_fields['Additional Information']['wpsl_listing_information'] = array(
         'label' => 'Listing Information',
         'type'  => 'textarea', // Defines the input type
         'name'  => 'wpsl_listing_information', // The meta key used in the database
