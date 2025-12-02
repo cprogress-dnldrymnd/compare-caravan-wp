@@ -1,6 +1,9 @@
 <?php get_header() ?>
 <?php while (have_posts()) { ?>
     <?php the_post() ?>
+    <?php
+    $post_categories = wp_get_post_categories(get_the_ID());
+    ?>
     <section class="hero mb-0!">
         <div class="container">
             <div class="breadcrumbs fs-16 mt-3">
@@ -30,7 +33,11 @@
                                         <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1z" />
                                     </svg>
                                 </span>
-                                Caravan
+                                <div class="post-categories">
+                                    <?php foreach ($post_categories as $post_category) { ?>
+                                        <span><?= $post_category->name ?> ?></span>
+                                    <?php } ?>
+                                </div>
                             </li>
                         </ul>
                     </div>
