@@ -8,11 +8,11 @@
     $manufacturers_slugs = [];
 
     foreach ($post_categories as $post_category) {
-        $post_categories_slugs = $post_category->slug;
+        $post_categories_slugs[] = $post_category->slug;
     }
 
     foreach ($manufacturers as $manufacturer) {
-        $manufacturers_slugs = $manufacturer->slug;
+        $manufacturers_slugs[] = $manufacturer->slug;
     }
     $related_posts = get_posts(array(
         'post_type' => 'post',
