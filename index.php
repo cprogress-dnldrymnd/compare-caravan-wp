@@ -1,4 +1,7 @@
 <?php get_header() ?>
+<?php
+
+?>
 <section class="hero background--color position-relative ">
     <div class="container position-relative">
         <?= breadcrumbs() ?>
@@ -6,7 +9,7 @@
 
             <div class="row">
                 <div class="col-lg-6 md-padding-bottom">
-                    <h1 class="mb-4"><?php the_title() ?></h1>
+                    <h1 class="mb-4"><?php the_archive_title() ?></h1>
                     <?php if ($description) { ?>
                         <div class="desc mb-4">
                             <?= wpautop($description) ?>
