@@ -1,39 +1,37 @@
 <?php
-/**
- * 1. Add the "Listing Information" textarea to the 'Additional Info' tab in Admin
- */
-add_filter( 'wpsl_meta_box_fields', 'custom_wpsl_add_listing_info_field' );
+add_filter( 'wpsl_meta_box_fields', 'custom_wpsl_inject_listing_info' );
 
-function custom_wpsl_add_listing_info_field( $meta_fields ) {
+function custom_wpsl_inject_listing_info( $meta_fields ) {
     
-    // The key 'additional' targets the "Additional Information" tab
-    $meta_fields['additional']['wpsl_listing_information'] = array(
-        'label' => 'Listing Information',
-        'type'  => 'textarea', // Defines the input type
-        'name'  => 'wpsl_listing_information', // The meta key used in the database
-        'help'  => 'Enter specific details about this listing here.', // Optional help text
-    );
+    // We want to modify the 'additional' tab
+    if ( isset( $meta_fields['additional'] ) ) {
+        
+        $new_additional_fields = array();
+
+        // Loop through existing fields to find the insertion point
+        foreach ( $meta_fields['additional'] as $key => $field ) {
+            
+            // Add the current existing field to our new array
+            $new_additional_fields[$key] = $field;
+
+            // Check if this is the URL field
+            if ( $key === 'wpsl_url' ) {
+                // INJECT our new field right here
+                $new_additional_fields['wpsl_listing_information'] = array(
+                    'label' => 'Listing Information',
+                    'type'  => 'textarea',
+                    'name'  => 'wpsl_listing_information',
+                    'help'  => 'Enter extra details about this location.',
+                );
+            }
+        }
+
+        // Replace the original 'additional' tab with our re-ordered array
+        $meta_fields['additional'] = $new_additional_fields;
+    }
 
     return $meta_fields;
 }
-
-/**
- * 2. Include the new data in the Frontend JSON response
- * This allows the map to read the data when generating the store list.
- */
-add_filter( 'wpsl_frontend_meta_fields', 'custom_wpsl_frontend_listing_info' );
-
-function custom_wpsl_frontend_listing_info( $store_fields ) {
-    
-    $store_fields['wpsl_listing_information'] = array( 
-        'name' => 'wpsl_listing_information',
-        'type' => 'text' 
-    );
-
-    return $store_fields;
-}
-
-add_filter('wpsl_listing_template', 'custom_listing_template');
 
 function custom_listing_template()
 {
