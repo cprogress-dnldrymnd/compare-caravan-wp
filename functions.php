@@ -216,20 +216,3 @@ function my_theme_register_footer_sidebars()
 
 add_action('widgets_init', 'my_theme_register_footer_sidebars');
 
-
-/**
- * Function to output values from a string that exist in a target array.
- *
- * @param string $text The input string to search.
- * @param array $targetValues The array of values to look for.
- */
-function outputFoundValues($text, $targetValues = ["Campervans", "Caravans", "Motorhomes"])
-{
-    // Loop through each item in the array
-    foreach ($targetValues as $value) {
-        // use stripos for case-insensitive search, or strpos for case-sensitive
-        if (stripos($text, $value) !== false) {
-            echo $value . "\n";
-        }
-    }
-}

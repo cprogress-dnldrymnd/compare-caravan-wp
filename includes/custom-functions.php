@@ -92,6 +92,7 @@ function action_wp_head()
                 .background--color.background--color.background--color.background--color {
                     background-color: <?= $background_color ?>;
                 }
+
                 .list--checkbox li:before {
                     border-color: <?= $background_color ?>;
                 }
@@ -148,7 +149,8 @@ function breadcrumbs()
  * or 'https://player.vimeo.com/video/VIDEO_ID') or an empty
  * string if no valid ID is found.
  */
-function get_video_embed_url( $url ) {
+function get_video_embed_url($url)
+{
     $video_id = '';
     $embed_url = '';
 
@@ -159,34 +161,34 @@ function get_video_embed_url( $url ) {
         . '(\d+)'                    // Captures the numeric video ID
         . '~';
 
-    if ( preg_match( $vimeo_pattern, $url, $vimeo_matches ) ) {
-        if ( isset( $vimeo_matches[1] ) ) {
+    if (preg_match($vimeo_pattern, $url, $vimeo_matches)) {
+        if (isset($vimeo_matches[1])) {
             $video_id = $vimeo_matches[1];
             $embed_url = 'https://player.vimeo.com/video/' . $video_id;
         }
     }
 
     // If not Vimeo, check for YouTube
-    if ( empty( $embed_url ) ) {
+    if (empty($embed_url)) {
         // A comprehensive regex to find the video ID from all common URL types
         // It looks for 'v=', 'v/', 'embed/', or 'youtu.be/' followed by the 11-character ID.
         $youtube_pattern = '~'
             . '(?:'                        // Start a non-capturing group for URL patterns
-                . 'v='                     // Standard 'watch' URL query parameter
-                . '|'                      // OR
-                . 'v\/'                   // Less common '/v/' format
-                . '|'                      // OR
-                . 'embed\/'               // Standard 'embed' URL path
-                . '|'                      // OR
-                . 'youtu\.be\/'           // Shortened 'youtu.be' domain
+            . 'v='                     // Standard 'watch' URL query parameter
+            . '|'                      // OR
+            . 'v\/'                   // Less common '/v/' format
+            . '|'                      // OR
+            . 'embed\/'               // Standard 'embed' URL path
+            . '|'                      // OR
+            . 'youtu\.be\/'           // Shortened 'youtu.be' domain
             . ')'                          // End non-capturing group
             . '([a-zA-Z0-9_-]{11})'       // Capture the 11-character video ID
             . '~';
 
         // Check if the pattern matches the given URL
-        if ( preg_match( $youtube_pattern, $url, $youtube_matches ) ) {
+        if (preg_match($youtube_pattern, $url, $youtube_matches)) {
             // The video ID will be in the first capture group ($matches[1])
-            if ( isset( $youtube_matches[1] ) ) {
+            if (isset($youtube_matches[1])) {
                 $video_id = $youtube_matches[1];
                 $embed_url = 'https://www.youtube.com/embed/' . $video_id;
             }
@@ -194,10 +196,29 @@ function get_video_embed_url( $url ) {
     }
 
     // If we found an embed URL, return it
-    if ( ! empty( $embed_url ) ) {
+    if (! empty($embed_url)) {
         return $embed_url;
     }
 
     // If no ID was found, return an empty string
     return '';
+}
+
+
+
+/**
+ * Function to output values from a string that exist in a target array.
+ *
+ * @param string $text The input string to search.
+ * @param array $targetValues The array of values to look for.
+ */
+function outputFoundValues($text, $targetValues = ["Campervans", "Caravans", "Motorhomes"])
+{
+    // Loop through each item in the array
+    foreach ($targetValues as $value) {
+        // use stripos for case-insensitive search, or strpos for case-sensitive
+        if (stripos($text, $value) !== false) {
+            echo $value . "\n";
+        }
+    }
 }
