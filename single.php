@@ -35,7 +35,7 @@
                                 </span>
                                 <div class="post-categories">
                                     <?php foreach ($post_categories as $post_category) { ?>
-                                        <span><?= $post_category->name ?> ?></span>
+                                        <span><?= $post_category->name ?></span>
                                     <?php } ?>
                                 </div>
                             </li>
