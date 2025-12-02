@@ -4,6 +4,7 @@ jQuery(document).ready(function () {
     //sell_leisure_vehicle_form();
     fancybox();
     listing_pricing();
+    sort_by();
     setTimeout(function () {
         swiper_sliders();
         header();
