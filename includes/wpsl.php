@@ -1,4 +1,67 @@
 <?php
+/**
+ * 1. Add the "Additional Information" textarea to the Store Editor in Admin.
+ * * This adds the field to the "Store Details" tab.
+ * The data is automatically saved by the plugin based on the key provided.
+ */
+add_filter( 'wpsl_meta_box_fields', 'custom_wpsl_add_additional_info_field' );
+
+function custom_wpsl_add_additional_info_field( $meta_fields ) {
+    
+    // 'wpsl_additional_info' is the meta key stored in the database.
+    $meta_fields['wpsl_additional_info'] = array(
+        'label' => __( 'Additional Information', 'wpsl' ),
+        'type'  => 'textarea',
+        'rows'  => 4, // Adjust height of the textarea
+        'help'  => __( 'Enter any extra details about the store here.', 'wpsl' )
+    );
+
+    return $meta_fields;
+}
+
+/**
+ * 2. Make the data available to the frontend (Map/JSON).
+ * * Without this, the data exists in the database but the JavaScript map
+ * won't see it.
+ */
+add_filter( 'wpsl_frontend_meta_fields', 'custom_wpsl_frontend_meta_fields' );
+
+function custom_wpsl_frontend_meta_fields( $store_fields ) {
+    
+    $store_fields['wpsl_additional_info'] = array(
+        'name' => 'wpsl_additional_info', // Must match the key used above
+        'type' => 'text' // 'text' treats it as a string for JS output
+    );
+
+    return $store_fields;
+}
+
+/**
+ * 3. Display the field in the Search Results List.
+ * * This modifies the Underscore.js template used to render the list
+ * below or beside the map.
+ */
+add_filter( 'wpsl_listing_template', 'custom_wpsl_listing_template' );
+
+function custom_wpsl_listing_template( $listing_template ) {
+    
+    // This is the HTML template that will be injected.
+    // We check if the data exists (<% if ... %>) before showing it.
+    $custom_content = '
+    <% if ( wpsl_additional_info ) { %>
+        <div class="wpsl-additional-info" style="margin-top: 10px; font-style: italic;">
+            <strong>Info:</strong> <%= wpsl_additional_info %>
+        </div>
+    <% } %>
+    ';
+
+    // We append this content before the closing </li> of the list item.
+    // You can change '</li>' to another tag to place it elsewhere in the list.
+    $listing_template = str_replace( '</li>', $custom_content . '</li>', $listing_template );
+
+    return $listing_template;
+}
+
 add_filter('wpsl_templates', 'custom_templates');
 
 function custom_templates($templates)
