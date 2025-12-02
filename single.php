@@ -21,7 +21,7 @@
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => $post_categories_slug
+                'terms' => $post_categories_slugs
             ),
             array(
                 'taxonomy' => 'product_brand',
