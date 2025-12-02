@@ -12,6 +12,33 @@ jQuery(document).ready(function () {
 
 });
 
+function sort_by() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramName = 'filter_type'; // Must match the select name attribute
+    const currentVal = urlParams.get(paramName);
+
+    if (currentVal) {
+        jQuery('#price-sort').val(currentVal);
+    }
+
+    // 3. The Core Logic: Detect Change and Reload
+    jQuery('#price-sort').on('change', function () {
+        var name = jQuery(this).attr('name');
+        var value = jQuery(this).val();
+
+        if (value) {
+            // Get base URL without query string
+            var baseUrl = window.location.href.split('?')[0];
+
+            // Construct new URL
+            var newUrl = baseUrl + '?' + name + '=' + value;
+
+            // Force reload to new URL
+            window.location.href = newUrl;
+        }
+    });
+}
+
 function fancybox() {
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
