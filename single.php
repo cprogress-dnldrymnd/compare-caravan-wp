@@ -16,6 +16,7 @@
     }
     $related_posts = get_posts(array(
         'post_type' => 'post',
+        'numberposts' => 3,
         'tax_query' => array(
             'relation' => 'AND',
             array(
