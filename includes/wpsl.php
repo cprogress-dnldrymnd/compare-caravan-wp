@@ -83,7 +83,7 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
     $listing_template .= '<% if ( listing_information ) { %>';
     $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
-    $listing_template .= '<p><%= listing_information %></p>' . "\r\n";
+    $listing_template .= '<p><%= listing_information.replace(/\r\n|\n|\r/g, "<br>") %></p>' . "\r\n";
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
