@@ -81,7 +81,7 @@ function action_wp_head()
             }
         </style>
         <?php
-    } else if (is_product()) {
+    } else if (is_product() || get_post_type() == 'post') {
         $terms = get_the_terms(get_the_ID(), 'product_brand');
         if ($terms && !is_wp_error($terms)) {
             $term = $terms[0];
