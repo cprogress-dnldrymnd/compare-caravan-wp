@@ -30,10 +30,7 @@
             ),
         ),
     ));
-    echo '<pre>';
-    var_dump($post_categories_slugs);
-    var_dump($manufacturers_slugs);
-    echo '</pre>';
+
     ?>
     <section class="hero mb-0!">
         <div class="container">
@@ -145,24 +142,28 @@
                         <div class="sidebar--blog--inner related-post">
                             <h5 class="opacity-half mb-4">Related posts</h5>
                             <div class="row g-3">
-                                <div class="col-12 related-post-insert">
-                                    <div class="cursor-pointer select-none related--post-grid rounded background-white overflow-hidden">
-                                        <div class="row g-0">
-                                            <div class="col-6">
-                                                <div class="image-box image-style h-100 blog-image"><img alt="Top 10 Motorhomes for 2025: UK Edition image" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" sizes="100vw" srcset="/_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=480&amp;q=75 480w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=3840&amp;q=75 3840w" src="https://compare.group/_next/image?url=https%3A%2F%2Fd1d1xzu5l8rgop.cloudfront.net%2Fleisure-vehicle%2Fblogs%2F1760373645-68ed2b8d46a9d.webp&amp;w=3840&amp;q=75" style="color: transparent;"></div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="content-box p-20">
-                                                    <div class="blog-grid--category fs-14 fw-semibold mb-3"><span>Blog</span></div>
-                                                    <div class="blog-grid--title mb-4">
-                                                        <h3 class="fs-16 fw-semibold line-clamp-4">Top 10 Motorhomes for 2025: UK Edition</h3>
+                                <?php foreach ($related_posts as $related_post) { ?>
+                                    <div class="col-12 related-post-insert">
+                                        <div class="cursor-pointer select-none related--post-grid rounded background-white overflow-hidden">
+                                            <div class="row g-0">
+                                                <div class="col-6">
+                                                    <div class="image-box image-style h-100 blog-image">
+                                                        <?= get_the_post_thumbnail($related_post->ID) ?>
                                                     </div>
-                                                    <div class="blog-grid--date fs-14 ">21st November</div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="content-box p-20">
+                                                        <div class="blog-grid--category fs-14 fw-semibold mb-3"><span>Blog</span></div>
+                                                        <div class="blog-grid--title mb-4">
+                                                            <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
+                                                        </div>
+                                                        <div class="blog-grid--date fs-14 "><?= $related_post->post_date ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
 
