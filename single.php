@@ -17,7 +17,7 @@
     $related_posts = get_posts(array(
         'post_type' => 'post',
         'tax_query' => array(
-            'relation' => 'OR',
+            'relation' => 'AND',
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
@@ -31,8 +31,6 @@
         ),
     ));
 
-    var_dump($post_categories_slugs);
-    var_dump($manufacturers_slugs);
     var_dump($related_posts);
     ?>
     <section class="hero mb-0!">
