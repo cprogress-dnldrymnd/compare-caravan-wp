@@ -133,6 +133,9 @@ function breadcrumbs()
             <?php if (is_archive()) { ?>
                 <li><span><?= get_the_archive_title() ?></span></li>
             <?php } ?>
+            <?php if (is_home()) { ?>
+                <li><span>Blogs</span></li>
+            <?php } ?>
         </ul>
     </div>
 <?php
