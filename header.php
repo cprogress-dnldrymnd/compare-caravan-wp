@@ -31,10 +31,7 @@
         <div class="col-auto d-none d-md-block">
           <ul class="d-flex gap-4 list-inline align-items-center mb-0 fs-15 fw-medium">
             <li>
-              <a href="#">Sell my leisure vehicle</a>
-            </li>
-            <li>
-              <a href="#">Log in</a>
+              <a href="https://compare.group/login">Log in</a>
             </li>
           </ul>
         </div>
