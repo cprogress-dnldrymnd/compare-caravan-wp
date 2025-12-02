@@ -41,6 +41,7 @@ if (is_archive()) {
                                     </div>
                                 <?php } ?>
                             </div>
+                            <?php the_posts_pagination() ?>
                         </div>
                     </div>
                 </div>
