@@ -17,8 +17,6 @@ function custom_wpsl_add_listing_info_field($meta_fields)
     );
 
     return $meta_fields;
-
-    return $meta_fields;
 }
 
 /**
