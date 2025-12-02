@@ -17141,15 +17141,6 @@ section.listing-single .nav-tabs-holder {
   font-weight: 500;
 }
 @media screen and (max-width: 991px) {
-  .listing-pricing {
-    margin-left: 0;
-    margin-right: 0;
-    position: sticky;
-    bottom: 0;
-    right: 0;
-    width: 40%;
-    z-index: 2;
-  }
   .listing-pricing .price {
     font-size: 40px;
   }
@@ -17604,8 +17595,13 @@ footer {
   inset: 0;
 }
 .listing-pricing {
-  position: sticky;
-  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  z-index: 2;
 }
 .is-range-hero {
   min-height: 30vw;
@@ -17629,18 +17625,18 @@ footer {
 }
 
 .offcanvas.offcanvas {
-  z-index: 999999;
+    z-index: 999999;
 }
 .offcanvas-backdrop {
   z-index: 99999;
 }
 .menu-holder .menu {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
 }
 
 @media (min-width: 992px) {

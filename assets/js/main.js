@@ -5,7 +5,6 @@ jQuery(document).ready(function () {
     fancybox();
     listing_pricing();
     sort_by();
-    listing_pricing();
     setTimeout(function () {
         swiper_sliders();
         header();
@@ -14,14 +13,6 @@ jQuery(document).ready(function () {
 
 });
 
-
-function listing_pricing() {
-    if (window.innerWidth < 992) {
-        jQuery('.listing-pricing').insertAfter('.listing-single');
-    } else {
-        jQuery('.listing-pricing').appendTo('.listing--single--right-inner');
-    }
-}
 
 function sort_by() {
     // 3. The Core Logic: Detect Change and Reload
