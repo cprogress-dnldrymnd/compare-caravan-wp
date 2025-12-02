@@ -13,7 +13,7 @@ if (is_archive()) {
 
             <div class="row">
                 <div class="col-lg-6 md-padding-bottom">
-                    <h1 class="mb-4"><?= $title ?> ?></h1>
+                    <h1 class="mb-4"><?= $title ?></h1>
                 </div>
 
             </div>
