@@ -388,7 +388,7 @@
                                         ?>
                                      <div class="filter--bottom p-20 background-pink text-white text-center">
                                          <span class="fs-25 fw-semibold">Show <span class="fw-semobold"><?= $total_posts_count ?></span>
-                                             <?= outputFoundValues($name) ?></span>ss
+                                             <?= outputFoundValues($name) ?></span>
                                      </div>
                                      <div class="reset-btn text-center mt-4 d-block d-lg-none">
                                          <a href="" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
