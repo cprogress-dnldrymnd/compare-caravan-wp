@@ -145,7 +145,9 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="content-box p-20">
-                                                        <div class="blog-grid--category fs-14 fw-semibold mb-3"><span>Blog</span></div>
+                                                        <div class="blog-grid--category fs-14 fw-semibold mb-3">
+                                                            <?= post_categories($related_post->ID) ?>
+                                                        </div>
                                                         <div class="blog-grid--title mb-4">
                                                             <a class="text-decoration-none text-color" href="<?= get_the_permalink($related_post->ID) ?> ?>">
                                                                 <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
