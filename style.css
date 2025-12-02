@@ -17594,7 +17594,15 @@ footer {
   position: absolute;
   inset: 0;
 }
-
+.listing-pricing {
+  margin-left: 0;
+  margin-right: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  z-index: 2;
+}
 .is-range-hero {
   min-height: 30vw;
 }
