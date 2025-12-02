@@ -410,9 +410,9 @@
                          </div>
                          <div class="filter d-none d-lg-block">
                              <div class="form-control-holder">
-                                 <select name="Type" id="Type" class="form-control form-control-lg background-transparent">
-                                     <option value="">Sort by lowest price</option>
-                                     <option value="Option 1">Sort by highest price</option>
+                                 <select name="price-sort" id="price-sort" class="form-control form-control-lg background-transparent">
+                                     <option value="price-asc">Sort by lowest price</option>
+                                     <option value="price-desc">Sort by highest price</option>
                                  </select>
                              </div>
                          </div>
