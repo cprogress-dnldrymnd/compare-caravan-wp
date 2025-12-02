@@ -11,7 +11,7 @@ function custom_wpsl_add_listing_info_field($meta_fields)
 
     $meta_fields[__('Listing Information', 'wpsl')] = array(
         'listing_information_1' => array(
-            'label'    => __('Listing Information', 'wpsl'),
+            'label'    => __('Listing Information 1', 'wpsl'),
             'type'  => 'text', // Defines the input type
         ),
     );
