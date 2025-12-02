@@ -2,7 +2,7 @@
 <?php while (have_posts()) { ?>
     <?php the_post() ?>
     <?php
-    $post_categories = wp_get_post_categories(get_the_ID());
+    $post_categories = get_the_terms(get_the_ID(), 'category');
     ?>
     <section class="hero mb-0!">
         <div class="container">
