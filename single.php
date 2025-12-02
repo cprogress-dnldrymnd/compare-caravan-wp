@@ -148,7 +148,7 @@
                                         <div class="cursor-pointer select-none related--post-grid rounded background-white overflow-hidden">
                                             <div class="row g-0">
                                                 <div class="col-6">
-                                                    <a class="image-box image-style h-100 blog-image d-block" href="<?= get_the_permalink($post->ID)  ?>">
+                                                    <a class="image-box image-style h-100 blog-image d-block" href="<?= get_the_permalink($related_post->ID)  ?>">
                                                         <?= get_the_post_thumbnail($related_post->ID) ?>
                                                     </a>
                                                 </div>
@@ -156,11 +156,11 @@
                                                     <div class="content-box p-20">
                                                         <div class="blog-grid--category fs-14 fw-semibold mb-3"><span>Blog</span></div>
                                                         <div class="blog-grid--title mb-4">
-                                                            <a class="text-decoration-none text-color" href="<?= get_the_permalink($post->ID) ?> ?>">
+                                                            <a class="text-decoration-none text-color" href="<?= get_the_permalink($related_post->ID) ?> ?>">
                                                                 <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
                                                             </a>
                                                         </div>
-                                                        <div class="blog-grid--date fs-14 "><?= get_the_date(NULL, $post->ID) ?></div>
+                                                        <div class="blog-grid--date fs-14 "><?= get_the_date(NULL, $related_post->ID) ?></div>
                                                     </div>
                                                 </div>
                                             </div>
