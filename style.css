@@ -17627,7 +17627,9 @@ footer {
 .offcanvas.offcanvas {
     z-index: 999999;
 }
-
+.offcanvas-backdrop {
+  z-index: 9999;
+}
 .menu-holder .menu {
     display: flex;
     flex-direction: column;
