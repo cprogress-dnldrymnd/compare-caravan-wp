@@ -32,7 +32,6 @@ function blog_grid($post_id)
 function blog_grid_featured($post_id)
 {
     ob_start();
-    $post_categories = get_the_terms($post_id, 'category');
 ?>
     <div class="blog-grid--holder--featured h-100">
         <div class="blog-grid--holder--featured-inner background-text text-white rounded overflow-hidden h-100 d-flex flex-column justify-content-between">
@@ -43,7 +42,7 @@ function blog_grid_featured($post_id)
             </div>
             <div class="content-box p-5">
                 <div class="blog-grid--category fs-14 fw-semibold mb-3">
-                    <span><?= $post_categories[0]->name ?></span>
+                   <?=  post_categories($post_id) ?>
                 </div>
                 <div class="blog-grid--title mb-4">
                     <h3 class="h2 fw-semibold">
