@@ -54,7 +54,7 @@
                                         <div class="share mb-5">
                                             <p class="mb-3 fw-semibold opacity-half">Share this post</p>
                                             <div class="row g-xxs align-items-end ">
-                                                <div class="text-[rgb(32,31,31)]! socials d-flex gap-3 list-inline mb-0 align-items-center">
+                                                <div class="text-[rgb(32,31,31)]! socials d-inline-flex gap-3 list-inline mb-0 align-items-center">
 
                                                     <!-- Twitter / X -->
                                                     <a class="text-inherit!" href="https://twitter.com/intent/tweet?url=<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer" aria-label="twitter">
