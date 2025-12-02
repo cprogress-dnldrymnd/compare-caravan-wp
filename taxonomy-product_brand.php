@@ -411,8 +411,8 @@
                          <div class="filter d-none d-lg-block">
                              <div class="form-control-holder">
                                  <select name="price-sort" id="price-sort" class="form-control form-control-lg background-transparent">
-                                     <option value="price-asc" <?php selected('price-asc', $_GET['price-asc']) ?>>Sort by lowest price</option>
-                                     <option value="price-desc" <?php selected('price-asc', $_GET['price-asc']) ?>>Sort by highest price</option>
+                                     <option value="price-asc" <?php selected('price-asc', $_GET['price-sort']) ?>>Sort by lowest price</option>
+                                     <option value="price-desc" <?php selected('price-desc', $_GET['price-sort']) ?>>Sort by highest price</option>
                                  </select>
                              </div>
                          </div>
