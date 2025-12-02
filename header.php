@@ -78,7 +78,7 @@
         </div>
         <div class="col-auto text-end d-flex flex-wrap">
           <div class="d-inline-flex gap-5 align-items-center ">
-            <a href="vehicle-comparison.html"
+            <a href="https://compare.group/vehicle-comparison"
               class="btn p-0 compare fw-semibold  gap-3 align-items-center d-none d-lg-flex">
               Compare
               <div class="icon position-relative">
