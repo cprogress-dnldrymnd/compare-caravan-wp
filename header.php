@@ -133,6 +133,7 @@
       </div>
       <div class="offcanvas--inner">
         <div class="menu-holder mb-5">
+          <?php dynamic_sidebar('sideout-menu'); ?>
           <h3 class="fs-25 mb-3">Compare for dealers</h3>
           <ul class="menu list-inline mb-0 d-flex flex-column gap-3">
             <li><a href="#">Advertising packages</a></li>
