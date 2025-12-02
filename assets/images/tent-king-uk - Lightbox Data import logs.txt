@@ -1,0 +1,11 @@
+Item Name,Error
+Imported item 4,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 5,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 6,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 2,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 7,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 3,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 9,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 8,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 11,There’s a problem with the Caption field: Expected value to be a single line
+Imported item 10,There’s a problem with the Caption field: Expected value to be a single line
