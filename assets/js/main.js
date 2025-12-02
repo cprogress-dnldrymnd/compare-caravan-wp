@@ -14,28 +14,23 @@ jQuery(document).ready(function () {
 });
 
 function sort_by() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramName = 'price-sort'; // Must match the select name attribute
-    const currentVal = urlParams.get(paramName);
-
-    if (currentVal) {
-        jQuery('#price-sort').val(currentVal);
-    }
-
     // 3. The Core Logic: Detect Change and Reload
     jQuery('#price-sort').on('change', function () {
         var name = jQuery(this).attr('name');
         var value = jQuery(this).val();
 
         if (value) {
-            // Get base URL without query string
-            var baseUrl = window.location.href.split('?')[0];
+            // 1. Create a URL object from the current address
+            // This grabs the full URL including all existing query strings
+            var currentUrl = new URL(window.location.href);
 
-            // Construct new URL
-            var newUrl = baseUrl + '?' + name + '=' + value;
+            // 2. Update or Add the specific parameter
+            // .set() will update 'name' if it exists, or add it if it doesn't.
+            // All other parameters remain untouched.
+            currentUrl.searchParams.set(name, value);
 
-            // Force reload to new URL
-            window.location.href = newUrl;
+            // 3. Force reload to the new URL
+            window.location.href = currentUrl.toString();
         }
     });
 }
