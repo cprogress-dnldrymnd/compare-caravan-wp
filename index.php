@@ -1,6 +1,10 @@
 <?php get_header() ?>
 <?php
-
+if (is_archive()) {
+    $title = get_the_archive_title();
+} else {
+    $title = 'Blogs';
+}
 ?>
 <section class="hero background--color position-relative ">
     <div class="container position-relative">
@@ -9,20 +13,8 @@
 
             <div class="row">
                 <div class="col-lg-6 md-padding-bottom">
-                    <h1 class="mb-4"><?php the_archive_title() ?></h1>
-                    <?php if ($description) { ?>
-                        <div class="desc mb-4">
-                            <?= wpautop($description) ?>
-                        </div>
-                    <?php } ?>
+                    <h1 class="mb-4"><?= $title ?> ?></h1>
                 </div>
-                <?php if ($thumbnail_id && $level == 0) { ?>
-                    <div class="col-lg-6">
-                        <div class="image-box">
-                            <?= wp_get_attachment_image($thumbnail_id, 'large') ?>
-                        </div>
-                    </div>
-                <?php } ?>
 
             </div>
         </div>
