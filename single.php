@@ -31,6 +31,8 @@
         ),
     ));
 
+    var_dump($post_categories_slugs);
+    var_dump($manufacturers_slugs);
     var_dump($related_posts);
     ?>
     <section class="hero mb-0!">
