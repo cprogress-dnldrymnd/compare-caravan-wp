@@ -309,7 +309,11 @@
             ),
 
         );
-
+        if (isset($_GET['price-sort'])) {
+            $args['meta_key'] = '_price';
+            $args['orderby'] = 'meta_value_num';
+            $args['order'] = 'ASC';
+        }
         if (!isset($_GET['range'])) {
             $tax_query[] = array(
                 'taxonomy' => 'product_cat',
@@ -411,8 +415,8 @@
                          <div class="filter d-none d-lg-block">
                              <div class="form-control-holder">
                                  <select name="price-sort" id="price-sort" class="form-control form-control-lg background-transparent">
-                                     <option value="price-asc" <?php selected('price-asc', $_GET['price-sort']) ?>>Sort by lowest price</option>
-                                     <option value="price-desc" <?php selected('price-desc', $_GET['price-sort']) ?>>Sort by highest price</option>
+                                     <option value="ASC" <?php selected('ASC', $_GET['price-sort']) ?>>Sort by lowest price</option>
+                                     <option value="DESC" <?php selected('DESC', $_GET['price-sort']) ?>>Sort by highest price</option>
                                  </select>
                              </div>
                          </div>
