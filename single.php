@@ -30,9 +30,10 @@
             ),
         ),
     ));
-
+    echo '<pre>';
     var_dump($post_categories_slug);
     var_dump($manufacturers_slugs);
+    echo '</pre>';
     ?>
     <section class="hero mb-0!">
         <div class="container">
