@@ -192,3 +192,13 @@ function my_theme_register_footer_sidebars() {
 }
 
 add_action( 'widgets_init', 'my_theme_register_footer_sidebars' );
+
+
+function register_my_custom_menus() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Header Menu' ),
+    )
+  );
+}
+add_action( 'after_setup_theme', 'register_my_custom_menus' );
