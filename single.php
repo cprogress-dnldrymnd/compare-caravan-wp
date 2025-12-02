@@ -3,6 +3,7 @@
     <?php the_post() ?>
     <?php
     $post_categories = get_the_terms(get_the_ID(), 'category');
+    $manufacturers = get_the_terms(get_the_ID(), 'product_brand');
     ?>
     <section class="hero mb-0!">
         <div class="container">
@@ -36,6 +37,9 @@
                                 <div class="post-categories">
                                     <?php foreach ($post_categories as $post_category) { ?>
                                         <span><?= $post_category->name ?></span>
+                                    <?php } ?>
+                                    <?php foreach ($manufacturers as $manufacturer) { ?>
+                                        <span><?= $manufacturer->name ?></span>
                                     <?php } ?>
                                 </div>
                             </li>
