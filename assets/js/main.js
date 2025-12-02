@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
 
 function sort_by() {
     const urlParams = new URLSearchParams(window.location.search);
-    const paramName = 'filter_type'; // Must match the select name attribute
+    const paramName = 'price-sort'; // Must match the select name attribute
     const currentVal = urlParams.get(paramName);
 
     if (currentVal) {
