@@ -18,6 +18,15 @@ $pill_specs = get_field('pill_specs');
 $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
+
+$manufacturer_term_vehicle_type = get_terms(array(
+    'taxonomy' => 'product_brand',
+    'parent'   => $manufacturer_term->term_id,
+))[0]->name;
+
+
+$vehicle_type = outputFoundValues($manufacturer_term_vehicle_type);
+
 $berths = get_the_terms(get_the_ID(), 'pa_berths');
 if ($berths) {
     $pa_berths = $berths[0]->name;
@@ -382,11 +391,12 @@ if ($seats) {
                                 ),
                             ),
                         ));
+
                         ?>
 
 
                         <div class="other-caravans md-padding-bottom">
-                            <h3 class="mb-4">Other caravans from this dealer</h3>
+                            <h3 class="mb-4">Other <?=  $vehicle_type ?> from this dealer</h3>
                             <div class="swiper-holder">
                                 <div class="swiper swiper-listing-related swiper-mobile-style">
                                     <div class="swiper-wrapper">
