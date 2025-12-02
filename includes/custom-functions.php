@@ -218,7 +218,7 @@ function outputFoundValues($text, $targetValues = ["Campervans", "Caravans", "Mo
     foreach ($targetValues as $value) {
         // use stripos for case-insensitive search, or strpos for case-sensitive
         if (stripos($text, $value) !== false) {
-            echo $value . "\n";
+            return $value . "\n";
         }
     }
 }
