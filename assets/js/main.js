@@ -18,6 +18,8 @@ jQuery(document).ready(function () {
 function listing_pricing() {
     if (window.innerWidth < 992) {
         jQuery('.listing-pricing').insertAfter('.listing-single');
+    } else {
+        jQuery('.listing-pricing').appendTo('.listing--single--right-inner');
     }
 }
 
