@@ -156,7 +156,9 @@
                                                     <div class="content-box p-20">
                                                         <div class="blog-grid--category fs-14 fw-semibold mb-3"><span>Blog</span></div>
                                                         <div class="blog-grid--title mb-4">
-                                                            <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
+                                                            <a href="<?= get_the_permalink($post->ID) ?> ?>">
+                                                                <h3 class="fs-16 fw-semibold line-clamp-4"><?= $related_post->post_title ?></h3>
+                                                            </a>
                                                         </div>
                                                         <div class="blog-grid--date fs-14 "><?= get_the_date(NULL, $post->ID) ?></div>
                                                     </div>
