@@ -1,19 +1,12 @@
 <?php get_header() ?>
-<section class="hero background--color position-relative <?= $is_range == true ? 'is-range-hero' : '' ?>">
-    <?php
-    if ($is_range == true) {
-        echo '<div class="background-image">';
-        echo wp_get_attachment_image($thumbnail_id, 'large');
-        echo '</div>';
-    }
-    ?>
+<section class="hero background--color position-relative ">
     <div class="container position-relative">
         <?= breadcrumbs() ?>
         <div class="hero-title-image md-margin-top ">
 
             <div class="row">
                 <div class="col-lg-6 md-padding-bottom">
-                    <h1 class="mb-4"><?= $name ?></h1>
+                    <h1 class="mb-4"><?php the_title() ?></h1>
                     <?php if ($description) { ?>
                         <div class="desc mb-4">
                             <?= wpautop($description) ?>
