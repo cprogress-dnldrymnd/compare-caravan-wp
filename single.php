@@ -86,7 +86,7 @@
                                             </div>
                                         </div>
                                         <div class="contact-us">
-                                            <h3 class="fs-18 opacity-half mb-3">Contact us</h3><a href="mailto:ste@digitallydisruptive.co.uk" class="btn btn-primary btn-lg">Contact Us</a>
+                                          <a href="mailto:ste@digitallydisruptive.co.uk" class="btn btn-primary btn-lg">Contact Us</a>
                                         </div>
                                     </div>
                                 </div>
