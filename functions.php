@@ -150,8 +150,19 @@ function my_theme_register_footer_sidebars()
     // --- Footer Column 1 ---
     register_sidebar(array(
         'name'          => esc_html__('Header Menu', 'compare-caravan'),
-        'id'            => 'footer-1',
+        'id'            => 'header-menu',
         'description'   => esc_html__('Add widgets here for the Header Menu.', 'compare-caravan'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // --- Footer Column 1 ---
+    register_sidebar(array(
+        'name'          => esc_html__('Sideout Menu', 'compare-caravan'),
+        'id'            => 'sideout-menu',
+        'description'   => esc_html__('Add widgets here for the Sideout Menu.', 'compare-caravan'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
