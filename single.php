@@ -76,9 +76,7 @@
                 <div class="col-lg-9">
                     <section class="blog--content">
                         <div class="container">
-                            <div class="image-box mb-4 overflow-hidden blog-image rounded-3">
-                                <?php the_post_thumbnail('large') ?>
-                            </div>
+                      
                             <div class="blog-content--inner">
                                 <?php the_content() ?>
                             </div>
@@ -119,9 +117,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="contact-us">
-                                            <a href="mailto:ste@digitallydisruptive.co.uk" class="btn btn-primary btn-lg">Contact Us</a>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                             </div>
