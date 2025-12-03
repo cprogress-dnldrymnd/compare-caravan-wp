@@ -399,7 +399,7 @@
                                              <?= $vehicle_type ?></span>
                                      </div>
                                      <div class="reset-btn text-center mt-4 d-block d-lg-none">
-                                         <a href="" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
+                                         <a href="<?=  get_term_link($term_id) ?>" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
                                      </div>
                                  </div>
                              </div>
