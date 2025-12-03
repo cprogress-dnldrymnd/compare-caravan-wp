@@ -20,7 +20,7 @@
     $vehicle_type = outputFoundValues($term->name);
     $reset_url = get_term_link($term_id);
     if (isset($_GET['range'])) {
-        $reset_url = add_query_arg('range', 'true', $reset_url);
+        $reset_url = add_query_arg('range', $_GET['range'], $reset_url);
         $reset_url = add_query_arg('id', $_GET['id'], $reset_url);
     }
     ?>
