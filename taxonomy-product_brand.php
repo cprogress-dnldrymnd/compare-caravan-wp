@@ -18,7 +18,11 @@
         $is_range = false;
     }
     $vehicle_type = outputFoundValues($term->name);
-
+    $reset_url = get_term_link($term_id);
+    if (isset($_GET['range'])) {
+        $reset_url = add_query_arg('range', 'true', $reset_url);
+        $reset_url = add_query_arg('id', $_GET['id'], $reset_url);
+    }
     ?>
  <section class="hero background--color position-relative <?= $is_range == true ? 'is-range-hero' : '' ?>">
      <?php
@@ -399,13 +403,13 @@
                                              <?= $vehicle_type ?></span>
                                      </div>
                                      <div class="reset-btn text-center mt-4 d-block d-lg-none">
-                                         <a href="<?=  get_term_link($term_id) ?>" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
+                                         <a href="<?= $reset_url  ?>" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
                                      </div>
                                  </div>
                              </div>
                          </div>
                          <div class="reset-btn text-center mt-4 d-none d-lg-block">
-                             <a href="<?=  get_term_link($term_id) ?>" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
+                             <a href="<?= $reset_url ?>" class="reset-btn btn btn-link p-0 text-color d-inline-block"><u>Reset</u></a>
                          </div>
                      </div>
                  </div>
