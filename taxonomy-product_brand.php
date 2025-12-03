@@ -286,7 +286,7 @@
              </div>
 
              <div class="button-box text-center mt-5">
-                 <a type="submit" class="btn btn-primary btn-lg" href="https://caravancompare.theprogressteam.com/blog-listing.html">Visit the blog</a>
+                 <a type="submit" class="btn btn-primary btn-lg" href="https://manufacturers.letsgoleisure.com//blog/">Visit the blog</a>
              </div>
          </div>
      </section>
