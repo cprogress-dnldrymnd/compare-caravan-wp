@@ -5,7 +5,7 @@ if (is_archive()) {
     $description = get_the_archive_description();
 } else {
     $title = 'Leisure Vehicle News';
-    $description = "Whether you're seeking expert advice or just a bit of information, you've come to the right place. We cover all kinds of caravan and motorhome related topics and insights to keep you up to date.";
+    $description = "Whether x you're seeking expert advice or just a bit of information, you've come to the right place. We cover all kinds of caravan and motorhome related topics and insights to keep you up to date.";
 }
 ?>
 <section class="hero background--color background-dark-color-2 position-relative ">
