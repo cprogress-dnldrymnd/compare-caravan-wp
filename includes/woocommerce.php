@@ -322,7 +322,7 @@ function get_all_woocommerce_attribute_slugs()
  * @return string A comma-separated string of brand slugs. Returns an empty
  * string if no brands are found or if an error occurs.
  */
-function get_product_brand_slugs_by_id($product_id, $array_val = false)
+function get_product_brand_slugs_by_id($product_id, $array_val = false, $child = false)
 {
     // Get the terms for the product ID from the 'product_brand' taxonomy
     // If your taxonomy is named differently (e.g., 'product_brands'), change 'product_brand' below.
@@ -336,10 +336,14 @@ function get_product_brand_slugs_by_id($product_id, $array_val = false)
         // Loop through each term object
         foreach ($terms as $term) {
 
-            // --- KEY CHANGE ---
-            // Only add the slug if it's a parent term (parent ID is 0)
-            if ($term->parent == 0) {
-                $brand_slugs[] = $term->slug;
+            if($child == true) {
+                if ($term->parent == 0) {
+                    $brand_slugs[] = $term->slug;
+                }
+            } else {
+                if ($term->parent != 0) {
+                    $brand_slugs[] = $term->slug;
+                }
             }
         }
     }
