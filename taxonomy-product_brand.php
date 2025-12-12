@@ -290,7 +290,7 @@
              </div>
 
              <div class="button-box text-center mt-5">
-                 <a type="submit" class="btn btn-primary btn-lg" href="https://manufacturers.letsgoleisure.com//blog/">Visit the blog</a>
+                 <a type="submit" class="btn btn-primary btn-lg" href="https://manufacturers.letsgoleisure.com//blog/?manufacturer-<?= $term_id ?>">Visit the blog</a>
              </div>
          </div>
      </section>
