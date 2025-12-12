@@ -21,7 +21,9 @@ $manufacturer_logo = get_field('logo', $manufacturer_term);
 
 $brand_slugs = get_product_brand_slugs(get_the_ID());
 
-var_dump($brand_slugs);
+$brand_slugs_string = implode(', ', $brand_slugs);
+
+echo $brand_slugs_string;
 
 
 $vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
