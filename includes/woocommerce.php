@@ -380,7 +380,7 @@ function get_product_vehicle_type($product_id)
  * Get product vehicle type .
  *
  */
-function get_product_vehicle_type_slug($product_id)
+function get_product_brand_slugs($product_id)
 {
     // Get the terms for the product ID from the 'product_brand' taxonomy
     // If your taxonomy is named differently (e.g., 'product_brands'), change 'product_brand' below.

@@ -19,8 +19,9 @@ $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
 
+$brand_slugs = get_product_brand_slugs(get_the_ID());
 
-var_dump(get_product_vehicle_type_slug(get_the_ID()));
+var_dump($brand_slugs);
 
 
 $vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
