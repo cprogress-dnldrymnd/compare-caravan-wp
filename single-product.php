@@ -27,7 +27,7 @@ $manufacturer_term_vehicles = get_terms(array(
 $manufacturer_term_vehicle_slugs = [];
 
 
-foreach($manufacturer_term_vehicle as $manufacturer_term_vehicle) {
+foreach($manufacturer_term_vehicles as $manufacturer_term_vehicle) {
     $manufacturer_term_vehicle_slugs[] = $manufacturer_term_vehicle->slug;
 }
 
