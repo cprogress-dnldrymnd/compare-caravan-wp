@@ -336,7 +336,7 @@ function get_product_brand_slugs_by_id($product_id, $array_val = false, $child =
         // Loop through each term object
         foreach ($terms as $term) {
 
-            if($child == true) {
+            if($child == false) {
                 if ($term->parent == 0) {
                     $brand_slugs[] = $term->slug;
                 }
