@@ -19,7 +19,7 @@ $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
 
-var_dump(get_product_brand_slugs_by_id($product->get_id()));
+var_dump(get_product_brand_slugs_by_id($product->get_id()), false, true);
 
 $vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
 
