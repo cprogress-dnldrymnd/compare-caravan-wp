@@ -19,6 +19,12 @@ $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
 
+$manufacturer_term_vehicle = get_terms(array(
+    'taxonomy' => 'product_brand',
+    'parent'   => $manufacturer_term->term_id,
+))[0];
+
+
 $manufacturer_term_vehicle_type = $manufacturer_term_vehicle->name;
 
 $manufacturer_term_vehicle_type_slug = $manufacturer_term_vehicle->slug;
