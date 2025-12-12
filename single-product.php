@@ -19,19 +19,8 @@ $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
 
-$manufacturer_term_vehicles = get_terms(array(
-    'taxonomy' => 'product_brand',
-    'parent'   => $manufacturer_term->term_id,
-));
 
-$manufacturer_term_vehicle_slugs = [];
-
-
-foreach($manufacturer_term_vehicles as $manufacturer_term_vehicle) {
-    $manufacturer_term_vehicle_slugs[] = $manufacturer_term_vehicle->slug;
-}
-
-var_dump($manufacturer_term_vehicle_slugs);
+var_dump(get_product_vehicle_type_slug(get_the_ID()));
 
 
 $vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
