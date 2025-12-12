@@ -2,7 +2,7 @@
 <footer class="background-text text-white md-padding-top md-padding-bottom overflow-hidden">
     <div class="container">
         <div class="row g-4 flex-column-reverse flex-lg-row">
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="accordion-style-3">
                     <div class="accordion row g-0 g-lg-4" id="accordionFooter">
                         <div class="col-lg-4 ">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3" style="display:none!important;">
                 <div class="rated text-center text-lg-start d-flex flex-column-reverse flex-lg-column gap-3">
                     <div class="rated-text"><span class="fw-semibold">Rated 4.9 / 5</span> based on 500 reviews
                     </div>
@@ -119,7 +119,7 @@
         <div class="container md-margin-top">
             <div class="logo-box text-center">
                 <a href="/" class="text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1144.369" height="291.117" viewBox="0 0 1144.369 291.117">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1144.369" height="291.117" viewBox="0 0 1144.369 291.117">
   <defs>
     <clipPath id="clip-path">
       <rect id="Rectangle_666" data-name="Rectangle 666" width="542.75" height="291.117" fill="#fff"/>
