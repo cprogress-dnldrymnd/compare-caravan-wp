@@ -123,7 +123,7 @@ function breadcrumbs()
                     <li><a href="<?=  get_term_link($term_parent->term_id, 'product_brand') ?>"><?= $term_parent->name ?></a>x2</li>
                 <?php } ?>
                 <li><span><?= $name ?></span></li>
-            <?php } ?>`
+            <?php } ?>
 
             <?php if (is_product()) { ?>
                 <li><span><?= get_the_title() ?></span></li>
