@@ -122,7 +122,7 @@ function breadcrumbs()
                     ?>
                     <li><span><?= $term_parent->name ?></span></li>
                 <?php } ?>
-                <li><span><?= $name ?></span></li>
+                <li><span><?= $name ?> x</span></li>
             <?php } ?>
 
             <?php if (is_product()) { ?>
