@@ -17,13 +17,11 @@ jQuery(document).ready(function () {
 function enquire_dealer() {
     jQuery(document).on('click', '.enquire-now-dealer', function () {
 
-        // Get the title attribute
         var dealer_name = jQuery(this).attr('title');
+        var email = jQuery(this).attr('email');
 
-        console.log('Clicked dealer:', dealer_name); // Debugging
-
-        // Update the Offcanvas Label
-        jQuery('#offcanvasEnquireDealerLabel').html('Enquire about ' + dealer_name);
+        jQuery('input[name="dealer-email"]').val(email);
+        jQuery('#offcanvasEnquireDealerLabel span').html('Enquire about ' + dealer_name);
     });
 }
 
