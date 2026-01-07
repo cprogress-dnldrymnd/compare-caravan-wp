@@ -17,6 +17,7 @@ jQuery(document).ready(function () {
 function enquire_dealer() {
     jQuery('.enquire-now-dealer').on('click', function () {
         $dealer_name = jQuery(this).attr('title');
+        console.log($dealer_name);
         jQuery('#offcanvasEnquireDealerLabel').text('Enquire about ' + $dealer_name);
     });
 }
