@@ -150,6 +150,10 @@ function custom_listing_template()
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
+    $listing_template .= '<div class="enquire-now fs-14">' . "\r\n";
+    $listing_template .= '<p><a href="#" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
+    $listing_template .= '<% } %>';
+
     // }
 
 
