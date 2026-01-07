@@ -15,10 +15,15 @@ jQuery(document).ready(function () {
 });
 
 function enquire_dealer() {
-    jQuery('.enquire-now-dealer').on('click', function () {
-        $dealer_name = jQuery(this).attr('title');
-        console.log($dealer_name);
-        jQuery('#offcanvasEnquireDealerLabel').text('Enquire about ' + $dealer_name);
+    jQuery(document).on('click', '.enquire-now-dealer', function () {
+
+        // Get the title attribute
+        var dealer_name = $(this).attr('title');
+
+        console.log('Clicked dealer:', dealer_name); // Debugging
+
+        // Update the Offcanvas Label
+        jQuery('#offcanvasEnquireDealerLabel').text('Enquire about ' + dealer_name);
     });
 }
 
