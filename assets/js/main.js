@@ -13,6 +13,12 @@ jQuery(document).ready(function () {
 
 });
 
+function enquire_dealer() {
+    jQuery('.enquire-now-dealer').on('click', function () {
+        $dealer_name = jQuery(this).closest('.wpsl-listing').find('.wpsl-listing-title').text();
+        jQuery('#offcanvasEnquireDealerLabel').text('Enquire about ' + $dealer_name);
+    });
+}
 
 function sort_by() {
     // 3. The Core Logic: Detect Change and Reload
