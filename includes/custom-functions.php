@@ -159,16 +159,25 @@ function get_video_embed_url($url)
     $embed_url = '';
 
     // Check for Vimeo first
-    // Regex for Vimeo: vimeo.com/ or vimeo.com/video/ followed by digits
+    // Regex matches: vimeo.com/ or vimeo.com/video/ or player.vimeo.com/video/ followed by digits
+    // Added support for 'player.vimeo.com' in the regex for robustness, though the previous one often caught it.
     $vimeo_pattern = '~'
-        . 'vimeo\.com\/(?:video\/)?' // Matches vimeo.com/ or vimeo.com/video/
-        . '(\d+)'                    // Captures the numeric video ID
+        . '(?:vimeo\.com\/(?:video\/)?|player\.vimeo\.com\/video\/)' // Matches domain and path variants
+        . '(\d+)'                                                    // Captures the numeric video ID
         . '~';
 
     if (preg_match($vimeo_pattern, $url, $vimeo_matches)) {
         if (isset($vimeo_matches[1])) {
             $video_id = $vimeo_matches[1];
             $embed_url = 'https://player.vimeo.com/video/' . $video_id;
+
+            // Check if the original URL has query parameters (e.g. ?h=0dd10d246d)
+            $query_string = parse_url($url, PHP_URL_QUERY);
+            
+            // If parameters exist, append them to the generated embed URL
+            if ($query_string) {
+                $embed_url .= '?' . $query_string;
+            }
         }
     }
 
@@ -195,6 +204,10 @@ function get_video_embed_url($url)
             if (isset($youtube_matches[1])) {
                 $video_id = $youtube_matches[1];
                 $embed_url = 'https://www.youtube.com/embed/' . $video_id;
+                
+                // Optional: If you want to support YouTube params (like ?start=), you can do the same here:
+                // $query_string = parse_url($url, PHP_URL_QUERY);
+                // if ($query_string) { $embed_url .= '?' . $query_string; }
             }
         }
     }
@@ -207,8 +220,6 @@ function get_video_embed_url($url)
     // If no ID was found, return an empty string
     return '';
 }
-
-
 
 /**
  * Function to output values from a string that exist in a target array.
