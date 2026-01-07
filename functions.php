@@ -28,7 +28,12 @@ require_once('includes/wpsl.php');
 add_filter('body_class', 'custom_class');
 function custom_class($classes)
 {
-    $classes[] = 'header-light breadcrumbs-light header-background-darkgreen hero-background-darkgreen';
+
+    if (is_tax('product_brand')) {
+        $classes[] = 'breadcrumbs-light';
+    }
+
+    $classes[] = 'header-light  header-background-darkgreen hero-background-darkgreen';
     return $classes;
 }
 
@@ -218,15 +223,16 @@ add_action('widgets_init', 'my_theme_register_footer_sidebars');
 
 
 
-function filter_blog_query_by_manufacturer( $query ) {
+function filter_blog_query_by_manufacturer($query)
+{
     // 1. Ensure this is the frontend, the main query, and specifically the blog page (is_home)
-    if ( ! is_admin() && $query->is_main_query() && $query->is_home() ) {
+    if (! is_admin() && $query->is_main_query() && $query->is_home()) {
 
         // 2. Check if the 'manufacturer' URL parameter exists and is not empty
-        if ( isset( $_GET['manufacturer'] ) && ! empty( $_GET['manufacturer'] ) ) {
+        if (isset($_GET['manufacturer']) && ! empty($_GET['manufacturer'])) {
 
             // 3. Sanitize the input
-            $manufacturer_slug = sanitize_text_field( $_GET['manufacturer'] );
+            $manufacturer_slug = sanitize_text_field($_GET['manufacturer']);
 
             // 4. Prepare the tax_query
             $tax_query = array(
@@ -238,8 +244,8 @@ function filter_blog_query_by_manufacturer( $query ) {
             );
 
             // 5. Modify the query
-            $query->set( 'tax_query', $tax_query );
+            $query->set('tax_query', $tax_query);
         }
     }
 }
-add_action( 'pre_get_posts', 'filter_blog_query_by_manufacturer' );
+add_action('pre_get_posts', 'filter_blog_query_by_manufacturer');
