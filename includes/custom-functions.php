@@ -11,7 +11,7 @@ function blog_grid($post_id)
         </div>
         <div class="content-box p-20">
             <div class="blog-grid--category fs-14 fw-semibold mb-3">
-                 <?= post_categories($post_id) ?>
+                <?= post_categories($post_id) ?>
             </div>
             <div class="blog-grid--title mb-4">
                 <h3 class="fs-25 fw-semibold">
@@ -115,14 +115,14 @@ function breadcrumbs()
                 $name = $term->name;
                 $level = get_term_hierarchy_level($term, $term->taxonomy);
                 ?>
-			<li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
+                <li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
                 <?php if ($level != 0) { ?>
                     <?php
                     $term_parent = get_term_by('id', $term->parent, $term->taxonomy);
                     ?>
                     <li><span><?= $term_parent->name ?></span></li>
                 <?php } ?>
-                <li><span><?= $name ?></span></li>
+                
             <?php } ?>
 
             <?php if (is_product()) { ?>
@@ -173,7 +173,7 @@ function get_video_embed_url($url)
 
             // Check if the original URL has query parameters (e.g. ?h=0dd10d246d)
             $query_string = parse_url($url, PHP_URL_QUERY);
-            
+
             // If parameters exist, append them to the generated embed URL
             if ($query_string) {
                 $embed_url .= '?' . $query_string;
@@ -204,7 +204,7 @@ function get_video_embed_url($url)
             if (isset($youtube_matches[1])) {
                 $video_id = $youtube_matches[1];
                 $embed_url = 'https://www.youtube.com/embed/' . $video_id;
-                
+
                 // Optional: If you want to support YouTube params (like ?start=), you can do the same here:
                 // $query_string = parse_url($url, PHP_URL_QUERY);
                 // if ($query_string) { $embed_url .= '?' . $query_string; }
