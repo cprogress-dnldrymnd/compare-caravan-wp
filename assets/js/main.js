@@ -23,7 +23,7 @@ function enquire_dealer() {
         console.log('Clicked dealer:', dealer_name); // Debugging
 
         // Update the Offcanvas Label
-        jQuery('#offcanvasEnquireDealerLabel').text('Enquire about ' + dealer_name);
+        jQuery('#offcanvasEnquireDealerLabel').html('Enquire about ' + dealer_name);
     });
 }
 
