@@ -51,22 +51,22 @@ function custom_wpsl_frontend_listing_info($store_fields)
         'name' => 'listing_information_1',
     );
 
-    
+
     $store_fields['wpsl_listing_information_2'] = array(
         'name' => 'listing_information_2',
     );
 
-    
+
     $store_fields['wpsl_listing_information_3'] = array(
         'name' => 'listing_information_3',
     );
 
-    
+
     $store_fields['wpsl_listing_information_4'] = array(
         'name' => 'listing_information_4',
     );
 
-    
+
     $store_fields['wpsl_listing_information_5'] = array(
         'name' => 'listing_information_5',
     );
@@ -152,7 +152,7 @@ function custom_listing_template()
 
     $listing_template .= '<% if ( email ) { %>';
     $listing_template .= '<div class="enquire-now fs-14">' . "\r\n";
-    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" title="'.wpsl_store_header_template('listing') .'" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
+    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" title="' . wpsl_store_header_template('listing') . '" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
