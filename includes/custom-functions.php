@@ -120,7 +120,7 @@ function breadcrumbs()
                     <?php
                     $term_parent = get_term_by('id', $term->parent, $term->taxonomy);
                     ?>
-                    <li><span><?= $term_parent->name ?></span></li>
+                    <li><span><?= $term_parent->name ?></span>x2</li>
                 <?php } ?>
                 <li><span><?= $name ?></span></li>
             <?php } ?>
