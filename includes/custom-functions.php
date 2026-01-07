@@ -122,13 +122,13 @@ function breadcrumbs()
                     ?>
                     <li><span><?= $term_parent->name ?></span></li>
                 <?php } ?>
-                
+                <li><span><?= $name ?></span></li>
             <?php } ?>
 
             <?php if (is_product()) { ?>
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
-            <?php if (is_archive()) { ?>
+            <?php if (is_archive() && !is_tax('product_brand')) { ?>
                 <li><span><?= get_the_archive_title() ?></span></li>
             <?php } ?>
             <?php if (is_home()) { ?>
