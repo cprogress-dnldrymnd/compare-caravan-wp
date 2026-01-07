@@ -122,6 +122,9 @@ function breadcrumbs()
                     ?>
                     <li><a href="<?= get_term_link($term_parent->term_id, 'product_brand') ?>"><?= $term_parent->name ?></a></li>
                     <li><span><?= str_replace($term_parent->name, '', $name) ?></span></li>
+                    <?php if (isset($_GET['range']) && isset($_GET['id'])) { ?>
+                        <li><span><?= get_the_title($_GET['id']) ?></span></li>
+                    <?php } ?>
                 <?php } else { ?>
                     <li><span><?= $name ?></span></li>
                 <?php } ?>
