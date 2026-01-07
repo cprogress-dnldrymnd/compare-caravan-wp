@@ -138,11 +138,24 @@ function breadcrumbs()
                 foreach ($terms as $term) {
                     $level = get_term_hierarchy_level($term, $term->taxonomy);
                     if ($level == 0) {
-                        echo $term->name;
+                        $term_parent = array(
+                            'id' => $term->term_id,
+                            'name' => $term->name,
+                        );
+                    } else {
+                        $term_child = array(
+                            'id' => $term->term_id,
+                            'name' => $term->name,
+                        );
                     }
                 }
                 ?>
-
+                <li><a href="<?= get_term_link($term_parent['id'], 'product_brand') ?>"><?= $term_parent['name'] ?></a></li>
+                <?php if (isset($term_child)) { ?>
+                    <li>
+                        <a href="<?= get_term_link($term_child['id'], 'product_brand') ?>"><?= str_replace($term_parent['name'], '', $term_child['name']) ?></a>
+                    </li>
+                <?php } ?>
 
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
