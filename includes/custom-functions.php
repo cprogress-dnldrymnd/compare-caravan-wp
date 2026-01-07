@@ -109,14 +109,14 @@ function breadcrumbs()
     <div class="breadcrumbs fs-16 mt-3">
         <ul class="list-inline">
             <li><a href="https://letsgoleisure.com/home">Home</a></li>
-            
+
             <?php /* --- TAXONOMY ARCHIVE (Existing Code) --- */ ?>
             <?php if (is_tax('product_brand')) { ?>
                 <?php
                 $term = get_queried_object();
                 $name = $term->name;
                 // Assuming this function exists in your theme
-                $level = get_term_hierarchy_level($term, $term->taxonomy); 
+                $level = get_term_hierarchy_level($term, $term->taxonomy);
                 ?>
                 <li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
                 <?php if ($level != 0) { ?>
@@ -142,31 +142,31 @@ function breadcrumbs()
                 // 2. Check if any terms exist
                 if ($terms && !is_wp_error($terms)) {
                     // Get the first brand assigned to the product
-                    $term = reset($terms); 
-                    ?>
-                    
+                    $term = reset($terms);
+                ?>
+
                     <li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
 
                     <?php
                     // 3. Check if this brand has a parent
                     if ($term->parent != 0) {
                         $term_parent = get_term($term->parent, 'product_brand');
-                        
+
                         // Clean the name (replicating your logic from above)
                         $child_name = str_replace($term_parent->name, '', $term->name);
-                        ?>
+                    ?>
                         <li><a href="<?= get_term_link($term_parent) ?>"><?= $term_parent->name ?></a></li>
                         <li><a href="<?= get_term_link($term) ?>"><?= $child_name ?></a></li>
-                    <?php 
-                    } else { 
-                        // No parent, just show the brand link
+                    <?php
+                    } else {
+                       echo 'x2';
                     ?>
                         <li><a href="<?= get_term_link($term) ?>"><?= $term->name ?></a></li>
-                    <?php 
+                <?php
                     }
                 }
                 ?>
-                
+
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
 
