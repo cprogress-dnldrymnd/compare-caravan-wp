@@ -123,7 +123,7 @@ function breadcrumbs()
                     $term_parent = get_term_by('id', $term->parent, $term->taxonomy);
                     ?>
                     <li><a href="<?= get_term_link($term_parent->term_id, 'product_brand') ?>"><?= $term_parent->name ?></a></li>
-                    <li><span><?= str_replace($term_parent->name, '', $name) ?></span></li>
+                    <li><span><?= str_replace($term_parent->name, '', $name) ?>x</span></li>
                     <?php if (isset($_GET['range']) && isset($_GET['id'])) { ?>
                         <li><span><?= get_the_title($_GET['id']) ?></span></li>
                     <?php } ?>
