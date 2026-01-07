@@ -17,10 +17,12 @@ jQuery(document).ready(function () {
 function enquire_dealer() {
     jQuery(document).on('click', '.enquire-now-dealer', function () {
 
-        var dealer_name = jQuery(this).attr('title');
+        var raw_name = jQuery(this).attr('title'); // Gets "<b>John</b>"
+        var dealer_name = jQuery('<div>').html(raw_name).text();
         var email = jQuery(this).attr('email');
 
         jQuery('input[name="dealer-email"]').val(email);
+        jQuery('input[name="dealer-name"]').val(dealer_name);
         jQuery('#offcanvasEnquireDealerLabel span').html('Enquire about ' + dealer_name);
     });
 }
