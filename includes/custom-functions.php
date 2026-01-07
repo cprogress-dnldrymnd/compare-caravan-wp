@@ -307,5 +307,3 @@ function post_categories($id = false)
     return ob_get_clean();
 }
 
-
-add_filter( 'wpcf7_form_tag', 'cf7_populate_vehicle_name_with_title', 10, 2 );
