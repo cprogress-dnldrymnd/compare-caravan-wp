@@ -68,6 +68,10 @@ function listing_grid($post_id)
             }
         }
     }
+    $parameters = '';
+    if (isset($_GET['range']) && isset($_GET['id'])) {
+        $parameters = '?range=' . $_GET['range'] . '&id=' . $_GET['id'];
+    }
 ?>
     <div class="listing-grid h-100 position-relative rounded style-1 background-white d-flex flex-column justify-content-between">
         <div class="listing-grid-item__top position-relative">
@@ -95,7 +99,7 @@ function listing_grid($post_id)
             </div>
 
             <div class="listing-grid-item__button border-top p-20">
-                <a href="<?= get_the_permalink($post_id) ?>" class="btn btn-primary w-100 btn-lg">
+                <a href="<?= get_the_permalink($post_id) . $parameters ?>" class="btn btn-primary w-100 btn-lg">
                     View <?= $count ?> Model<?= $add_s ?>
                 </a>
             </div>
@@ -336,7 +340,7 @@ function get_product_brand_slugs_by_id($product_id, $array_val = false, $child =
         // Loop through each term object
         foreach ($terms as $term) {
 
-            if($child == false) {
+            if ($child == false) {
                 if ($term->parent == 0) {
                     $brand_slugs[] = $term->slug;
                 }
