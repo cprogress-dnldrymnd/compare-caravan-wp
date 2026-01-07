@@ -216,3 +216,30 @@ function my_theme_register_footer_sidebars()
 
 add_action('widgets_init', 'my_theme_register_footer_sidebars');
 
+
+
+function filter_blog_query_by_manufacturer( $query ) {
+    // 1. Ensure this is the frontend, the main query, and specifically the blog page (is_home)
+    if ( ! is_admin() && $query->is_main_query() && $query->is_home() ) {
+
+        // 2. Check if the 'manufacturer' URL parameter exists and is not empty
+        if ( isset( $_GET['manufacturer'] ) && ! empty( $_GET['manufacturer'] ) ) {
+
+            // 3. Sanitize the input
+            $manufacturer_slug = sanitize_text_field( $_GET['manufacturer'] );
+
+            // 4. Prepare the tax_query
+            $tax_query = array(
+                array(
+                    'taxonomy' => 'product_brand', // The taxonomy name
+                    'field'    => 'slug',          // We are searching by slug
+                    'terms'    => $manufacturer_slug,
+                ),
+            );
+
+            // 5. Modify the query
+            $query->set( 'tax_query', $tax_query );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'filter_blog_query_by_manufacturer' );

@@ -19,11 +19,6 @@ $manufacturer_slug = get_product_brand_slugs_by_id(get_the_ID());
 $manufacturer_term = get_term_by('slug', $manufacturer_slug, 'product_brand');
 $manufacturer_logo = get_field('logo', $manufacturer_term);
 
-$manufacturer_term_vehicle_type = get_terms(array(
-    'taxonomy' => 'product_brand',
-    'parent'   => $manufacturer_term->term_id,
-))[0]->name;
-
 
 $vehicle_type = outputFoundValues(get_product_vehicle_type(get_the_ID()));
 
@@ -440,10 +435,10 @@ if ($seats) {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 42.568 42.576">
                                             <path id="Icon_awesome-search" data-name="Icon awesome-search" d="M41.989,36.809,33.7,28.52a1.994,1.994,0,0,0-1.414-.582H30.931a17.287,17.287,0,1,0-2.993,2.993v1.355A1.994,1.994,0,0,0,28.52,33.7l8.29,8.29a1.987,1.987,0,0,0,2.819,0l2.353-2.353A2,2,0,0,0,41.989,36.809ZM17.295,27.938A10.643,10.643,0,1,1,27.938,17.295,10.637,10.637,0,0,1,17.295,27.938Z" fill="#f2007d"></path>
                                         </svg>
-                                        Find dealers in your area
+                                        Find dealers in your area <?= $manufacturer_term_vehicle_type_slug ?>
                                     </h3>
                                 </div>
-                                <?= do_shortcode('[wpsl category="' . get_product_brand_slugs_by_id($product->get_id()) . '" ]') ?>
+                                <?= do_shortcode('[wpsl category="' . get_product_brand_slugs_by_id($product->get_id(),false, true) . '" ]') ?>
                             </div>
 
                             <div class="listing-pricing background-text text-white">

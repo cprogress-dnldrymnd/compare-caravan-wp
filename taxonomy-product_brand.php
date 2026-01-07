@@ -2,6 +2,7 @@
  <?php
     $term = get_queried_object();
     $term_id = $term->term_id;
+    $term_slug = $term->slug;
     $level = get_term_hierarchy_level($term, $term->taxonomy);
     $child_terms = get_level_one_child_terms($term_id, $term->taxonomy);
     if (isset($_GET['range'])) {
@@ -290,7 +291,7 @@
              </div>
 
              <div class="button-box text-center mt-5">
-                 <a type="submit" class="btn btn-primary btn-lg" href="https://manufacturers.letsgoleisure.com//blog/">Visit the blog</a>
+                 <a type="submit" class="btn btn-primary btn-lg" href="https://manufacturers.letsgoleisure.com//blog/?manufacturer=<?= $term_slug ?>">Visit the blog</a>
              </div>
          </div>
      </section>
