@@ -317,6 +317,7 @@ function swiper_sliders() {
         },
         pagination: {
             el: '.swiper-pagination',
+            clickable: true,
         },
     });
 
