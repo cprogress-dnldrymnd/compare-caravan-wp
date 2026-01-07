@@ -159,7 +159,7 @@ function breadcrumbs()
                         <li><a href="<?= get_term_link($term) ?>"><?= $child_name ?></a></li>
                     <?php
                     } else {
-                       echo 'x2';
+                       
                     ?>
                         <li><a href="<?= get_term_link($term) ?>"><?= $term->name ?></a></li>
                 <?php
@@ -305,4 +305,25 @@ function post_categories($id = false)
     </div>
 <?php
     return ob_get_clean();
+}
+
+
+add_filter( 'wpcf7_form_tag', 'cf7_populate_vehicle_name_with_title', 10, 2 );
+
+function cf7_populate_vehicle_name_with_title( $tag, $unused ) {
+    // 1. Check if the tag name matches your field name ('vehicle-name')
+    if ( 'vehicle-name' !== $tag->name ) {
+        return $tag;
+    }
+
+    // 2. Get the current post ID and Title
+    // Use get_queried_object_id() to ensure we get the main page ID, 
+    // even if the form is in a sidebar or outside the main loop.
+    $post_id = get_queried_object_id();
+    
+    if ( $post_id ) {
+        $tag->values = array( get_the_title( $post_id ) );
+    }
+
+    return $tag;
 }
