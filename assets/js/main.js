@@ -20,7 +20,7 @@ function enquire_dealer() {
         var raw_name = jQuery(this).attr('title'); // Gets "<b>John</b>"
         var dealer_name = jQuery('<div>').html(raw_name).text().trim();
         var email = jQuery(this).attr('email');
-        var vechile_name = jQuery('title').text().trim();
+        var vechile_name = jQuery('.vehicle-name').text().trim();
 
         jQuery('input[name="dealer-email"]').val(email);
         jQuery('input[name="dealer-name"]').val(dealer_name);
