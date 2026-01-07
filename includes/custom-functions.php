@@ -133,6 +133,17 @@ function breadcrumbs()
             <?php } ?>
 
             <?php if (is_product()) { ?>
+                <?php
+                $terms = get_the_terms(get_the_ID(), 'product_brand');
+                foreach ($terms as $term) {
+                    $level = get_term_hierarchy_level($term, $term->taxonomy);
+                    if ($level == 0) {
+                        echo $term->name;
+                    }
+                }
+                ?>
+
+
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
             <?php if (is_archive() && !is_tax('product_brand')) { ?>
