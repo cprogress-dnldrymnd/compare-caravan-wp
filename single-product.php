@@ -469,7 +469,7 @@ if ($seats) {
     </div>
     <div class="offcanvas-body">
         <div>
-            <?= do_shortcode('[contact-form-7 id="e44c382" title="Contact form 1"]') ?>
+            <?= do_shortcode('[contact-form-7 id="e44c382" title="Dealer Enquiry"]') ?>
         </div>
     </div>
 </div>
