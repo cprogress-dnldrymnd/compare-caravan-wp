@@ -155,10 +155,14 @@ function breadcrumbs()
                     <li>
                         <a href="<?= get_term_link($term_child['id'], 'product_brand') ?>"><?= str_replace($term_parent['name'], '', $term_child['name']) ?></a>
                     </li>
+                    <?php if (isset($_GET['range']) && isset($_GET['id'])) { ?>
+                        <?php
+                        $parameters = '?range=' . $_GET['range'] . '&id=' . $_GET['id'];
+                        ?>
+                        <li><a href="<?= get_term_link($term_child['id'], 'product_brand') . $parameters ?>"><?= get_the_title($_GET['id']) ?></a></li>
+                    <?php } ?>
                 <?php } ?>
-                <?php if (isset($_GET['range']) && isset($_GET['id'])) { ?>
-                    <li><span><?= get_the_title($_GET['id']) ?></span></li>
-                <?php } ?>
+
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
             <?php if (is_archive() && !is_tax('product_brand')) { ?>
