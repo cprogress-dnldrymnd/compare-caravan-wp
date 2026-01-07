@@ -109,13 +109,15 @@ function breadcrumbs()
     <div class="breadcrumbs fs-16 mt-3">
         <ul class="list-inline">
             <li><a href="https://letsgoleisure.com/home">Home</a></li>
+            <?php if (is_tax('product_brand') || is_product()) { ?>
+                <li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
+            <?php } ?>
             <?php if (is_tax('product_brand')) { ?>
                 <?php
                 $term = get_queried_object();
                 $name = $term->name;
                 $level = get_term_hierarchy_level($term, $term->taxonomy);
                 ?>
-                <li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
                 <?php if ($level != 0) { ?>
                     <?php
                     $term_parent = get_term_by('id', $term->parent, $term->taxonomy);
@@ -131,9 +133,6 @@ function breadcrumbs()
             <?php } ?>
 
             <?php if (is_product()) { ?>
-                
-
-
                 <li><span><?= get_the_title() ?></span></li>
             <?php } ?>
             <?php if (is_archive() && !is_tax('product_brand')) { ?>
@@ -271,4 +270,3 @@ function post_categories($id = false)
 <?php
     return ob_get_clean();
 }
-
