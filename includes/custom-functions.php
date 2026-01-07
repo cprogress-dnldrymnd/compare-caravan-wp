@@ -108,14 +108,14 @@ function breadcrumbs()
     ?>
     <div class="breadcrumbs fs-16 mt-3">
         <ul class="list-inline">
-            <li><a href="/">Home</a></li>
+            <li><a href="https://letsgoleisure.com/home">Home</a></li>
             <?php if (is_tax('product_brand')) { ?>
                 <?php
                 $term = get_queried_object();
                 $name = $term->name;
                 $level = get_term_hierarchy_level($term, $term->taxonomy);
                 ?>
-                <li><span>Manufacturer</span></li>
+			<li><span><a href="https://letsgoleisure.com/manufacturers">Manufacturer</a></span></li>
                 <?php if ($level != 0) { ?>
                     <?php
                     $term_parent = get_term_by('id', $term->parent, $term->taxonomy);
@@ -220,6 +220,8 @@ function get_video_embed_url($url)
     // If no ID was found, return an empty string
     return '';
 }
+
+
 
 /**
  * Function to output values from a string that exist in a target array.
