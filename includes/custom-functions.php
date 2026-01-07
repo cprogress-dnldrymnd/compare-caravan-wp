@@ -155,8 +155,8 @@ function breadcrumbs()
                         // Clean the name (replicating your logic from above)
                         $child_name = str_replace($term_parent->name, '', $term->name);
                     ?>
-                        <li><a href="<?= get_term_link($term_parent) ?>"><?= $term_parent->name ?></a></li>
-                        <li><a href="<?= get_term_link($term) ?>"><?= $child_name ?></a></li>
+                        <li><a href="<?= get_term_link($term_parent) ?>"><?= $term_parent->name ?>z</a></li>
+                        <li><a href="<?= get_term_link($term) ?>"><?= $child_name ?>x</a></li>
                     <?php
                     } else {
                        
