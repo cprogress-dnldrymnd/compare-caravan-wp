@@ -24,6 +24,7 @@ function enquire_dealer() {
 
         jQuery('input[name="dealer-email"]').val(email);
         jQuery('input[name="dealer-name"]').val(dealer_name);
+        jQuery('input[name="vehicle-name"]').val(vechile_name);
         jQuery('#offcanvasEnquireDealerLabel span').html('Enquire about ' + dealer_name);
     });
 }
