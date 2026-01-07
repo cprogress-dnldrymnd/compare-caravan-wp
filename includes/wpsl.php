@@ -152,7 +152,7 @@ function custom_listing_template()
 
     $listing_template .= '<% if ( email ) { %>';
     $listing_template .= '<div class="enquire-now fs-14">' . "\r\n";
-    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
+    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" title="'.wpsl_store_header_template('listing') .'" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
