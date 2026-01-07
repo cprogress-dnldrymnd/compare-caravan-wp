@@ -10,6 +10,7 @@ jQuery(document).ready(function () {
         header();
         menu_responsive();
     }, 1000);
+    enquire_dealer();
 
 });
 
