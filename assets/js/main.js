@@ -18,7 +18,7 @@ function enquire_dealer() {
     jQuery(document).on('click', '.enquire-now-dealer', function () {
 
         // Get the title attribute
-        var dealer_name = $(this).attr('title');
+        var dealer_name = jQuery(this).attr('title');
 
         console.log('Clicked dealer:', dealer_name); // Debugging
 
