@@ -17113,7 +17113,7 @@ section.listing-single .listing--single-right .listing--single--right-inner {
 }
 @media screen and (min-width: 992px) {
   section.listing-single .listing--single-right .listing--single--right-inner {
-    height: calc(100vh - var(--header-height) - var(--top-bar-height));
+    height: 100vh;
   }
 }
 section.listing-single .nav-tabs-holder {
@@ -17599,10 +17599,10 @@ footer {
 .listing-pricing {
   margin-left: 0;
   margin-right: 0;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 40%;
   z-index: 2;
 }
 .is-range-hero {
@@ -17676,7 +17676,7 @@ footer {
   width: 100%;
 }
 body[style*="padding-right: 15px"] {
-}
+} 
 @media (min-width: 992px) {
   #main-header .menu {
     flex-direction: row;
