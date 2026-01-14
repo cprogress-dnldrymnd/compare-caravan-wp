@@ -17675,7 +17675,8 @@ footer {
 .wpcf7-form label {
   width: 100%;
 }
-body[style*="padding-right: 15px"] {
+body[style*="padding-right: 15px"] .listing-pricing {
+  right: 9px;
 } 
 @media (min-width: 992px) {
   #main-header .menu {
