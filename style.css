@@ -17599,10 +17599,10 @@ footer {
 .listing-pricing {
   margin-left: 0;
   margin-right: 0;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   right: 0;
-  width: 40%;
+  width: 100%;
   z-index: 2;
 }
 .is-range-hero {
