@@ -17113,7 +17113,7 @@ section.listing-single .listing--single-right .listing--single--right-inner {
 }
 @media screen and (min-width: 992px) {
   section.listing-single .listing--single-right .listing--single--right-inner {
-    height: 100vh;
+    height: calc(100vh - var(--header-height) - var(--top-bar-height));
   }
 }
 section.listing-single .nav-tabs-holder {
@@ -17674,6 +17674,8 @@ footer {
 }
 .wpcf7-form label {
   width: 100%;
+}
+body[style*="padding-right: 15px"] {
 }
 @media (min-width: 992px) {
   #main-header .menu {
