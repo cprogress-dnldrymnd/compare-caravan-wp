@@ -113,9 +113,12 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '<% if ( fax ) { %>' . "\r\n";
     $listing_template .= "\t\t\t" . '<span><strong>' . esc_html($wpsl->i18n->get_translation('fax_label', __('Fax', 'wpsl'))) . '</strong>: <%= fax %></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
+
+    /*
     $listing_template .= "\t\t\t" . '<% if ( email ) { %>' . "\r\n";
     $listing_template .= "\t\t\t" . '<span><strong>' . esc_html($wpsl->i18n->get_translation('email_label', __('Email', 'wpsl'))) . '</strong>: <span class="email"><%= email %></span></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
+*/
     $listing_template .= "\t\t\t" . '<% if ( url ) { %>' . "\r\n";
     $listing_template .= "\t\t\t" . '<span  class="contact-details-span"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"> <g id="Icon_feather-globe" data-name="Icon feather-globe" transform="translate(-2.5 -2.5)"> <path id="Path_1331" data-name="Path 1331" d="M15,9A6,6,0,1,1,9,3,6,6,0,0,1,15,9Z" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1332" data-name="Path 1332" d="M3,18H15" transform="translate(0 -9)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1333" data-name="Path 1333" d="M14.4,3a9.18,9.18,0,0,1,2.4,6,9.18,9.18,0,0,1-2.4,6A9.18,9.18,0,0,1,12,9a9.18,9.18,0,0,1,2.4-6Z" transform="translate(-5.4)" fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> </g> </svg><%= url %></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
