@@ -17677,7 +17677,18 @@ footer {
 }
 body[style*="padding-right: 15px"] .listing-pricing {
   right: 9px;
-} 
+}
+
+.top-bar .menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  gap: 1.5rem;
+  font-weight: 500;
+}
 @media (min-width: 992px) {
   #main-header .menu {
     flex-direction: row;
