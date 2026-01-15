@@ -372,54 +372,83 @@ if ($seats) {
 
                             </div>
                         <?php } ?>
-                        <?php
-                        // 1. Get all 'product_brand' terms assigned to the post as objects
-                        $terms = wp_get_post_terms(get_the_ID(), 'product_brand');
-                        $child_term_ids = array();
 
-                        // 2. Loop through them and only keep terms that have a parent
-                        if (! empty($terms) && ! is_wp_error($terms)) {
-                            foreach ($terms as $term) {
-                                // If parent is NOT 0, it is a child term
-                                if ($term->parent != 0) {
-                                    $child_term_ids[] = $term->term_id;
+                        <?php
+                        // Initialize variable
+                        $related_listings = array();
+
+                        // 1. CHECK: Do we have 'range' and 'id' in the URL?
+                        if (isset($_GET['range']) && isset($_GET['id'])) {
+
+                            // Sanitize the ID from the URL
+                            $group_product_id = intval($_GET['id']);
+
+                            // Get the children of the grouped product
+                            // WooCommerce stores grouped product children in the '_children' meta key
+                            $group_children = get_post_meta($group_product_id, '_children', true);
+
+                            // If valid children exist, use them as the listings
+                            if (! empty($group_children) && is_array($group_children)) {
+                                $related_listings = $group_children;
+                            }
+                        } else {
+
+                            // 2. FALLBACK: Original Logic (Search by Product Brand)
+
+                            // Get all 'product_brand' terms assigned to the post
+                            $terms = wp_get_post_terms(get_the_ID(), 'product_brand');
+                            $child_term_ids = array();
+
+                            // Loop through them and only keep terms that have a parent
+                            if (! empty($terms) && ! is_wp_error($terms)) {
+                                foreach ($terms as $term) {
+                                    // If parent is NOT 0, it is a child term
+                                    if ($term->parent != 0) {
+                                        $child_term_ids[] = $term->term_id;
+                                    }
                                 }
                             }
-                        }
 
-                        // 3. Run the query using the filtered IDs
-                        $related_listings = get_posts(array(
-                            'post_type'      => 'product',
-                            'posts_per_page' => 6,
-                            'post__not_in'   => array(get_the_ID()),
-                            'fields'         => 'ids',
-                            'tax_query'      => array(
-                                array(
-                                    'taxonomy' => 'product_brand',
-                                    'field'    => 'term_id',
-                                    'terms'    => $child_term_ids, // logic: only searching for child IDs
-                                ),
-                            ),
-                        ));
+                            // Only run the query if we actually found child brand IDs
+                            if (! empty($child_term_ids)) {
+                                $related_listings = get_posts(array(
+                                    'post_type'      => 'product',
+                                    'posts_per_page' => 6,
+                                    'post__not_in'   => array(get_the_ID()),
+                                    'fields'         => 'ids',
+                                    'tax_query'      => array(
+                                        array(
+                                            'taxonomy' => 'product_brand',
+                                            'field'    => 'term_id',
+                                            'terms'    => $child_term_ids,
+                                        ),
+                                    ),
+                                ));
+                            }
+                        }
                         ?>
 
-
-                        <div class="other-caravans md-padding-bottom">
-                            <h3 class="mb-4">Other <?= $vehicle_type ?> from this dealer</h3>
-                            <div class="swiper-holder">
-                                <div class="swiper swiper-listing-related swiper-mobile-style">
-                                    <div class="swiper-wrapper">
-                                        <?php foreach ($related_listings as $related_listing) { ?>
-                                            <div class="swiper-slide">
-                                                <?= listing_grid($related_listing); ?>
-                                            </div>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="swiper-pagination swiper-pagination-dark mt-5 text-center position-static">
+                        <?php
+                        // 3. OUTPUT: Only render the HTML if we have related listings
+                        if (! empty($related_listings)) :
+                        ?>
+                            <div class="other-caravans md-padding-bottom">
+                                <h3 class="mb-4">Other <?= isset($vehicle_type) ? $vehicle_type : 'Vehicles' ?> from this dealer</h3>
+                                <div class="swiper-holder">
+                                    <div class="swiper swiper-listing-related swiper-mobile-style">
+                                        <div class="swiper-wrapper">
+                                            <?php foreach ($related_listings as $related_listing) { ?>
+                                                <div class="swiper-slide">
+                                                    <?= listing_grid($related_listing); ?>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="swiper-pagination swiper-pagination-dark mt-5 text-center position-static">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
 
                     </div>
                 </div>
