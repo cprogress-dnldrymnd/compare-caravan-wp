@@ -32,7 +32,7 @@
 
           <?php dynamic_sidebar('top-bar-menu'); ?>
 
-         
+
         </div>
       </div>
     </div>
@@ -131,10 +131,13 @@
   </header>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvasMenu" aria-labelledby="offCanvasMenuLabel">
     <div class="offcanvas-body background-lightgray-2">
-      <div class="button-box text-end">
-        <button type="button" class="btn-close text-color" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <div class="flex items-center justify-between absolute h-[70px] w-full background-lightgray-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="46.229" height="28.992" viewBox="0 0 46.229 28.992">
+          <path id="Path_2552" data-name="Path 2552" d="M46.229,7.6,39.941,1.309,27.5,13.75V4.259A4.259,4.259,0,0,0,23.241,0H3.136V8.892H12.5L0,21.394l6.288,6.288L18.729,15.241v9.492a4.259,4.259,0,0,0,4.259,4.259h20.1V20.1H33.727Z" fill="#f2007d" />
+        </svg>
+        <button type="button" class="btn-close text-color" aria-label="Close"></button>
       </div>
-      <div class="offcanvas--inner">
+      <div class="offcanvas--inner mt-5">
         <?php dynamic_sidebar('sideout-menu'); ?>
 
       </div>
