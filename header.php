@@ -30,7 +30,7 @@
         </div>
         <div class="col-auto d-none d-md-block">
 
-          <?php dynamic_sidebar('sideout-menu'); ?>
+          <?php dynamic_sidebar('top-bar-menu'); ?>
 
           <ul class="d-flex gap-4 list-inline align-items-center mb-0 fs-15 fw-medium">
             <li>
