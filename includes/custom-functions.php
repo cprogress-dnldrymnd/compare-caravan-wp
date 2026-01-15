@@ -303,24 +303,24 @@ function post_categories($id = false)
     return ob_get_clean();
 }
 
-
 /**
  * 1. Add Custom Fields to Menu Item (Admin)
  */
 function my_menu_add_custom_fields( $item_id, $item, $depth, $args ) {
-    // Get existing values
-    $icon_class = get_post_meta( $item_id, '_menu_item_icon', true );
+    $icon_svg = get_post_meta( $item_id, '_menu_item_icon_svg', true );
     $mobile_only = get_post_meta( $item_id, '_menu_item_mobile_only', true );
     ?>
     
     <p class="field-custom description description-wide">
-        <label for="edit-menu-item-icon-<?php echo $item_id; ?>">
-            <?php _e( 'Icon Class (e.g., fa fa-home)', 'textdomain' ); ?><br />
-            <input type="text" 
-                   id="edit-menu-item-icon-<?php echo $item_id; ?>" 
+        <label for="edit-menu-item-icon-svg-<?php echo $item_id; ?>">
+            <?php _e( 'Paste SVG Code', 'textdomain' ); ?><br />
+            <textarea 
+                   id="edit-menu-item-icon-svg-<?php echo $item_id; ?>" 
                    class="widefat code edit-menu-item-custom" 
-                   name="menu_item_icon[<?php echo $item_id; ?>]" 
-                   value="<?php echo esc_attr( $icon_class ); ?>" />
+                   rows="3"
+                   placeholder="<svg...>"
+                   name="menu_item_icon_svg[<?php echo $item_id; ?>]"><?php echo esc_textarea( $icon_svg ); ?></textarea>
+            <span class="description"><?php _e('Paste raw SVG code here. It will be sanitized for security.', 'textdomain'); ?></span>
         </label>
     </p>
 
@@ -342,12 +342,29 @@ add_action( 'wp_nav_menu_item_custom_fields', 'my_menu_add_custom_fields', 10, 4
  * 2. Save Custom Fields (Admin)
  */
 function my_menu_save_custom_fields( $menu_id, $menu_item_db_id ) {
-    // Save Icon
-    if ( isset( $_POST['menu_item_icon'][$menu_item_db_id] ) ) {
-        $sanitized_icon = sanitize_text_field( $_POST['menu_item_icon'][$menu_item_db_id] );
-        update_post_meta( $menu_item_db_id, '_menu_item_icon', $sanitized_icon );
+    
+    // Save SVG: We need to define allowed tags because standard sanitization strips SVG
+    if ( isset( $_POST['menu_item_icon_svg'][$menu_item_db_id] ) ) {
+        $raw_svg = $_POST['menu_item_icon_svg'][$menu_item_db_id];
+        
+        // Define allowed SVG tags and attributes for security (prevents XSS)
+        $allowed_html = array(
+            'svg' => array(
+                'class' => true, 'aria-hidden' => true, 'aria-labelledby' => true, 'role' => true, 
+                'xmlns' => true, 'width' => true, 'height' => true, 'viewbox' => true, 'fill' => true,
+            ),
+            'g'     => array( 'fill' => true ),
+            'path'  => array( 'd' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true ),
+            'circle'=> array( 'cx' => true, 'cy' => true, 'r' => true, 'fill' => true ),
+            'rect'  => array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'fill' => true ),
+            // Add other SVG tags here if needed (line, polyline, etc.)
+        );
+
+        // Sanitize using wp_kses
+        $clean_svg = wp_kses( $raw_svg, $allowed_html );
+        update_post_meta( $menu_item_db_id, '_menu_item_icon_svg', $clean_svg );
     } else {
-        delete_post_meta( $menu_item_db_id, '_menu_item_icon' );
+        delete_post_meta( $menu_item_db_id, '_menu_item_icon_svg' );
     }
 
     // Save Mobile Only Checkbox
@@ -360,20 +377,20 @@ function my_menu_save_custom_fields( $menu_id, $menu_item_db_id ) {
 add_action( 'wp_update_nav_menu_item', 'my_menu_save_custom_fields', 10, 2 );
 
 /**
- * 3. Display Icon in Menu (Frontend)
+ * 3. Display SVG in Menu (Frontend)
  */
-function my_menu_display_icon( $title, $item, $args, $depth ) {
-    $icon_class = get_post_meta( $item->ID, '_menu_item_icon', true );
+function my_menu_display_svg( $title, $item, $args, $depth ) {
+    $svg_code = get_post_meta( $item->ID, '_menu_item_icon_svg', true );
 
-    if ( ! empty( $icon_class ) ) {
-        // You can change <i> to <span> or <svg> depending on your icon set
-        $icon_html = '<i class="' . esc_attr( $icon_class ) . '"></i> '; 
+    if ( ! empty( $svg_code ) ) {
+        // Wrap SVG in a span for easier CSS styling
+        $icon_html = '<span class="menu-item-svg-icon">' . $svg_code . '</span> ';
         return $icon_html . $title;
     }
 
     return $title;
 }
-add_filter( 'nav_menu_item_title', 'my_menu_display_icon', 10, 4 );
+add_filter( 'nav_menu_item_title', 'my_menu_display_svg', 10, 4 );
 
 /**
  * 4. Add Helper Class for Mobile Only (Frontend)
@@ -382,7 +399,7 @@ function my_menu_add_mobile_class( $classes, $item, $args, $depth ) {
     $is_mobile_only = get_post_meta( $item->ID, '_menu_item_mobile_only', true );
 
     if ( $is_mobile_only ) {
-        $classes[] = 'd-block d-lg-none';
+        $classes[] = 'd-none d-lg-block';
     }
 
     return $classes;
