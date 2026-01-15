@@ -32,11 +32,7 @@
 
           <?php dynamic_sidebar('top-bar-menu'); ?>
 
-          <ul class="d-flex gap-4 list-inline align-items-center mb-0 fs-15 fw-medium">
-            <li>
-              <a href="https://letsgoleisure.com/login">Log in</a>
-            </li>
-          </ul>
+         
         </div>
       </div>
     </div>
