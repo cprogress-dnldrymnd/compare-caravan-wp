@@ -17689,6 +17689,15 @@ body[style*="padding-right: 15px"] .listing-pricing {
   gap: 1.5rem;
   font-weight: 500;
 }
+.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a svg{
+  width: 28px;
+  height: 28px;
+}
 @media (min-width: 992px) {
   #main-header .menu {
     flex-direction: row;
