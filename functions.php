@@ -154,7 +154,7 @@ function my_theme_register_footer_sidebars()
 
     // --- Top Bar Menu ---
     register_sidebar(array(
-        'name'          => esc_html__('Header Menu', 'compare-caravan'),
+        'name'          => esc_html__('Top Bar Menu', 'compare-caravan'),
         'id'            => 'top-bar-menu',
         'description'   => esc_html__('Add widgets here for the Header Menu.', 'compare-caravan'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
