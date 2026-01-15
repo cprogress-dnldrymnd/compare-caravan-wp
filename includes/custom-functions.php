@@ -304,7 +304,6 @@ function post_categories($id = false)
 }
 
 
-<?php
 /**
  * 1. Add Custom Fields to Menu Item (Admin)
  */
