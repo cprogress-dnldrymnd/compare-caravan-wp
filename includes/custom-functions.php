@@ -351,7 +351,7 @@ function my_menu_save_custom_fields($menu_id, $menu_item_db_id)
 
 
         // Sanitize using wp_kses
-        $clean_svg = wp_kses($raw_svg, $allowed_html);
+        $clean_svg = wp_kses($raw_svg, $raw_svg);
         update_post_meta($menu_item_db_id, '_menu_item_icon_svg', $raw_svg);
     } else {
         delete_post_meta($menu_item_db_id, '_menu_item_icon_svg');
