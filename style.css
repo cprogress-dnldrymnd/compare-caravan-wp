@@ -17675,13 +17675,6 @@ footer {
 .wpcf7-form label {
   width: 100%;
 }
-body[style*="padding-right: 15px"] .listing-pricing {
-  right: 9px;
-}
-
-body[style*="padding-right: 15px"] .listing-pricing .price {
-  padding-right: 6px;
-}
 
 .top-bar .menu {
   display: flex;
@@ -17693,12 +17686,12 @@ body[style*="padding-right: 15px"] .listing-pricing .price {
   gap: 1.5rem;
   font-weight: 500;
 }
-.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a svg{
+.menu-item-has-icon.menu-item-has-icon.menu-item-has-icon a svg {
   width: 28px;
   height: 28px;
 }
@@ -17733,5 +17726,12 @@ body[style*="padding-right: 15px"] .listing-pricing .price {
   }
   .listing-inner-holder > .row > .col-lg-4 {
     width: 40%;
+  }
+  body[style*="padding-right: 15px"] .listing-pricing {
+    right: 9px;
+  }
+
+  body[style*="padding-right: 15px"] .listing-pricing .price {
+    padding-right: 6px;
   }
 }
