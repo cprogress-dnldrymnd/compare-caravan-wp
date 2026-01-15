@@ -17679,6 +17679,10 @@ body[style*="padding-right: 15px"] .listing-pricing {
   right: 9px;
 }
 
+body[style*="padding-right: 15px"] .listing-pricing .price {
+  padding-right: 9px;
+}
+
 .top-bar .menu {
   display: flex;
   flex-wrap: wrap;
