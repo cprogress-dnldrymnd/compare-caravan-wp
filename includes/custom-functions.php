@@ -392,13 +392,30 @@ function my_menu_display_svg($title, $item, $args, $depth)
 {
     $svg_code = get_post_meta($item->ID, '_menu_item_icon_svg', true);
     $is_mobile_only = get_post_meta($item->ID, '_menu_item_mobile_only', true);
-    
+
     if (! empty($svg_code)) {
         // Wrap SVG in a span for easier CSS styling
-        $icon_html = '<span class="menu-item-svg-icon '.($is_mobile_only ? 'd-none d-lg-block': '').'">' . $svg_code . '</span> ';
+        $icon_html = '<span class="menu-item-svg-icon ' . ($is_mobile_only ? 'd-block d-lg-none' : '') . '">' . $svg_code . '</span> ';
         return $icon_html . $title;
     }
 
     return $title;
 }
 add_filter('nav_menu_item_title', 'my_menu_display_svg', 10, 4);
+
+
+/**
+ * 4. Add Helper Class for Mobile Only (Frontend)
+ */
+function my_menu_add_mobile_class($classes, $item, $args, $depth)
+{
+    $svg_code = get_post_meta($item->ID, '_menu_item_icon_svg', true);
+
+
+    if ($svg_code) {
+        $classes[] = 'menu-item-has-icon';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'my_menu_add_mobile_class', 10, 4);
