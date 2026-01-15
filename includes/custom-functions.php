@@ -302,3 +302,90 @@ function post_categories($id = false)
 <?php
     return ob_get_clean();
 }
+
+
+<?php
+/**
+ * 1. Add Custom Fields to Menu Item (Admin)
+ */
+function my_menu_add_custom_fields( $item_id, $item, $depth, $args ) {
+    // Get existing values
+    $icon_class = get_post_meta( $item_id, '_menu_item_icon', true );
+    $mobile_only = get_post_meta( $item_id, '_menu_item_mobile_only', true );
+    ?>
+    
+    <p class="field-custom description description-wide">
+        <label for="edit-menu-item-icon-<?php echo $item_id; ?>">
+            <?php _e( 'Icon Class (e.g., fa fa-home)', 'textdomain' ); ?><br />
+            <input type="text" 
+                   id="edit-menu-item-icon-<?php echo $item_id; ?>" 
+                   class="widefat code edit-menu-item-custom" 
+                   name="menu_item_icon[<?php echo $item_id; ?>]" 
+                   value="<?php echo esc_attr( $icon_class ); ?>" />
+        </label>
+    </p>
+
+    <p class="field-custom description description-wide">
+        <label for="edit-menu-item-mobile-only-<?php echo $item_id; ?>">
+            <input type="checkbox" 
+                   id="edit-menu-item-mobile-only-<?php echo $item_id; ?>" 
+                   value="1" 
+                   name="menu_item_mobile_only[<?php echo $item_id; ?>]"
+                   <?php checked( $mobile_only, 1 ); ?> />
+            <?php _e( 'Display only on Mobile?', 'textdomain' ); ?>
+        </label>
+    </p>
+    <?php
+}
+add_action( 'wp_nav_menu_item_custom_fields', 'my_menu_add_custom_fields', 10, 4 );
+
+/**
+ * 2. Save Custom Fields (Admin)
+ */
+function my_menu_save_custom_fields( $menu_id, $menu_item_db_id ) {
+    // Save Icon
+    if ( isset( $_POST['menu_item_icon'][$menu_item_db_id] ) ) {
+        $sanitized_icon = sanitize_text_field( $_POST['menu_item_icon'][$menu_item_db_id] );
+        update_post_meta( $menu_item_db_id, '_menu_item_icon', $sanitized_icon );
+    } else {
+        delete_post_meta( $menu_item_db_id, '_menu_item_icon' );
+    }
+
+    // Save Mobile Only Checkbox
+    if ( isset( $_POST['menu_item_mobile_only'][$menu_item_db_id] ) ) {
+        update_post_meta( $menu_item_db_id, '_menu_item_mobile_only', 1 );
+    } else {
+        delete_post_meta( $menu_item_db_id, '_menu_item_mobile_only' );
+    }
+}
+add_action( 'wp_update_nav_menu_item', 'my_menu_save_custom_fields', 10, 2 );
+
+/**
+ * 3. Display Icon in Menu (Frontend)
+ */
+function my_menu_display_icon( $title, $item, $args, $depth ) {
+    $icon_class = get_post_meta( $item->ID, '_menu_item_icon', true );
+
+    if ( ! empty( $icon_class ) ) {
+        // You can change <i> to <span> or <svg> depending on your icon set
+        $icon_html = '<i class="' . esc_attr( $icon_class ) . '"></i> '; 
+        return $icon_html . $title;
+    }
+
+    return $title;
+}
+add_filter( 'nav_menu_item_title', 'my_menu_display_icon', 10, 4 );
+
+/**
+ * 4. Add Helper Class for Mobile Only (Frontend)
+ */
+function my_menu_add_mobile_class( $classes, $item, $args, $depth ) {
+    $is_mobile_only = get_post_meta( $item->ID, '_menu_item_mobile_only', true );
+
+    if ( $is_mobile_only ) {
+        $classes[] = 'menu-item-mobile-only';
+    }
+
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'my_menu_add_mobile_class', 10, 4 );
