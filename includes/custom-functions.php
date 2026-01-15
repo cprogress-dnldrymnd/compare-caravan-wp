@@ -349,29 +349,10 @@ function my_menu_save_custom_fields($menu_id, $menu_item_db_id)
     if (isset($_POST['menu_item_icon_svg'][$menu_item_db_id])) {
         $raw_svg = $_POST['menu_item_icon_svg'][$menu_item_db_id];
 
-        // Define allowed SVG tags and attributes for security (prevents XSS)
-        $allowed_html = array(
-            'svg' => array(
-                'class' => true,
-                'aria-hidden' => true,
-                'aria-labelledby' => true,
-                'role' => true,
-                'xmlns' => true,
-                'width' => true,
-                'height' => true,
-                'viewbox' => true,
-                'fill' => true,
-            ),
-            'g'     => array('fill' => true),
-            'path'  => array('d' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true),
-            'circle' => array('cx' => true, 'cy' => true, 'r' => true, 'fill' => true),
-            'rect'  => array('x' => true, 'y' => true, 'width' => true, 'height' => true, 'fill' => true),
-            // Add other SVG tags here if needed (line, polyline, etc.)
-        );
 
         // Sanitize using wp_kses
         $clean_svg = wp_kses($raw_svg, $allowed_html);
-        update_post_meta($menu_item_db_id, '_menu_item_icon_svg', $clean_svg);
+        update_post_meta($menu_item_db_id, '_menu_item_icon_svg', $raw_svg);
     } else {
         delete_post_meta($menu_item_db_id, '_menu_item_icon_svg');
     }
