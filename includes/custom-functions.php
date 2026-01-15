@@ -383,7 +383,7 @@ function my_menu_add_mobile_class( $classes, $item, $args, $depth ) {
     $is_mobile_only = get_post_meta( $item->ID, '_menu_item_mobile_only', true );
 
     if ( $is_mobile_only ) {
-        $classes[] = 'menu-item-mobile-only';
+        $classes[] = 'd-block d-lg-none';
     }
 
     return $classes;
