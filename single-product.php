@@ -373,20 +373,34 @@ if ($seats) {
                             </div>
                         <?php } ?>
                         <?php
+                        // 1. Get all 'product_brand' terms assigned to the post as objects
+                        $terms = wp_get_post_terms(get_the_ID(), 'product_brand');
+                        $child_term_ids = array();
+
+                        // 2. Loop through them and only keep terms that have a parent
+                        if (! empty($terms) && ! is_wp_error($terms)) {
+                            foreach ($terms as $term) {
+                                // If parent is NOT 0, it is a child term
+                                if ($term->parent != 0) {
+                                    $child_term_ids[] = $term->term_id;
+                                }
+                            }
+                        }
+
+                        // 3. Run the query using the filtered IDs
                         $related_listings = get_posts(array(
-                            'post_type' => 'product',
+                            'post_type'      => 'product',
                             'posts_per_page' => 6,
-                            'post__not_in' => array(get_the_ID()),
-                            'fields' => 'ids',
-                            'tax_query' => array(
+                            'post__not_in'   => array(get_the_ID()),
+                            'fields'         => 'ids',
+                            'tax_query'      => array(
                                 array(
                                     'taxonomy' => 'product_brand',
                                     'field'    => 'term_id',
-                                    'terms'    => wp_get_post_terms(get_the_ID(), 'product_brand', array('fields' => 'ids')),
+                                    'terms'    => $child_term_ids, // logic: only searching for child IDs
                                 ),
                             ),
                         ));
-
                         ?>
 
 
