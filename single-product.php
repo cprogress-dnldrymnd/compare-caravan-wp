@@ -485,15 +485,24 @@ if ($seats) {
                             </div>
 
                             <div class="listing-pricing background-text text-white">
-                                <div class="row g-3 justify-content-between align-items-center">
+                                <div class="row">
                                     <div class="col-auto">
-                                        <h3 class="fs-32"><?= $product->get_name() ?></h3>
-                                    </div>
+                                        <div class="row g-3 justify-content-between align-items-center">
+                                            <div class="col-auto">
+                                                <h3 class="fs-32"><?= $product->get_name() ?></h3>
+                                            </div>
 
-                                    <div class="col-auto">
-                                        <div class="price">
-                                            <?= $product->get_price_html() ?>
+                                            <div class="col-auto">
+                                                <div class="price">
+                                                    <?= $product->get_price_html() ?>
+                                                </div>
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="col-auto d-block d-lg-none">
+                                        <a href="#" class="btn btn-primary">
+                                            Find a Dealer
+                                        </a>
                                     </div>
                                 </div>
                             </div>
