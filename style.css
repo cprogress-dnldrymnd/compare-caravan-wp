@@ -17433,7 +17433,7 @@ section.hero {
 }
 #wpsl-wrap #wpsl-result-list ul li .address {
   border-bottom: 1px solid #ebebeb;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 #wpsl-wrap #wpsl-result-list ul li .distance {
   background-color: #201f1f;
@@ -17456,7 +17456,14 @@ section.hero {
 
 #wpsl-result-list .contact-details-enquire {
   border-bottom: 1px solid #ebebeb;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+.contact-details-span svg {
+      background-color: #EAEAEA;
+    padding: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
 }
 #wpsl-result-list .wpsl-contact-details span {
   display: flex !important;
@@ -17468,6 +17475,10 @@ section.hero {
   display: flex;
   gap: 10px;
   flex-direction: column;
+}
+#wpsl-wrap #wpsl-result-list ul li > div {
+  gap: 20px;
+
 }
 .store--listing h4 strong {
   font-weight: 600;
