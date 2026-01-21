@@ -486,7 +486,7 @@ if ($seats) {
 
                             <div class="listing-pricing background-text text-white">
                                 <div class="row">
-                                    <div class="col-auto">
+                                    <div class="col-auto flex-grow-1">
                                         <div class="row g-3 justify-content-between align-items-center">
                                             <div class="col-auto">
                                                 <h3 class="fs-32"><?= $product->get_name() ?></h3>
