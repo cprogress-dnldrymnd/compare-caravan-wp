@@ -17442,6 +17442,7 @@ section.hero {
   position: absolute;
   right: 0;
   top: 0;
+  border-radius: 0 0 0 5px;
 }
 #wpsl-stores#wpsl-stores,
 #wpsl-direction-details,
