@@ -140,6 +140,7 @@ function breadcrumbs()
                 foreach ($terms as $term) {
                     $level = get_term_hierarchy_level($term, $term->taxonomy);
                     if ($level == 0) {
+                        $manufacturer_email = get_field('email', $term);
                         $term_parent = array(
                             'id' => $term->term_id,
                             'name' => $term->name,
@@ -152,7 +153,7 @@ function breadcrumbs()
                     }
                 }
                 ?>
-                <li><a href="<?= get_term_link($term_parent['id'], 'product_brand') ?>"><?= $term_parent['name'] ?></a></li>
+                <li class="manufacturer-email" value="<?= $manufacturer_email ?>"><a href="<?= get_term_link($term_parent['id'], 'product_brand') ?>"><?= $term_parent['name'] ?></a></li>
                 <?php if (isset($term_child)) { ?>
                     <li>
                         <a href="<?= get_term_link($term_child['id'], 'product_brand') ?>"><?= str_replace($term_parent['name'], '', $term_child['name']) ?></a>
@@ -398,29 +399,3 @@ function my_menu_add_mobile_class($classes, $item, $args, $depth)
     return $classes;
 }
 add_filter('nav_menu_css_class', 'my_menu_add_mobile_class', 10, 4);
-
-add_filter('wpcf7_form_tag', 'populate_specific_form_field', 10, 2);
-
-function populate_specific_form_field($tag, $replace)
-{
-
-    // 1. Get the current form object
-    $contact_form = WPCF7_ContactForm::get_current();
-
-    // 2. Safety Check: If no form is found, or ID is NOT 1900, stop.
-    if (! $contact_form || $contact_form->id() != 1900) {
-        return $tag;
-    }
-
-    // 3. Check if the tag name is 'manufacturer-email'
-    if ('manufacturer-email' === $tag->name) {
-
-        // YOUR LOGIC HERE: Calculate the email you want
-        $my_email = 'dynamic-manufacturer@example.com';
-
-        // 4. Assign the value (Must be an array)
-        $tag->values = (array) $my_email;
-    }
-
-    return $tag;
-}
