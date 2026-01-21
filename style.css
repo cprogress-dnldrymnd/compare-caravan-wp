@@ -17475,6 +17475,7 @@ section.hero {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  opacity: 0.75;
 }
 .wpsl-listing-info-tag .custom-tag {
   display: flex;
