@@ -17457,6 +17457,7 @@ section.hero {
 #wpsl-result-list .contact-details-enquire {
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 20px;
+  padding-top: 10px;
 }
 .contact-details-span svg {
       background-color: #EAEAEA;
@@ -17476,10 +17477,7 @@ section.hero {
   gap: 10px;
   flex-direction: column;
 }
-#wpsl-wrap #wpsl-result-list ul li > div {
-  gap: 20px;
 
-}
 .store--listing h4 strong {
   font-weight: 600;
 }
