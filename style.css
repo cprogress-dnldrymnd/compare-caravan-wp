@@ -17719,7 +17719,7 @@ footer {
   .listing-pricing .price {
     font-size: 22px;
   }
-  .listing--single-right {
+  .listing--single-right.listing--single-right {
     z-index: 5;
   }
 }
