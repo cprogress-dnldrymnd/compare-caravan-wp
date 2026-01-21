@@ -17511,6 +17511,10 @@ section.hero {
   border: 1px solid var(--pink-color);
   padding: 16px 25px;
 }
+.store--listing .enquire-now a:hover {
+   background-color: var(--pink-color);
+   color: var(--white-color);
+}
 #wpsl-search-wrap input {
   padding: 14px;
   line-height: 1;
