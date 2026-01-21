@@ -141,6 +141,7 @@ function breadcrumbs()
                     $level = get_term_hierarchy_level($term, $term->taxonomy);
                     if ($level == 0) {
                         $manufacturer_email = get_field('email', $term);
+
                         $term_parent = array(
                             'id' => $term->term_id,
                             'name' => $term->name,
