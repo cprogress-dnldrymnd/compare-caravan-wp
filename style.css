@@ -17425,10 +17425,21 @@ section.hero {
   padding: 35px;
 }
 #wpsl-wrap #wpsl-result-list ul li {
-  padding: 0;
-  border-bottom: 1px solid #eeeee9;
-  padding-bottom: 28px;
-  margin-bottom: 28px;
+    border: 1px solid #D6D6D6;
+    margin-bottom: 28px;
+    border-radius: 5px;
+    padding: 16px;
+}
+#wpsl-wrap #wpsl-result-list ul li .address {
+    border-bottom: 1px solid #EBEBEB;
+    padding-bottom: 10px;
+}
+#wpsl-wrap #wpsl-result-list ul li .distance{
+      background-color: #201F1F;
+    padding: 10px;
+    color: var(--bs-white);
+    margin-top: -16px;
+    margin-right: -16px;
 }
 #wpsl-stores#wpsl-stores,
 #wpsl-direction-details,
