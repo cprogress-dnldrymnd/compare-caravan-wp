@@ -17428,7 +17428,7 @@ section.hero {
   border: 1px solid #d6d6d6;
   margin-bottom: 28px;
   border-radius: 5px;
-  padding: 16px;
+  padding: 16px 16px 10px;
   position: relative;
 }
 #wpsl-wrap #wpsl-result-list ul li .address {
