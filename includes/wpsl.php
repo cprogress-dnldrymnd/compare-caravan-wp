@@ -125,7 +125,6 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
 
-    $listing_template .= "\t\t\t" . '</div>' . "\r\n";
 
 
     $listing_template .= '<% if ( email ) { %>';
@@ -134,6 +133,7 @@ function custom_listing_template()
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
+    $listing_template .= "\t\t\t" . '</div>' . "\r\n";
 
 
     $listing_template .= '<% if ( listing_information_1 ) { %>';
