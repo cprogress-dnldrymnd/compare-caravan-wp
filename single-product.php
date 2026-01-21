@@ -460,7 +460,7 @@ if ($seats) {
                                     <h5 class="offcanvas-title" id="offcanvasFindDealerLabel"><span></span></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body">
+                                <div class="offcanvas-body p-0">
                                     <div>
                                         <div class="dealer-details">
                                             <div class="delear-details--inner">
