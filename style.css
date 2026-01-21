@@ -17493,6 +17493,13 @@ section.hero {
 .text-pink {
   color: var(--pink-color) !important;
 }
+.store--listing .enquire-now a {
+	padding: 10px;
+	background: #f2007d;
+	color: #fff;
+	border-radius: 3px;
+	text-decoration: none;
+}
 #wpsl-search-wrap input {
   padding: 14px;
   line-height: 1;
