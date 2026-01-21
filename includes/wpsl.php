@@ -125,7 +125,10 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
     $listing_template .= '<% if ( listing_information_1 ) { %>';
     $listing_template .= '<div class="wpsl-listing-info fs-14">' . "\r\n";
-    $listing_template .= '<p><%= listing_information_1 %></p>' . "\r\n";
+    $listing_template .= '<% var items = listing_information_1.split(","); %>';
+    $listing_template .= '<% _.each( items, function( item ) { %>';
+    $listing_template .= '<span class="custom-tag"><%= item.trim() %></span>' . "\r\n";
+    $listing_template .= '<% }); %>';
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
