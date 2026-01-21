@@ -17716,11 +17716,17 @@ footer {
   .fs-32 {
     font-size: 28px;
   }
+  .listing-pricing .price {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 767px) {
   .fs-32 {
     font-size: 24px;
+  }
+  .listing-pricing .price {
+    font-size: 18px;
   }
 }
 @media (max-width: 575px) {
@@ -17729,6 +17735,12 @@ footer {
   }
   .listing-pricing .fs-32 {
     font-size: 18px;
+  }
+  .listing-pricing .price {
+    font-size: 14px;
+  }
+  .listing-pricing .suffix {
+    font-size: 12px;
   }
 }
 
