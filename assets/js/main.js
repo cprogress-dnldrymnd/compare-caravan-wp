@@ -21,10 +21,12 @@ function enquire_dealer() {
         var dealer_name = jQuery('<div>').html(raw_name).text().trim();
         var email = jQuery(this).attr('email');
         var vechile_name = jQuery('.vehicle-name').text().trim();
+        var manufacturer_email = jQuery('.manufacturer-email').attr('value');
 
         jQuery('input[name="dealer-email"]').val(email);
         jQuery('input[name="dealer-name"]').val(dealer_name);
         jQuery('input[name="vehicle-name"]').val(vechile_name);
+        jQuery('input[name="manufacturer-email"]').val(manufacturer_email);
         jQuery('#offcanvasEnquireDealerLabel span').html('Enquire with ' + dealer_name);
     });
 }
