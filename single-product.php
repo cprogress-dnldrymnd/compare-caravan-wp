@@ -455,32 +455,6 @@ if ($seats) {
                 <div class="col-lg-4">
                     <div class="listing--single-right position-sticky top-0 overflow-auto background-white">
                         <div class="listing--single--right-inner">
-                            <div class="dealer-details">
-                                <div class="delear-details--inner">
-                                    <div class="row g-3 justify-content-between align-items-center">
-                                        <div class="col-auto">
-                                            <h3 class="fs-32"><?= $product->get_name() ?></h3>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="logo-box">
-                                                <?= wp_get_attachment_image($manufacturer_logo, 'medium') ?>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="find-dealer">
-                                <div class="heading-icon mb-3">
-                                    <h3 class="d-flex align-items-center gap-3 fs-25">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 42.568 42.576">
-                                            <path id="Icon_awesome-search" data-name="Icon awesome-search" d="M41.989,36.809,33.7,28.52a1.994,1.994,0,0,0-1.414-.582H30.931a17.287,17.287,0,1,0-2.993,2.993v1.355A1.994,1.994,0,0,0,28.52,33.7l8.29,8.29a1.987,1.987,0,0,0,2.819,0l2.353-2.353A2,2,0,0,0,41.989,36.809ZM17.295,27.938A10.643,10.643,0,1,1,27.938,17.295,10.637,10.637,0,0,1,17.295,27.938Z" fill="#f2007d"></path>
-                                        </svg>
-                                        Find dealers in your area <?= $manufacturer_term_vehicle_type_slug ?>
-                                    </h3>
-                                </div>
-                                <?= do_shortcode('[wpsl category="' . get_product_brand_slugs_by_id($product->get_id(), false, true) . '" ]') ?>
-                            </div>
 
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFindDealer" aria-labelledby="offcanvasFindDealerLabel">
                                 <div class="offcanvas-header">
@@ -489,7 +463,33 @@ if ($seats) {
                                 </div>
                                 <div class="offcanvas-body">
                                     <div>
-                                        <?= do_shortcode('[contact-form-7 id="e44c382" title="Dealer Enquiry"]') ?>
+                                        <div class="dealer-details">
+                                            <div class="delear-details--inner">
+                                                <div class="row g-3 justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        <h3 class="fs-32"><?= $product->get_name() ?></h3>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="logo-box">
+                                                            <?= wp_get_attachment_image($manufacturer_logo, 'medium') ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="find-dealer">
+                                            <div class="heading-icon mb-3">
+                                                <h3 class="d-flex align-items-center gap-3 fs-25">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 42.568 42.576">
+                                                        <path id="Icon_awesome-search" data-name="Icon awesome-search" d="M41.989,36.809,33.7,28.52a1.994,1.994,0,0,0-1.414-.582H30.931a17.287,17.287,0,1,0-2.993,2.993v1.355A1.994,1.994,0,0,0,28.52,33.7l8.29,8.29a1.987,1.987,0,0,0,2.819,0l2.353-2.353A2,2,0,0,0,41.989,36.809ZM17.295,27.938A10.643,10.643,0,1,1,27.938,17.295,10.637,10.637,0,0,1,17.295,27.938Z" fill="#f2007d"></path>
+                                                    </svg>
+                                                    Find dealers in your area <?= $manufacturer_term_vehicle_type_slug ?>
+                                                </h3>
+                                            </div>
+                                            <?= do_shortcode('[wpsl category="' . get_product_brand_slugs_by_id($product->get_id(), false, true) . '" ]') ?>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
