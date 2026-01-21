@@ -485,11 +485,11 @@ if ($seats) {
                             </div>
 
                             <div class="listing-pricing background-text text-white">
-                                <div class="row">
+                                <div class="row g-3 align-items-center">
                                     <div class="col-auto flex-grow-1">
                                         <div class="row g-3 justify-content-between align-items-lg-center flex-lg-row flex-column">
                                             <div class="col-auto">
-                                                <h3 class="fs-32"><?= $product->get_name() ?></h3>
+                                                <h3 class="fs-32 mb-0"><?= $product->get_name() ?></h3>
                                             </div>
 
                                             <div class="col-auto">
