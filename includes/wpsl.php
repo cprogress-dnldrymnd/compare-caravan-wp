@@ -88,7 +88,7 @@ function custom_listing_template()
     $listing_template = '<li class="store--listing"  data-store-id="<%= id %>">' . "\r\n";
     $listing_template .= "\t\t" . '<div>' . "\r\n";
     $listing_template .= "\t\t\t" . '<%= thumb %>' . "\r\n";
-    $listing_template .= "\t\t" . '<div class="d-flex gap-3 align-items-center justify-content-between ">' . "\r\n";
+    $listing_template .= "\t\t" . '<div class="d-flex gap-3 align-items-center justify-content-between flex-column flex-lg-row ">' . "\r\n";
     $listing_template .= "\t\t\t\t" . '<h4 class="fs-18 fw-semibold mb-0">' . wpsl_store_header_template('listing') . '</h4>' . "\r\n";
     // Check if we need to show the distance.
     if (!$wpsl_settings['hide_distance']) {
