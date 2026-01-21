@@ -106,7 +106,7 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
 
     //if ($wpsl_settings['show_contact_details']) {
-    $listing_template .= "\t\t\t" . '<div class="contact-details-enquire">' . "\r\n";
+    $listing_template .= "\t\t\t" . '<div class="contact-details-enquire d-flex align-items-center justify-content-between">' . "\r\n";
     $listing_template .= "\t\t\t" . '<div class="wpsl-contact-details fw-semibold fs-14 mb-0">' . "\r\n";
     $listing_template .= "\t\t\t" . '<% if ( phone ) { %>' . "\r\n";
     $listing_template .= "\t\t\t" . '<span class="contact-details-span"><svg xmlns="http://www.w3.org/2000/svg" width="12.707" height="12.707" viewBox="0 0 12.707 12.707"> <path id="Icon_awesome-phone-alt" data-name="Icon awesome-phone-alt" d="M12.345,8.98,9.565,7.788a.6.6,0,0,0-.695.171l-1.231,1.5a9.2,9.2,0,0,1-4.4-4.4l1.5-1.231a.594.594,0,0,0,.171-.695L3.725.36A.6.6,0,0,0,3.043.015L.462.611A.6.6,0,0,0,0,1.192,11.515,11.515,0,0,0,11.516,12.707a.6.6,0,0,0,.581-.462l.6-2.581a.6.6,0,0,0-.348-.685Z" transform="translate(0 0)"/> </svg> <%= formatPhoneNumber( phone ) %></span>' . "\r\n";
