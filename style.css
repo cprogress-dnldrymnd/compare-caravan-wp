@@ -17713,10 +17713,22 @@ footer {
   footer {
     margin-bottom: var(--listing-pricing-height);
   }
+  .fs-32 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fs-32 {
+    font-size: 24px;
+  }
 }
 @media (max-width: 575px) {
   .listing-inner--layouts-holder {
     --box-padding: 20px;
+  }
+  .listing-pricing .fs-32 {
+    font-size: 18px;
   }
 }
 
