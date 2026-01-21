@@ -17490,6 +17490,9 @@ section.hero {
     height: 14px;
     background-position: center;
 }
+.text-pink {
+  color: var(--pink-color) !important;
+}
 #wpsl-search-wrap input {
   padding: 14px;
   line-height: 1;
