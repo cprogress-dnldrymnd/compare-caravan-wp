@@ -106,6 +106,7 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
 
     //if ($wpsl_settings['show_contact_details']) {
+    $listing_template .= "\t\t\t" . '<div class="contact-details-enquire">' . "\r\n";
     $listing_template .= "\t\t\t" . '<div class="wpsl-contact-details fw-semibold fs-14 mb-0">' . "\r\n";
     $listing_template .= "\t\t\t" . '<% if ( phone ) { %>' . "\r\n";
     $listing_template .= "\t\t\t" . '<span class="contact-details-span"><svg xmlns="http://www.w3.org/2000/svg" width="12.707" height="12.707" viewBox="0 0 12.707 12.707"> <path id="Icon_awesome-phone-alt" data-name="Icon awesome-phone-alt" d="M12.345,8.98,9.565,7.788a.6.6,0,0,0-.695.171l-1.231,1.5a9.2,9.2,0,0,1-4.4-4.4l1.5-1.231a.594.594,0,0,0,.171-.695L3.725.36A.6.6,0,0,0,3.043.015L.462.611A.6.6,0,0,0,0,1.192,11.515,11.515,0,0,0,11.516,12.707a.6.6,0,0,0,.581-.462l.6-2.581a.6.6,0,0,0-.348-.685Z" transform="translate(0 0)"/> </svg> <%= formatPhoneNumber( phone ) %></span>' . "\r\n";
@@ -123,6 +124,18 @@ function custom_listing_template()
     $listing_template .= "\t\t\t" . '<span  class="contact-details-span text-pink"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"> <g id="Icon_feather-globe" data-name="Icon feather-globe" transform="translate(-2.5 -2.5)"> <path id="Path_1331" data-name="Path 1331" d="M15,9A6,6,0,1,1,9,3,6,6,0,0,1,15,9Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1332" data-name="Path 1332" d="M3,18H15" transform="translate(0 -9)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> <path id="Path_1333" data-name="Path 1333" d="M14.4,3a9.18,9.18,0,0,1,2.4,6,9.18,9.18,0,0,1-2.4,6A9.18,9.18,0,0,1,12,9a9.18,9.18,0,0,1,2.4-6Z" transform="translate(-5.4)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/> </g> </svg><%= url %></span>' . "\r\n";
     $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
     $listing_template .= "\t\t\t" . '</div>' . "\r\n";
+
+    $listing_template .= "\t\t\t" . '</div>' . "\r\n";
+
+
+    $listing_template .= '<% if ( email ) { %>';
+    $listing_template .= '<div class="enquire-now fs-14">' . "\r\n";
+    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" title="' . wpsl_store_header_template('listing') . '" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
+    $listing_template .= '</div>';
+    $listing_template .= '<% } %>';
+
+
+
     $listing_template .= '<% if ( listing_information_1 ) { %>';
     $listing_template .= '<div class="wpsl-listing-info wpsl-listing-info-tag fw-medium fs-14">' . "\r\n";
     $listing_template .= '<% var items = listing_information_1.split(","); %>';
@@ -156,11 +169,7 @@ function custom_listing_template()
     $listing_template .= '</div>';
     $listing_template .= '<% } %>';
 
-    $listing_template .= '<% if ( email ) { %>';
-    $listing_template .= '<div class="enquire-now fs-14">' . "\r\n";
-    $listing_template .= '<p><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnquireDealer" aria-controls="offcanvasEnquireDealer" email="<%= email %>" title="' . wpsl_store_header_template('listing') . '" class="enquire-now-dealer">Enquire Now</a>' . "\r\n";
-    $listing_template .= '</div>';
-    $listing_template .= '<% } %>';
+
 
 
     // }
