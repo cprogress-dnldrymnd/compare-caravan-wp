@@ -17695,6 +17695,9 @@ footer {
   width: 28px;
   height: 28px;
 }
+#offcanvasFindDealer .offcanvas-body {
+  padding: 0 !important;
+}
 @media (min-width: 992px) {
   #main-header .menu {
     flex-direction: row;

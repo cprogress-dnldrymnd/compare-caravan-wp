@@ -455,8 +455,8 @@ if ($seats) {
                 <div class="col-lg-4">
                     <div class="listing--single-right position-sticky top-0 overflow-auto background-white">
                         <div class="listing--single--right-inner">
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFindDealer" aria-labelledby="offcanvasFindDealerLabel">
-                                <div class="offcanvas-header d-none d-lg-block">
+                            <div class="offcanvas offcanvas-end offcanvas-visible-desktop" tabindex="-1" id="offcanvasFindDealer" aria-labelledby="offcanvasFindDealerLabel">
+                                <div class="offcanvas-header d-block d-lg-none">
                                     <h5 class="offcanvas-title" id="offcanvasFindDealerLabel"><span></span></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
