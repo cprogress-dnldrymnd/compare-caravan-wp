@@ -399,25 +399,28 @@ function my_menu_add_mobile_class($classes, $item, $args, $depth)
 }
 add_filter('nav_menu_css_class', 'my_menu_add_mobile_class', 10, 4);
 
-add_filter( 'wpcf7_form_tag', 'populate_manufacturer_email_field', 10, 2 );
+add_filter('wpcf7_form_tag', 'populate_specific_form_field', 10, 2);
 
-function populate_manufacturer_email_field( $tag, $replace ) {
-    
-    // 1. Check if the tag name matches your specific field
-    if ( 'manufacturer-email' !== $tag->name ) {
+function populate_specific_form_field($tag, $replace)
+{
+
+    // 1. Get the current form object
+    $contact_form = WPCF7_ContactForm::get_current();
+
+    // 2. Safety Check: If no form is found, or ID is NOT 1900, stop.
+    if (! $contact_form || $contact_form->id() != 1900) {
         return $tag;
     }
 
-    // 2. Define your logic to get the email address
-    // Example: Getting an email from a custom field on the current post
-    // $email_value = get_post_meta( get_the_ID(), 'manufacturer_email_meta_key', true );
-    
-    // For demonstration, we'll set a static value
-    $email_value = 'contact@example-manufacturer.com';
+    // 3. Check if the tag name is 'manufacturer-email'
+    if ('manufacturer-email' === $tag->name) {
 
-    // 3. Set the value of the tag
-    // Note: $tag->values must always be an array
-    $tag->values = (array) $email_value;
+        // YOUR LOGIC HERE: Calculate the email you want
+        $my_email = 'dynamic-manufacturer@example.com';
+
+        // 4. Assign the value (Must be an array)
+        $tag->values = (array) $my_email;
+    }
 
     return $tag;
 }
