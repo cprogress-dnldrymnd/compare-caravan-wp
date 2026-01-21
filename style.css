@@ -17719,6 +17719,9 @@ footer {
   .listing-pricing .price {
     font-size: 22px;
   }
+  .listing--single-right {
+    z-index: 5;
+  }
 }
 
 @media (max-width: 767px) {
