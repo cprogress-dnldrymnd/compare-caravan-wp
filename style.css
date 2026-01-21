@@ -17515,6 +17515,9 @@ section.hero {
    background-color: var(--pink-color);
    color: var(--bs-white);
 }
+.store--listing .listing-title {
+padding-right: 125px;
+}
 #wpsl-search-wrap input {
   padding: 14px;
   line-height: 1;
@@ -17769,6 +17772,10 @@ footer {
   }
 }
 @media (max-width: 991px) {
+.store--listing .listing-title {
+  padding-right: 0;
+  padding-top: 20px;
+}
   .single-product #main {
     position: relative;
     z-index: 9999;
