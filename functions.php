@@ -152,9 +152,21 @@ add_action('init', 'add_brands_to_posts');
 function my_theme_register_footer_sidebars()
 {
 
-    // --- Top Bar Menu ---
+
+    // --- Top Bar Left ---
     register_sidebar(array(
-        'name'          => esc_html__('Top Bar Menu', 'compare-caravan'),
+        'name'          => esc_html__('Top Bar Left', 'compare-caravan'),
+        'id'            => 'top-bar-left',
+        'description'   => esc_html__('Add widgets here for the Header Menu.', 'compare-caravan'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+
+    // --- Top Bar Right ---
+    register_sidebar(array(
+        'name'          => esc_html__('Top Bar Right', 'compare-caravan'),
         'id'            => 'top-bar-menu',
         'description'   => esc_html__('Add widgets here for the Header Menu.', 'compare-caravan'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -162,6 +174,8 @@ function my_theme_register_footer_sidebars()
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));
+
+
 
 
 
