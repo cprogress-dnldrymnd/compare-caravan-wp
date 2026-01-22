@@ -17459,6 +17459,9 @@ section.hero {
   padding-bottom: 20px;
   padding-top: 10px;
 }
+.contact-details-span a {
+  text-decoration:  none;
+}
 .contact-details-span svg {
       background-color: #EAEAEA;
     padding: 5px;
