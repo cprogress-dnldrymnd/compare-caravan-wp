@@ -17831,6 +17831,14 @@ footer {
   .find-dealer {
     padding: 20px;
   }
+  .contact-details-enquire {
+        gap: 0 !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .contact-details-enquire .enquire-now{
+    margin-top: 20px !important;
+  }
 }
 
 @media (min-width: 992px) {
