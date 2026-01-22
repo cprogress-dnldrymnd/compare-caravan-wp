@@ -17763,6 +17763,9 @@ footer {
 #offcanvasFindDealer .offcanvas-body {
   padding: 0 !important;
 }
+.wp-block-social-links.wp-block-social-links {
+  margin-bottom: 0 !important;
+}
 @media (min-width: 992px) {
   #main-header .menu {
     flex-direction: row;
