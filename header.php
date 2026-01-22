@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
   <div class="top-bar py-2 position-relative">
     <div class="container">
-      <div class="row g-3 justify-content-center justify-content-md-between">
+      <div class="row g-3 justify-content-between">
         <div class="col-auto trustpilot d-flex align-items-center gap-3">
           <ul class="socials d-flex gap-3 list-inline mb-0 align-items-center">
             <li><a href="https://www.instagram.com/lets_goleisureuk/" class="text-color" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
