@@ -17464,6 +17464,7 @@ section.hero {
     padding: 5px;
     width: 24px;
     height: 24px;
+    flex: 0 0 24px;
     border-radius: 2px;
 }
 #wpsl-result-list .wpsl-contact-details span {
