@@ -17825,6 +17825,9 @@ footer {
   .listing-pricing .suffix {
     font-size: 12px;
   }
+  .find-dealer {
+    padding: 20px;
+  }
 }
 
 @media (min-width: 992px) {
