@@ -17514,6 +17514,8 @@ section.hero {
   font-weight: 600;
   border: 1px solid var(--pink-color);
   padding: 16px 25px;
+  display: inline-block;
+
 }
 .store--listing .enquire-now a:hover {
    background-color: var(--pink-color);
@@ -17830,14 +17832,6 @@ footer {
   }
   .find-dealer {
     padding: 20px;
-  }
-  .contact-details-enquire {
-        gap: 0 !important;
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-  .contact-details-enquire .enquire-now{
-    margin-top: 20px !important;
   }
 }
 
