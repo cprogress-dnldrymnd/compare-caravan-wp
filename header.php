@@ -23,7 +23,7 @@
         <div class="col-auto trustpilot d-flex align-items-center gap-3">
          
         </div>
-        <div class="col-auto d-none d-md-block">
+        <div class="col-auto">
 
           <?php dynamic_sidebar('top-bar-menu'); ?>
 
